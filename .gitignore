@@ -31,5 +31,11 @@
 *.out
 *.app
 
+# Debug outputs
+*/Debug/*
+
 # CodeLite temp workspace files
 .codelite/*
+
+# Header swaps
+*.swp

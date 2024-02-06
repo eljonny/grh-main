@@ -1,0 +1,91 @@
+########################################################################
+#                                                                      #
+# Configuration for meetings, fellowships, and other resources/data    #
+#                                                                      #
+# Notes for consideration:                                             #
+#                                                                      #
+# There are special formatter tokens that refer to lists that will be  #
+#  iterated over when a formatter token is specified in a URL or data  #
+#  item.                                                               #
+# The format of the formatter token is $$TOKEN_ID$$ where TOKEN_ID is  #
+#  the name of the list being drawn from.                              #
+#                                                                      #
+# Valid formatter tokens:                                              #
+#  US_STATE - List of abbreviations that act as identifiers for states #
+#              within the United States.                               #
+#                                                                      #
+########################################################################
+#
+# Meetings
+# ---------------------------------------------------------------------
+# Data locations for 12-step meetings.
+# These are web locations where meeting information is downloaded from.
+# Meeting information found here will be processed and stored.
+#
+# Format:
+# `meetings`,fellowshipID,locationType,meetingsDataURL
+#
+# NOTE: The GA website for live in-person meetings in the United States
+#        uses a URL format that is on a per-US-state basis, so a special
+#        formatter token is used to indicate this special URL used to
+#        retrieve the data for each individual state:
+#        $$US_STATE$$
+#
+meetings,ga,us-in-person,https://gamblersanonymous.org/ga/locations/state/table/$$US_STATE$$/na/na/na/na/250?#gmap-nodemap-gmap0
+meetings,ga,virtual,https://gamblersanonymous.org/ga/virtual-meetings
+meetings,ga,phone,https://gamblersanonymous.org/ga/content/phone-meetings
+meetings,ga,international-in-person,https://gamblersanonymous.org/ga/addresses?page=0
+meetings,ga,international-in-person,https://gamblersanonymous.org/ga/addresses?page=1
+meetings,rro,virtual,https://dev01.recoveryroadonline.com/diarylist/
+meetings,ba,virtual,http://bettors-anonymous.org/images/pdf/Online-Info.pdf
+meetings,ba,all-in-person,https://bettors-anonymous.org/meeting.html
+#
+########################################################################
+#
+# Fellowships
+# ---------------------------------------------------------------------
+# These are 12-step fellowships that focus on Compulsive Gambling.
+#
+# `fellowships`,fellowshipID,fellowshipName,fellowshipURL
+#
+fellowships,rro,Recovery Road Online,https://recoveryroadonline.com/
+fellowships,ga,Gamblers Anonymous,https://gamblersanonymous.org
+fellowships,ba,Bettors Anonymous,https://bettors-anonymous.org
+#
+########################################################################
+#
+# Organizations
+# ---------------------------------------------------------------------
+# These are non-profit organizations that help people find resources.
+# Commonly called "councils" in some cases.
+#
+# Format:
+# `organizations`,organizationID,organizationName,organizationURL
+#
+organizations,ncpg,National Council on Problem Gambling,https://www.ncpgambling.org/help-treatment/
+#
+########################################################################
+#
+# General Resources
+# ---------------------------------------------------------------------
+# Resources for help in recovering from Compulsive Gambling that are not
+#  meetings.
+# This includes help lines for calling/texting, self-tests, and other
+#  useful information.
+#
+# Format:
+# `resources`,id,resource-type,data
+#
+# NOTE: The data field is either a URL or a phone/text number.
+#       Also, the GA call-list item is a URL for the GA hotlines.
+#
+resources,ncpg,text,800GAM
+resources,ncpg,call,1-800-GAMBLER
+resources,ncpg,test,https://www.ncpgambling.org/help-treatment/problem-gambling-self-assessment/
+resources,ga,test,https://gamblersanonymous.org/ga/content/20-questions
+resources,ga,call-list,https://gamblersanonymous.org/ga/hotlines
+resources,ba,test,https://bettors-anonymous.org/questions.html
+resources,rro,reading,https://dev01.recoveryroadonline.com/00_promises/
+#
+########################################################################
+#
