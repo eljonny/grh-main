@@ -20,6 +20,8 @@
     </VirtualDirectory>
     <VirtualDirectory Name="data">
       <File Name="res/data/US_STATE.list"/>
+      <File Name="res/data/INTL_GA_PAGE.list"/>
+      <File Name="res/data/US_STATE_FULL.list"/>
     </VirtualDirectory>
   </VirtualDirectory>
   <VirtualDirectory Name="include">
@@ -124,4 +126,11 @@
       </Completion>
     </Configuration>
   </Settings>
+  <VirtualDirectory Name="lang">
+    <VirtualDirectory Name="config">
+      <File Name="lang/config/DataList.g4"/>
+      <File Name="lang/config/url.g4"/>
+      <File Name="lang/config/CommonRules.g4"/>
+    </VirtualDirectory>
+  </VirtualDirectory>
 </CodeLite_Project>
