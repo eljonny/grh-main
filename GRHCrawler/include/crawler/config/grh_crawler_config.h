@@ -5,14 +5,17 @@
 
 using namespace std;
 
+template<T>
 class GRHDataList {
     string name;
     string loadTime;
-    vector<string> dataList;
+    vector<T> dataList;
 };
 
 class GRHConfigMap {
-    GRHDataList usStates;
+    GRHDataList<string> usStateAbbrevs;
+    GRHDataList<string> usStateNames;
+    GRHDataList<int> intlGAPages;
 };
 
 class GRHCrawlerConfig {
