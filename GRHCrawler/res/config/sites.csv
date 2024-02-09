@@ -11,8 +11,12 @@
 #  the name of the list being drawn from.                              #
 #                                                                      #
 # Valid formatter tokens:                                              #
-#  US_STATE - List of abbreviations that act as identifiers for states #
-#              within the United States.                               #
+#  US_STATE      - List of abbreviations that act as identifiers for   #
+#                   states within the United States.                   #
+#  US_STATE_FULL - List of full state names for crawling the NCPG      #
+#                   website.                                           #
+#  INTL_GA_PAGE  - List of page numbers for crawling the GA            #
+#                   International Meetings page.                       #
 #                                                                      #
 ########################################################################
 #
@@ -31,26 +35,38 @@
 #        retrieve the data for each individual state:
 #        $$US_STATE$$
 #
+# NOTE: The GA website for live in-person meetings internationally uses
+#        a URL format that is paged, so a special formatter token is
+#        used to indicate this special URL used to retrieve
+#        international in-person meeting data:
+#        $$INTL_GA_PAGE$$
+#
 meetings,ga,us-in-person,https://gamblersanonymous.org/ga/locations/state/table/$$US_STATE$$/na/na/na/na/250?#gmap-nodemap-gmap0
 meetings,ga,virtual,https://gamblersanonymous.org/ga/virtual-meetings
 meetings,ga,phone,https://gamblersanonymous.org/ga/content/phone-meetings
-meetings,ga,international-in-person,https://gamblersanonymous.org/ga/addresses?page=0
-meetings,ga,international-in-person,https://gamblersanonymous.org/ga/addresses?page=1
+meetings,ga,intl-in-person,https://gamblersanonymous.org/ga/addresses?page=$$INTL_GA_PAGE$$
 meetings,rro,virtual,https://dev01.recoveryroadonline.com/diarylist/
 meetings,ba,virtual,http://bettors-anonymous.org/images/pdf/Online-Info.pdf
 meetings,ba,all-in-person,https://bettors-anonymous.org/meeting.html
+meetings,gam-anon,us-in-person,https://www.gam-anon.org/meeting-directory/us-meetings
+meetings,gam-anon,ca-in-person,https://www.gam-anon.org/meeting-directory/canada-meetings
+meetings,gam-anon,intl-in-person,https://www.gam-anon.org/meeting-directory/international-meetings
+meetings,gam-anon,virtual,https://www.gam-anon.org/meeting-directory/virtual-meetings
 #
 ########################################################################
 #
 # Fellowships
 # ---------------------------------------------------------------------
-# These are 12-step fellowships that focus on Compulsive Gambling.
+# These are 12-step fellowships that focus on Compulsive Gambling or
+#  those close to the compulsive gambler that have been harmed by the
+#  compulsive gambler.
 #
 # `fellowships`,fellowshipID,fellowshipName,fellowshipURL
 #
 fellowships,rro,Recovery Road Online,https://recoveryroadonline.com/
 fellowships,ga,Gamblers Anonymous,https://gamblersanonymous.org
 fellowships,ba,Bettors Anonymous,https://bettors-anonymous.org
+fellowships,gam-anon,Gam-Anon,http://www.gam-anon.org/
 #
 ########################################################################
 #
@@ -62,7 +78,14 @@ fellowships,ba,Bettors Anonymous,https://bettors-anonymous.org
 # Format:
 # `organizations`,organizationID,organizationName,organizationURL
 #
+# NOTE: The NCPG website for per-state resources in the United States
+#        uses a URL format that is on a per-US-state basis, so a special
+#        formatter token is used to indicate this special URL used to
+#        retrieve the data for each individual state:
+#        $$US_STATE_FULL$$
+#
 organizations,ncpg,National Council on Problem Gambling,https://www.ncpgambling.org/help-treatment/
+organizations,per-state,per-state,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
 #
 ########################################################################
 #
@@ -70,22 +93,40 @@ organizations,ncpg,National Council on Problem Gambling,https://www.ncpgambling.
 # ---------------------------------------------------------------------
 # Resources for help in recovering from Compulsive Gambling that are not
 #  meetings.
-# This includes help lines for calling/texting, self-tests, and other
-#  useful information.
+# This includes help lines for calling/texting, chat, self-tests, and
+#  other useful information.
 #
 # Format:
-# `resources`,id,resource-type,data
+# `resources`,id,resource-type,data1[,data2]
 #
-# NOTE: The data field is either a URL or a phone/text number.
+# NOTE: The data1 field is either a URL or a phone/text number.
 #       Also, the GA call-list item is a URL for the GA hotlines.
+#       The data2 field is additional information and/or context
+#        related to the contents of the data1 field.
 #
-resources,ncpg,text,800GAM
+# NOTE: The NCPG website for per-state resources in the United States
+#        uses a URL format that is on a per-US-state basis, so a special
+#        formatter token is used to indicate this special URL used to
+#        retrieve the data for each individual state:
+#        $$US_STATE_FULL$$
+#
+resources,ncpg,text,800GAM,any
 resources,ncpg,call,1-800-GAMBLER
 resources,ncpg,test,https://www.ncpgambling.org/help-treatment/problem-gambling-self-assessment/
 resources,ga,test,https://gamblersanonymous.org/ga/content/20-questions
 resources,ga,call-list,https://gamblersanonymous.org/ga/hotlines
+resources,ga,literature,https://www.gamblersanonymous.org.uk/literature
+resources,ga,reading,https://gamblersanonymous.ph/
+resources,ga,store,https://www.gamblersanonymous.org/ga/products
+resources,ga,bulletin,https://www.gamblersanonymous.org/ga/pdf
 resources,ba,test,https://bettors-anonymous.org/questions.html
 resources,rro,reading,https://dev01.recoveryroadonline.com/00_promises/
+resources,gam-anon,call-list,https://www.gam-anon.org/?view=article&id=574:hotline-numbers&catid=11:general
+resources,gam-anon,literature,https://www.gam-anon.org/literature-summary
+resources,gam-talk,chat,http://www.gamtalk.org/
+resources,per-state,call,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+resources,per-state,text,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+resources,per-state,chat,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
 #
 ########################################################################
 #
