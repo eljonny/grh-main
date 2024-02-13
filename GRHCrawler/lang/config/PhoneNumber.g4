@@ -2,14 +2,12 @@ grammar PhoneNumber;
 
 import CommonRules;
 
-phone : countryCode SPACE
-        areaCode SPACE
+phone : countryCode phoneSep
+        areaCode phoneSep
         phoneNumber
       ;
 
 countryCode : PLUS? DIGITS ;
-
-phoneSep : SPACE | HYPH ;
 
 areaCode : LPAREN? DIGITS RPAREN?;
 
@@ -30,6 +28,8 @@ localAreaWithDtmf : ALPHANUM+ ;
 dtmfAll : ALPHANUM+ ;
 
 dtmfLocalizer : ALPHANUM+ ;
+
+phoneSep : SPACE | HYPH ;
 
 /* Lexer Rules */
 
