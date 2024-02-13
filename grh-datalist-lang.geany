@@ -18,7 +18,7 @@ detect_indent_width=false
 indent_mode=2
 
 [project]
-name=grh-lang
+name=grh-datalist-lang
 base_path=/home/jhyry/Code/GamblingRecoveryHelp
 description=Project for ANTLR grammar development related to GRH.
 file_patterns=*.g4;
@@ -28,10 +28,10 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=1
-FILE_NAME_0=2633;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2Furl.g4;0;4
-FILE_NAME_1=482;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FDataList.g4;0;4
-FILE_NAME_2=316;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
+current_page=2
+FILE_NAME_0=2711;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2Furl.g4;0;4
+FILE_NAME_1=118;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FDataList.g4;0;4
+FILE_NAME_2=315;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
 
 [VTE]
 last_dir=/home/jhyry
