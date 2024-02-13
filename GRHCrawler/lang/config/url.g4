@@ -30,9 +30,9 @@ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-/**
-* scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
-*/
+/*
+ * scheme:[//[user:password@]host[:port]][/]path[?query][#fragment]
+ */
 
 // $antlr-format alignTrailingComments true, columnLimit 150, minEmptyLines 1, maxEmptyLinesToKeep 1, reflowComments false, useTab false
 // $antlr-format allowShortRulesOnASingleLine false, allowShortBlocksOnASingleLine true, alignSemicolons hanging, alignColons hanging
@@ -46,7 +46,15 @@ url
     ;
 
 uri
-    : scheme SCHEME_SEP login? host (COL port)? (FS path?)? query? frag?
+    : scheme SCHEME_SEP login? host uriPort? uriPath? query? frag?
+    ;
+
+uriPort
+    : COL port
+    ;
+
+uriPath
+    : FS path?
     ;
 
 scheme
@@ -58,12 +66,24 @@ host
     ;
 
 hostname
-    : string         # DomainNameOrIPv4Host
+    : parameterString | string # DomainNameOrIPv4Host
     | LBRACKET v6host RBRACKET # IPv6Host
     ;
 
 v6host
-    : DBL_COL? (string | DIGITS) ((COL | DBL_COL) (string | DIGITS))*
+    : DBL_COL? v6hostConfigParam v6hostSegment*
+    ;
+
+v6hostSegment
+    : v6hostSep v6hostConfigParam
+    ;
+
+v6hostSep
+    : COL | DBL_COL
+    ;
+
+v6hostConfigParam
+    : configParam
     ;
 
 port
@@ -71,23 +91,39 @@ port
     ;
 
 path
-    : string (FS string)* FS?
+    : pathString multiPathChunk* FS?
+    ;
+
+multiPathChunk
+    : FS pathString
+    ;
+
+pathString
+    : parameterString | string
     ;
 
 user
-    : string
+    : parameterString | string
     ;
 
 login
-    : user (COL password)? AT
+    : user loginPassword? AT
+    ;
+
+loginPassword
+    : COL password
     ;
 
 password
-    : string
+    : parameterString | string
     ;
 
 frag
-    : HASH (string | DIGITS)
+    : HASH fragString
+    ;
+
+fragString
+    : parameterString | string | DIGITS
     ;
 
 query
@@ -95,11 +131,39 @@ query
     ;
 
 search
-    : searchparameter (AMP searchparameter)*
+    : searchParameter multiSearch*
     ;
 
-searchparameter
-    : string (EQ (string | DIGITS | HEX))?
+multiSearch
+    : AMP searchParameter
+    ;
+
+searchParameter
+    : searchParameterKey searchParameterValue?
+    ;
+
+searchParameterKey
+    : parameterString | string
+    ;
+
+searchParameterValue
+    : EQ searchParameterValueString?
+    ;
+
+searchParameterValueString
+    : parameterString | string | DIGITS | HEX
+    ;
+
+parameterString
+    : DBL_DOLLAR parameterName DBL_DOLLAR
+    ;
+
+parameterName
+    : string usString*
+    ;
+
+configParam
+    : parameterString | string | DIGITS
     ;
 
 string
@@ -107,32 +171,26 @@ string
     | DIGITS
     ;
 
-HEX
-    : (PERC (HEX_ALPHA | SINGLE_DIGIT_INT) (HEX_ALPHA | SINGLE_DIGIT_INT))+
+usString
+    : US string
     ;
+
+/* Lexer Rules */
 
 SCHEME_SEP
     : COL FS FS
+    ;
+
+DBL_DOLLAR
+    : DOLLAR DOLLAR
     ;
 
 DBL_COL
     : COL COL
     ;
 
-US
-    : '_'
-    ;
-
-FS
-    : '/'
-    ;
-
 AMP
     : '&'
-    ;
-
-PERC
-    : '%'
     ;
 
 AT
@@ -145,10 +203,6 @@ LBRACKET
 
 RBRACKET
     : ']'
-    ;
-
-HASH
-    : '#'
     ;
 
 Q
