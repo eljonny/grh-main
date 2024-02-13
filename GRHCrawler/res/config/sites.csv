@@ -61,12 +61,12 @@ meetings,gam-anon,virtual,https://www.gam-anon.org/meeting-directory/virtual-mee
 #  those close to the compulsive gambler that have been harmed by the
 #  compulsive gambler.
 #
-# `fellowships`,fellowshipID,fellowshipName,fellowshipURL
+# `fellowship`,fellowshipID,fellowshipName,fellowshipURL
 #
-fellowships,rro,Recovery Road Online,https://recoveryroadonline.com/
-fellowships,ga,Gamblers Anonymous,https://gamblersanonymous.org
-fellowships,ba,Bettors Anonymous,https://bettors-anonymous.org
-fellowships,gam-anon,Gam-Anon,http://www.gam-anon.org/
+fellowship,rro,Recovery Road Online,https://recoveryroadonline.com/
+fellowship,ga,Gamblers Anonymous,https://gamblersanonymous.org
+fellowship,ba,Bettors Anonymous,https://bettors-anonymous.org
+fellowship,gam-anon,Gam-Anon,http://www.gam-anon.org/
 #
 ########################################################################
 #
@@ -76,7 +76,7 @@ fellowships,gam-anon,Gam-Anon,http://www.gam-anon.org/
 # Commonly called "councils" in some cases.
 #
 # Format:
-# `organizations`,organizationID,organizationName,organizationURL
+# `organization`,organizationID,organizationName,organizationURL
 #
 # NOTE: The NCPG website for per-state resources in the United States
 #        uses a URL format that is on a per-US-state basis, so a special
@@ -84,8 +84,8 @@ fellowships,gam-anon,Gam-Anon,http://www.gam-anon.org/
 #        retrieve the data for each individual state:
 #        $$US_STATE_FULL$$
 #
-organizations,ncpg,National Council on Problem Gambling,https://www.ncpgambling.org/help-treatment/
-organizations,per-state,per-state,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+organization,ncpg,National Council on Problem Gambling,https://www.ncpgambling.org/help-treatment/
+organization,per-state,per-state,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
 #
 ########################################################################
 #
@@ -97,7 +97,7 @@ organizations,per-state,per-state,https://www.ncpgambling.org/help-treatment/hel
 #  other useful information.
 #
 # Format:
-# `resources`,id,resource-type,data1[,data2]
+# `resource`,id,resource-type,data1[,data2]
 #
 # NOTE: The data1 field is either a URL or a phone/text number.
 #       Also, the GA call-list item is a URL for the GA hotlines.
@@ -110,23 +110,23 @@ organizations,per-state,per-state,https://www.ncpgambling.org/help-treatment/hel
 #        retrieve the data for each individual state:
 #        $$US_STATE_FULL$$
 #
-resources,ncpg,text,800GAM,any
-resources,ncpg,call,1-800-GAMBLER
-resources,ncpg,test,https://www.ncpgambling.org/help-treatment/problem-gambling-self-assessment/
-resources,ga,test,https://gamblersanonymous.org/ga/content/20-questions
-resources,ga,call-list,https://gamblersanonymous.org/ga/hotlines
-resources,ga,literature,https://www.gamblersanonymous.org.uk/literature
-resources,ga,reading,https://gamblersanonymous.ph/
-resources,ga,store,https://www.gamblersanonymous.org/ga/products
-resources,ga,bulletin,https://www.gamblersanonymous.org/ga/pdf
-resources,ba,test,https://bettors-anonymous.org/questions.html
-resources,rro,reading,https://dev01.recoveryroadonline.com/00_promises/
-resources,gam-anon,call-list,https://www.gam-anon.org/?view=article&id=574:hotline-numbers&catid=11:general
-resources,gam-anon,literature,https://www.gam-anon.org/literature-summary
-resources,gam-talk,chat,http://www.gamtalk.org/
-resources,per-state,call,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
-resources,per-state,text,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
-resources,per-state,chat,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+resource,ncpg,text,800GAM,any
+resource,ncpg,call,1-800-GAMBLER
+resource,ncpg,test,https://www.ncpgambling.org/help-treatment/problem-gambling-self-assessment/
+resource,ga,test,https://gamblersanonymous.org/ga/content/20-questions
+resource,ga,call-list,https://gamblersanonymous.org/ga/hotlines
+resource,ga,literature,https://www.gamblersanonymous.org.uk/literature
+resource,ga,reading,https://gamblersanonymous.ph/
+resource,ga,store,https://www.gamblersanonymous.org/ga/products
+resource,ga,bulletin,https://www.gamblersanonymous.org/ga/pdf
+resource,ba,test,https://bettors-anonymous.org/questions.html
+resource,rro,reading,https://dev01.recoveryroadonline.com/00_promises/
+resource,gam-anon,call-list,https://www.gam-anon.org/?view=article&id=574:hotline-numbers&catid=11:general
+resource,gam-anon,literature,https://www.gam-anon.org/literature-summary
+resource,gam-talk,chat,http://www.gamtalk.org/
+resource,per-state,call,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+resource,per-state,text,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
+resource,per-state,chat,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
 #
 ########################################################################
 #
