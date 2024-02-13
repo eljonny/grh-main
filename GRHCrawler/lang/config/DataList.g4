@@ -10,7 +10,9 @@ source : SOURCE EQ (STATIC_SOURCE | url) WS ;
 
 lastUpdated : LAST_UPDATED EQ dateTime WS;
 
-dateTime : year HYPH month HYPH day SPACE hour COL minute (COL second)? timeZone ;
+dateTime : year HYPH month HYPH day SPACE hour COL minute (COL second)?
+           timeZone
+         ;
 
 year : DIGITS ;
 
@@ -51,5 +53,3 @@ START_LIST : 'start-list' ;
 END_LIST : 'end-list' ;
 
 STATIC_SOURCE : 'static' ;
-
-SPACE : ' ' ;

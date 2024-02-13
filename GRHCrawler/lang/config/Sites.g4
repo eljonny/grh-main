@@ -155,8 +155,6 @@ ORGANIZATION : 'organization' ;
 
 RESOURCE : 'resource' ;
 
-DOUBLE_DOLLAR : DOLLAR DOLLAR ;
-
 GRAVE : '`' ;
 
 DOLLAR : '$' ;
