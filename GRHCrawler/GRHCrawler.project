@@ -131,6 +131,8 @@
       <File Name="lang/config/DataList.g4"/>
       <File Name="lang/config/url.g4"/>
       <File Name="lang/config/CommonRules.g4"/>
+      <File Name="lang/config/Sites.g4"/>
+      <File Name="lang/config/PhoneNumber.g4"/>
     </VirtualDirectory>
   </VirtualDirectory>
 </CodeLite_Project>
