@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="GamblingRecoveryHelp" Database="" Version="10.0.0">
   <Project Name="GRHCrawler" Path="GRHCrawler/GRHCrawler.project" Active="Yes"/>
+  <Project Name="antlr4-runtime" Path="antlr4-runtime/antlr4-runtime.project"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
       <Project Name="GRHCrawler" ConfigName="Debug"/>
+      <Project Name="antlr4-runtime" ConfigName="Debug_Linux"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="GRHCrawler" ConfigName="Release"/>
+      <Project Name="antlr4-runtime" ConfigName="Debug_Linux"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>
