@@ -15,6 +15,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # required if linking to static library
 add_definitions(-DANTLR4CPP_STATIC)
 
+# using /MD flag for antlr4_runtime (for Visual C++ compilers only)
+set(ANTLR4_WITH_STATIC_CRT OFF)
+
 set(ANTLR4_TAG 7ed420ff2c78d62883875c442d75f32e73bc86c8)
 
 # add external build for antlrcpp
@@ -79,11 +82,11 @@ antlr_target(SitesParser ${PROJECT_SOURCE_DIR}/../GRHCrawler/lang/config/Sites.g
 include_directories(${PROJECT_SOURCE_DIR}/generated)
 
 # add generated grammar to binary target
-add_library(ghr_lang_proc STATIC
+add_library(grh_lang_proc STATIC
              ${ANTLR_CommonRulesLexer_CXX_OUTPUTS}
              ${ANTLR_UrlParser_CXX_OUTPUTS}
              ${ANTLR_PhoneNumberParser_CXX_OUTPUTS}
              ${ANTLR_DataListParser_CXX_OUTPUTS}
              ${ANTLR_SitesParser_CXX_OUTPUTS})
 
-target_link_libraries(ghr_lang_proc antlr4_static ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(grh_lang_proc antlr4_static ${CMAKE_THREAD_LIBS_INIT})
