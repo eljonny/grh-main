@@ -2,7 +2,7 @@ find_package(Java QUIET COMPONENTS Runtime)
 
 if(NOT ANTLR_EXECUTABLE)
   find_program(ANTLR_EXECUTABLE
-               NAMES antlr.jar antlr4.jar antlr-4.jar antlr-4.9.2-complete.jar)
+               NAMES antlr.jar antlr4.jar antlr-4.jar antlr-4.13.1-complete.jar)
 endif()
 
 if(ANTLR_EXECUTABLE AND Java_JAVA_EXECUTABLE)
@@ -25,8 +25,8 @@ if(ANTLR_EXECUTABLE AND Java_JAVA_EXECUTABLE)
 
   macro(ANTLR_TARGET Name InputFile)
     set(ANTLR_OPTIONS LEXER PARSER LISTENER VISITOR)
-    set(ANTLR_ONE_VALUE_ARGS PACKAGE OUTPUT_DIRECTORY DEPENDS_ANTLR)
-    set(ANTLR_MULTI_VALUE_ARGS COMPILE_FLAGS DEPENDS)
+    set(ANTLR_ONE_VALUE_ARGS PACKAGE OUTPUT_DIRECTORY)
+    set(ANTLR_MULTI_VALUE_ARGS COMPILE_FLAGS DEPENDS DEPENDS_ANTLR)
     cmake_parse_arguments(ANTLR_TARGET
                           "${ANTLR_OPTIONS}"
                           "${ANTLR_ONE_VALUE_ARGS}"
@@ -90,15 +90,17 @@ if(ANTLR_EXECUTABLE AND Java_JAVA_EXECUTABLE)
     list(APPEND ANTLR_${Name}_OUTPUTS ${ANTLR_${Name}_CXX_OUTPUTS})
 
     if(ANTLR_TARGET_DEPENDS_ANTLR)
-      if(ANTLR_${ANTLR_TARGET_DEPENDS_ANTLR}_INPUT)
-        list(APPEND ANTLR_TARGET_DEPENDS
-             ${ANTLR_${ANTLR_TARGET_DEPENDS_ANTLR}_INPUT})
-        list(APPEND ANTLR_TARGET_DEPENDS
-             ${ANTLR_${ANTLR_TARGET_DEPENDS_ANTLR}_OUTPUTS})
-      else()
-        message(SEND_ERROR
-                "ANTLR target '${ANTLR_TARGET_DEPENDS_ANTLR}' not found")
-      endif()
+      foreach(antlrDep IN LISTS ANTLR_TARGET_DEPENDS_ANTLR)
+        if(ANTLR_${antlrDep}_INPUT)
+          list(APPEND ANTLR_TARGET_DEPENDS
+               ${ANTLR_${antlrDep}_INPUT})
+          list(APPEND ANTLR_TARGET_DEPENDS
+               ${ANTLR_${antlrDep}_OUTPUTS})
+        else()
+          message(SEND_ERROR
+                  "ANTLR target '${antlrDep}' not found")
+        endif()
+      endforeach()
     endif()
 
     add_custom_command(
