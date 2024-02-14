@@ -157,6 +157,4 @@ RESOURCE : 'resource' ;
 
 GRAVE : '`' ;
 
-DOLLAR : '$' ;
-
 COMMA : ',' ;
