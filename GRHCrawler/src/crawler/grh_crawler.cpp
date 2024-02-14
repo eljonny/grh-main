@@ -24,7 +24,7 @@ void GRHCrawler::parse(GRHCrawlerSiteData siteData) {
     size_t htmlSize = siteData.data.rawData.size();
     myhtml_parse(tree, MyENCODING_UTF_8, html, htmlSize);
     
-    mycore_string_raw_t str = {0};
+    mycore_string_raw_t str = {0, 0, 0};
     myhtml_serialization_tree_buffer(myhtml_tree_get_document(tree), &str);
     
     cout << "\nParsed tree:" << endl;
