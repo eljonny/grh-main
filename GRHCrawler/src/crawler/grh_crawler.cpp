@@ -34,4 +34,3 @@ void GRHCrawler::parse(GRHDocument siteData) {
     myhtml_tree_destroy(tree);
     myhtml_destroy(myhtml);
 }
-
