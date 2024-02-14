@@ -66,8 +66,15 @@ host
     ;
 
 hostname
-    : parameterString | string # DomainNameOrIPv4Host
-    | LBRACKET v6host RBRACKET # IPv6Host
+    : domainNameOrIpv4Host | ipv6Host
+    ;
+
+domainNameOrIpv4Host
+    : parameterString | string
+    ;
+
+ipv6Host
+    : LBRACKET v6host RBRACKET
     ;
 
 v6host
