@@ -33,7 +33,6 @@ set(ANTLR_VERSION 4.13.1)
 
 # add macros to generate ANTLR Cpp code from grammar
 find_package(ANTLR REQUIRED)
-find_package(Threads)
 
 # Call macro to add lexer and grammar to your build dependencies.
 # NOTE: Here, we define "antlr4cpp" as our project's namespace
@@ -89,4 +88,4 @@ add_library(grh_lang_proc STATIC
              ${ANTLR_DataListParser_CXX_OUTPUTS}
              ${ANTLR_SitesParser_CXX_OUTPUTS})
 
-target_link_libraries(grh_lang_proc antlr4_static ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(grh_lang_proc antlr4_static)
