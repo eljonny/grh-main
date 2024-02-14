@@ -1,14 +1,6 @@
 lexer grammar CommonRules;
 
-EQ : '=' ;
-
-COL : ':' ;
-
-HASH : '#' ;
-
-SPACE : ' ' ;
-
-FS : '/' ;
+WS : [\r\n]+ ;
 
 STRING : (ALPHA | HEX)
          ([.] | PLUS | ALPHA | SINGLE_DIGIT_INT | HYPH | US | HEX)* ;
@@ -28,6 +20,18 @@ SINGLE_DIGIT_INT : [1-9] | ZERO ;
 
 ZERO : [0] ;
 
+EQ : '=' ;
+
+COL : ':' ;
+
+HASH : '#' ;
+
+SPACE : ' ' ;
+
+DOLLAR : '$' ;
+
+FS : '/' ;
+
 US : '_' ;
 
 PLUS : '+' ;
@@ -35,5 +39,3 @@ PLUS : '+' ;
 HYPH : '-' ;
 
 PERC : '%' ;
-
-WS : [\r\n]+ ;
