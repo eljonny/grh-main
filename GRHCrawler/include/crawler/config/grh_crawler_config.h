@@ -1,11 +1,12 @@
 #ifndef GRH_CRAWLER_CONFIG_H_
 #define GRH_CRAWLER_CONFIG_H_
 
+#include <string>
 #include <vector>
 
 using namespace std;
 
-template<T>
+template<class T>
 class GRHDataList {
     string name;
     string loadTime;

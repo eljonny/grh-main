@@ -1,1 +1,1 @@
-./Debug/main.cpp.o
+./Debug/grh_main.cpp.o ./Debug/src_crawler_grh_crawler.cpp.o ./Debug/src_crawler_db_grh_crawler_db.cpp.o ./Debug/src_crawler_config_grh_crawler_config.cpp.o

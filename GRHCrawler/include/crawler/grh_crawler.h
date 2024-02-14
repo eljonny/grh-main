@@ -14,7 +14,7 @@ public:
 private:
     GRHCrawlerSiteData _data;
 
-    void parse(GRHDocument rawData);
+    void parse(GRHCrawlerSiteData rawData);
 };
 
 #endif
