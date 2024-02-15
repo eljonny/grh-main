@@ -11,6 +11,9 @@
       <VirtualDirectory Name="config">
         <File Name="src/crawler/config/grh_crawler_config.cpp"/>
       </VirtualDirectory>
+      <VirtualDirectory Name="util">
+        <File Name="src/crawler/util/grh_io_utils.cpp"/>
+      </VirtualDirectory>
     </VirtualDirectory>
     <File Name="grh_main.cpp"/>
   </VirtualDirectory>
@@ -33,6 +36,9 @@
       <File Name="include/crawler/grh_crawler.h"/>
       <VirtualDirectory Name="config">
         <File Name="include/crawler/config/grh_crawler_config.h"/>
+      </VirtualDirectory>
+      <VirtualDirectory Name="util">
+        <File Name="include/crawler/util/grh_io_utils.h"/>
       </VirtualDirectory>
     </VirtualDirectory>
   </VirtualDirectory>
@@ -58,12 +64,19 @@
     <Configuration Name="Debug" CompilerType="clang( tags/RELEASE_600/final )" DebuggerType="GNU gdb debugger" Type="Executable" BuildCmpWithGlobalSettings="append" BuildLnkWithGlobalSettings="append" BuildResWithGlobalSettings="append">
       <Compiler Options="-g;-O0;-Wall;-Wextra;-std=c++17" C_Options="-g;-O0;-Wall;-Wextra;-std= c11" Assembler="" Required="yes" PreCompiledHeader="" PCHInCommandLine="no" PCHFlags="" PCHFlagsPolicy="0">
         <IncludePath Value="./include"/>
+        <IncludePath Value="../antlr4-runtime/build-debug/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime/src"/>
+        <IncludePath Value="../antlr4-runtime/generated"/>
       </Compiler>
       <Linker Options="" Required="yes">
+        <LibraryPath Value="../antlr4-runtime/build-debug"/>
+        <LibraryPath Value="../antlr4-runtime/build-debug/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime"/>
         <Library Value="myhtml"/>
+        <Library Value="grh_lang_proc"/>
+        <Library Value="antlr4-runtime"/>
+        <Library Value="pthread"/>
       </Linker>
       <ResourceCompiler Options="" Required="no"/>
-      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
+      <General OutputFile="$(IntermediateDirectory)/$(ProjectName)" IntermediateDirectory="./Debug" Command="./$(ProjectName)" CommandArguments="--sites config/sites.csv --list config/US_STATE.list --list config/US_STATE_FULL.list --list config/INTL_GA_PAGE.list" UseSeparateDebugArgs="no" DebugArguments="" WorkingDirectory="$(IntermediateDirectory)" PauseExecWhenProcTerminates="yes" IsGUIProgram="no" IsEnabled="yes"/>
       <BuildSystem Name="Default"/>
       <Environment EnvVarSetName="&lt;Use Defaults&gt;" DbgSetName="&lt;Use Defaults&gt;">
         <![CDATA[]]>
@@ -74,7 +87,13 @@
         <StartupCommands/>
       </Debugger>
       <PreBuild/>
-      <PostBuild/>
+      <PostBuild>
+        <Command Enabled="yes">mkdir -p Debug/config</Command>
+        <Command Enabled="yes">cp res/config/sites.csv Debug/config/sites.csv</Command>
+        <Command Enabled="yes">cp res/data/US_STATE.list Debug/config/US_STATE.list</Command>
+        <Command Enabled="yes">cp res/data/US_STATE_FULL.list Debug/config/US_STATE_FULL.list</Command>
+        <Command Enabled="yes">cp res/data/INTL_GA_PAGE.list Debug/config/INTL_GA_PAGE.list</Command>
+      </PostBuild>
       <CustomBuild Enabled="no">
         <RebuildCommand/>
         <CleanCommand/>
@@ -89,7 +108,7 @@
         <CustomPostBuild/>
         <CustomPreBuild/>
       </AdditionalRules>
-      <Completion EnableCpp11="no" EnableCpp14="no">
+      <Completion EnableCpp11="yes" EnableCpp14="yes">
         <ClangCmpFlagsC/>
         <ClangCmpFlags/>
         <ClangPP/>
@@ -137,4 +156,13 @@
       </Completion>
     </Configuration>
   </Settings>
+  <VirtualDirectory Name="test">
+    <VirtualDirectory Name="lang">
+      <VirtualDirectory Name="PhoneNumber">
+        <File Name="test/lang/PhoneNumber/phoneRegular.txt"/>
+        <File Name="test/lang/PhoneNumber/phoneDtmf.txt"/>
+        <File Name="test/lang/PhoneNumber/phoneHalf.txt"/>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
 </CodeLite_Project>

@@ -13,7 +13,7 @@ CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=Jonathan Hyry
-Date                   :=13/02/24
+Date                   :=15/02/24
 CodeLitePath           :=/home/jhyry/.codelite
 LinkerName             :=/usr/bin/clang++
 SharedObjectLinkerName :=/usr/bin/clang++ -shared -fPIC
@@ -36,12 +36,12 @@ ObjectsFileList        :="GRHCrawler.txt"
 PCHCompileFlags        :=
 MakeDirCommand         :=mkdir -p
 LinkOptions            :=  
-IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)./include 
+IncludePath            :=  $(IncludeSwitch). $(IncludeSwitch)./include $(IncludeSwitch)../antlr4-runtime/build-debug/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime/src $(IncludeSwitch)../antlr4-runtime/generated 
 IncludePCH             := 
 RcIncludePath          := 
-Libs                   := $(LibrarySwitch)myhtml 
-ArLibs                 :=  "myhtml" 
-LibPath                := $(LibraryPathSwitch). 
+Libs                   := $(LibrarySwitch)myhtml $(LibrarySwitch)grh_lang_proc $(LibrarySwitch)antlr4-runtime $(LibrarySwitch)pthread 
+ArLibs                 :=  "myhtml" "grh_lang_proc" "antlr4-runtime" "pthread" 
+LibPath                := $(LibraryPathSwitch). $(LibraryPathSwitch)../antlr4-runtime/build-debug $(LibraryPathSwitch)../antlr4-runtime/build-debug/antlr4_runtime/src/antlr4_runtime/runtime/Cpp/runtime 
 
 ##
 ## Common variables
@@ -60,7 +60,7 @@ AS       := /usr/bin/llvm-as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/grh_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_grh_crawler.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_db_grh_crawler_db.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_config_grh_crawler_config.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/grh_main.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_grh_crawler.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_db_grh_crawler_db.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_config_grh_crawler_config.cpp$(ObjectSuffix) $(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(ObjectSuffix) 
 
 
 
@@ -77,6 +77,15 @@ $(OutputFile): $(IntermediateDirectory)/.d $(Objects)
 	@echo "" > $(IntermediateDirectory)/.d
 	@echo $(Objects0)  > $(ObjectsFileList)
 	$(LinkerName) $(OutputSwitch)$(OutputFile) @$(ObjectsFileList) $(LibPath) $(Libs) $(LinkOptions)
+
+PostBuild:
+	@echo Executing Post Build commands ...
+	mkdir -p Debug/config
+	cp res/config/sites.csv Debug/config/sites.csv
+	cp res/data/US_STATE.list Debug/config/US_STATE.list
+	cp res/data/US_STATE_FULL.list Debug/config/US_STATE_FULL.list
+	cp res/data/INTL_GA_PAGE.list Debug/config/INTL_GA_PAGE.list
+	@echo Done
 
 MakeIntermediateDirs:
 	@test -d ./Debug || $(MakeDirCommand) ./Debug
@@ -122,6 +131,14 @@ $(IntermediateDirectory)/src_crawler_config_grh_crawler_config.cpp$(DependSuffix
 
 $(IntermediateDirectory)/src_crawler_config_grh_crawler_config.cpp$(PreprocessSuffix): src/crawler/config/grh_crawler_config.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_crawler_config_grh_crawler_config.cpp$(PreprocessSuffix) src/crawler/config/grh_crawler_config.cpp
+
+$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(ObjectSuffix): src/crawler/util/grh_io_utils.cpp $(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(DependSuffix)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/jhyry/Code/GamblingRecoveryHelp/GRHCrawler/src/crawler/util/grh_io_utils.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(DependSuffix): src/crawler/util/grh_io_utils.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(DependSuffix) -MM src/crawler/util/grh_io_utils.cpp
+
+$(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(PreprocessSuffix): src/crawler/util/grh_io_utils.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/src_crawler_util_grh_io_utils.cpp$(PreprocessSuffix) src/crawler/util/grh_io_utils.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)
