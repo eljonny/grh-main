@@ -81,11 +81,27 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitListId(DataListParser::ListIdContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitListItem(DataListParser::ListItemContext *ctx) override {
     return visitChildren(ctx);
   }
 
   virtual std::any visitListItemContent(DataListParser::ListItemContentContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitNumericalListItemContent(DataListParser::NumericalListItemContentContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitComplexListItemContent(DataListParser::ComplexListItemContentContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitDataListString(DataListParser::DataListStringContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -110,6 +126,18 @@ public:
   }
 
   virtual std::any visitScheme(DataListParser::SchemeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitSchemeSeparator(DataListParser::SchemeSeparatorContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitUriSchemePrefix(DataListParser::UriSchemePrefixContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitUriScheme(DataListParser::UriSchemeContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -161,11 +189,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitUser(DataListParser::UserContext *ctx) override {
+  virtual std::any visitLogin(DataListParser::LoginContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitLogin(DataListParser::LoginContext *ctx) override {
+  virtual std::any visitUser(DataListParser::UserContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -209,10 +237,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitSearchParameterValueString(DataListParser::SearchParameterValueStringContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitParameterString(DataListParser::ParameterStringContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -222,14 +246,6 @@ public:
   }
 
   virtual std::any visitConfigParam(DataListParser::ConfigParamContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitString(DataListParser::StringContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitUsString(DataListParser::UsStringContext *ctx) override {
     return visitChildren(ctx);
   }
 

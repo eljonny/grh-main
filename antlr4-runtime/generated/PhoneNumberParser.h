@@ -13,10 +13,11 @@ namespace antlrcpp {
 class  PhoneNumberParser : public antlr4::Parser {
 public:
   enum {
-    LPAREN = 1, RPAREN = 2, WS = 3, STRING = 4, ALPHANUM = 5, ALPHA = 6, 
-    HEX = 7, HEX_ALPHA = 8, DIGITS = 9, SINGLE_DIGIT_INT = 10, ZERO = 11, 
-    EQ = 12, COL = 13, HASH = 14, SPACE = 15, DOLLAR = 16, FS = 17, US = 18, 
-    PLUS = 19, HYPH = 20, PERC = 21
+    LPAREN = 1, RPAREN = 2, WS = 3, BASIC_STRING = 4, STRING = 5, DIGITS = 6, 
+    ALPHANUM = 7, ALPHA = 8, HEX = 9, SINGLE_DIGIT_INT = 10, ZERO = 11, 
+    PERIOD = 12, EQ = 13, COL = 14, HASH = 15, SPACE = 16, DOLLAR = 17, 
+    FS = 18, US = 19, PLUS = 20, HYPH = 21, PERC = 22, LBRACKET = 23, RBRACKET = 24, 
+    AMP = 25, AT = 26, Q = 27
   };
 
   enum {
@@ -66,6 +67,7 @@ public:
     PhoneSepContext* phoneSep(size_t i);
     AreaCodeContext *areaCode();
     PhoneNumberContext *phoneNumber();
+    antlr4::tree::TerminalNode *EOF();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -209,8 +211,10 @@ public:
   public:
     LocalAreaWithDtmfContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> DIGITS();
+    antlr4::tree::TerminalNode* DIGITS(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> BASIC_STRING();
+    antlr4::tree::TerminalNode* BASIC_STRING(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -225,8 +229,7 @@ public:
   public:
     DtmfAllContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    antlr4::tree::TerminalNode *BASIC_STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -241,8 +244,7 @@ public:
   public:
     DtmfLocalizerContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    antlr4::tree::TerminalNode *BASIC_STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -259,6 +261,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *SPACE();
     antlr4::tree::TerminalNode *HYPH();
+    antlr4::tree::TerminalNode *PERIOD();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

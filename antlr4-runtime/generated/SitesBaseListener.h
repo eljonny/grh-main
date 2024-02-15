@@ -33,6 +33,27 @@ public:
   virtual void enterCommentTextFragment(SitesParser::CommentTextFragmentContext * /*ctx*/) override { }
   virtual void exitCommentTextFragment(SitesParser::CommentTextFragmentContext * /*ctx*/) override { }
 
+  virtual void enterSiteFormat(SitesParser::SiteFormatContext * /*ctx*/) override { }
+  virtual void exitSiteFormat(SitesParser::SiteFormatContext * /*ctx*/) override { }
+
+  virtual void enterSiteType(SitesParser::SiteTypeContext * /*ctx*/) override { }
+  virtual void exitSiteType(SitesParser::SiteTypeContext * /*ctx*/) override { }
+
+  virtual void enterSiteDetailFormat(SitesParser::SiteDetailFormatContext * /*ctx*/) override { }
+  virtual void exitSiteDetailFormat(SitesParser::SiteDetailFormatContext * /*ctx*/) override { }
+
+  virtual void enterSiteFormatElement(SitesParser::SiteFormatElementContext * /*ctx*/) override { }
+  virtual void exitSiteFormatElement(SitesParser::SiteFormatElementContext * /*ctx*/) override { }
+
+  virtual void enterSiteFormatId(SitesParser::SiteFormatIdContext * /*ctx*/) override { }
+  virtual void exitSiteFormatId(SitesParser::SiteFormatIdContext * /*ctx*/) override { }
+
+  virtual void enterOptionalDataElement(SitesParser::OptionalDataElementContext * /*ctx*/) override { }
+  virtual void exitOptionalDataElement(SitesParser::OptionalDataElementContext * /*ctx*/) override { }
+
+  virtual void enterOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext * /*ctx*/) override { }
+  virtual void exitOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext * /*ctx*/) override { }
+
   virtual void enterSite(SitesParser::SiteContext * /*ctx*/) override { }
   virtual void exitSite(SitesParser::SiteContext * /*ctx*/) override { }
 
@@ -129,6 +150,15 @@ public:
   virtual void enterScheme(SitesParser::SchemeContext * /*ctx*/) override { }
   virtual void exitScheme(SitesParser::SchemeContext * /*ctx*/) override { }
 
+  virtual void enterSchemeSeparator(SitesParser::SchemeSeparatorContext * /*ctx*/) override { }
+  virtual void exitSchemeSeparator(SitesParser::SchemeSeparatorContext * /*ctx*/) override { }
+
+  virtual void enterUriSchemePrefix(SitesParser::UriSchemePrefixContext * /*ctx*/) override { }
+  virtual void exitUriSchemePrefix(SitesParser::UriSchemePrefixContext * /*ctx*/) override { }
+
+  virtual void enterUriScheme(SitesParser::UriSchemeContext * /*ctx*/) override { }
+  virtual void exitUriScheme(SitesParser::UriSchemeContext * /*ctx*/) override { }
+
   virtual void enterHost(SitesParser::HostContext * /*ctx*/) override { }
   virtual void exitHost(SitesParser::HostContext * /*ctx*/) override { }
 
@@ -165,11 +195,11 @@ public:
   virtual void enterPathString(SitesParser::PathStringContext * /*ctx*/) override { }
   virtual void exitPathString(SitesParser::PathStringContext * /*ctx*/) override { }
 
-  virtual void enterUser(SitesParser::UserContext * /*ctx*/) override { }
-  virtual void exitUser(SitesParser::UserContext * /*ctx*/) override { }
-
   virtual void enterLogin(SitesParser::LoginContext * /*ctx*/) override { }
   virtual void exitLogin(SitesParser::LoginContext * /*ctx*/) override { }
+
+  virtual void enterUser(SitesParser::UserContext * /*ctx*/) override { }
+  virtual void exitUser(SitesParser::UserContext * /*ctx*/) override { }
 
   virtual void enterLoginPassword(SitesParser::LoginPasswordContext * /*ctx*/) override { }
   virtual void exitLoginPassword(SitesParser::LoginPasswordContext * /*ctx*/) override { }
@@ -201,9 +231,6 @@ public:
   virtual void enterSearchParameterValue(SitesParser::SearchParameterValueContext * /*ctx*/) override { }
   virtual void exitSearchParameterValue(SitesParser::SearchParameterValueContext * /*ctx*/) override { }
 
-  virtual void enterSearchParameterValueString(SitesParser::SearchParameterValueStringContext * /*ctx*/) override { }
-  virtual void exitSearchParameterValueString(SitesParser::SearchParameterValueStringContext * /*ctx*/) override { }
-
   virtual void enterParameterString(SitesParser::ParameterStringContext * /*ctx*/) override { }
   virtual void exitParameterString(SitesParser::ParameterStringContext * /*ctx*/) override { }
 
@@ -212,12 +239,6 @@ public:
 
   virtual void enterConfigParam(SitesParser::ConfigParamContext * /*ctx*/) override { }
   virtual void exitConfigParam(SitesParser::ConfigParamContext * /*ctx*/) override { }
-
-  virtual void enterString(SitesParser::StringContext * /*ctx*/) override { }
-  virtual void exitString(SitesParser::StringContext * /*ctx*/) override { }
-
-  virtual void enterUsString(SitesParser::UsStringContext * /*ctx*/) override { }
-  virtual void exitUsString(SitesParser::UsStringContext * /*ctx*/) override { }
 
   virtual void enterPhone(SitesParser::PhoneContext * /*ctx*/) override { }
   virtual void exitPhone(SitesParser::PhoneContext * /*ctx*/) override { }

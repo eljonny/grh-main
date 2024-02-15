@@ -13,10 +13,11 @@ namespace antlrcpp {
 class  PhoneNumberLexer : public antlr4::Lexer {
 public:
   enum {
-    LPAREN = 1, RPAREN = 2, WS = 3, STRING = 4, ALPHANUM = 5, ALPHA = 6, 
-    HEX = 7, HEX_ALPHA = 8, DIGITS = 9, SINGLE_DIGIT_INT = 10, ZERO = 11, 
-    EQ = 12, COL = 13, HASH = 14, SPACE = 15, DOLLAR = 16, FS = 17, US = 18, 
-    PLUS = 19, HYPH = 20, PERC = 21
+    LPAREN = 1, RPAREN = 2, WS = 3, BASIC_STRING = 4, STRING = 5, DIGITS = 6, 
+    ALPHANUM = 7, ALPHA = 8, HEX = 9, SINGLE_DIGIT_INT = 10, ZERO = 11, 
+    PERIOD = 12, EQ = 13, COL = 14, HASH = 15, SPACE = 16, DOLLAR = 17, 
+    FS = 18, US = 19, PLUS = 20, HYPH = 21, PERC = 22, LBRACKET = 23, RBRACKET = 24, 
+    AMP = 25, AT = 26, Q = 27
   };
 
   explicit PhoneNumberLexer(antlr4::CharStream *input);

@@ -31,6 +31,27 @@ public:
   virtual void enterCommentTextFragment(SitesParser::CommentTextFragmentContext *ctx) = 0;
   virtual void exitCommentTextFragment(SitesParser::CommentTextFragmentContext *ctx) = 0;
 
+  virtual void enterSiteFormat(SitesParser::SiteFormatContext *ctx) = 0;
+  virtual void exitSiteFormat(SitesParser::SiteFormatContext *ctx) = 0;
+
+  virtual void enterSiteType(SitesParser::SiteTypeContext *ctx) = 0;
+  virtual void exitSiteType(SitesParser::SiteTypeContext *ctx) = 0;
+
+  virtual void enterSiteDetailFormat(SitesParser::SiteDetailFormatContext *ctx) = 0;
+  virtual void exitSiteDetailFormat(SitesParser::SiteDetailFormatContext *ctx) = 0;
+
+  virtual void enterSiteFormatElement(SitesParser::SiteFormatElementContext *ctx) = 0;
+  virtual void exitSiteFormatElement(SitesParser::SiteFormatElementContext *ctx) = 0;
+
+  virtual void enterSiteFormatId(SitesParser::SiteFormatIdContext *ctx) = 0;
+  virtual void exitSiteFormatId(SitesParser::SiteFormatIdContext *ctx) = 0;
+
+  virtual void enterOptionalDataElement(SitesParser::OptionalDataElementContext *ctx) = 0;
+  virtual void exitOptionalDataElement(SitesParser::OptionalDataElementContext *ctx) = 0;
+
+  virtual void enterOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext *ctx) = 0;
+  virtual void exitOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext *ctx) = 0;
+
   virtual void enterSite(SitesParser::SiteContext *ctx) = 0;
   virtual void exitSite(SitesParser::SiteContext *ctx) = 0;
 
@@ -127,6 +148,15 @@ public:
   virtual void enterScheme(SitesParser::SchemeContext *ctx) = 0;
   virtual void exitScheme(SitesParser::SchemeContext *ctx) = 0;
 
+  virtual void enterSchemeSeparator(SitesParser::SchemeSeparatorContext *ctx) = 0;
+  virtual void exitSchemeSeparator(SitesParser::SchemeSeparatorContext *ctx) = 0;
+
+  virtual void enterUriSchemePrefix(SitesParser::UriSchemePrefixContext *ctx) = 0;
+  virtual void exitUriSchemePrefix(SitesParser::UriSchemePrefixContext *ctx) = 0;
+
+  virtual void enterUriScheme(SitesParser::UriSchemeContext *ctx) = 0;
+  virtual void exitUriScheme(SitesParser::UriSchemeContext *ctx) = 0;
+
   virtual void enterHost(SitesParser::HostContext *ctx) = 0;
   virtual void exitHost(SitesParser::HostContext *ctx) = 0;
 
@@ -163,11 +193,11 @@ public:
   virtual void enterPathString(SitesParser::PathStringContext *ctx) = 0;
   virtual void exitPathString(SitesParser::PathStringContext *ctx) = 0;
 
-  virtual void enterUser(SitesParser::UserContext *ctx) = 0;
-  virtual void exitUser(SitesParser::UserContext *ctx) = 0;
-
   virtual void enterLogin(SitesParser::LoginContext *ctx) = 0;
   virtual void exitLogin(SitesParser::LoginContext *ctx) = 0;
+
+  virtual void enterUser(SitesParser::UserContext *ctx) = 0;
+  virtual void exitUser(SitesParser::UserContext *ctx) = 0;
 
   virtual void enterLoginPassword(SitesParser::LoginPasswordContext *ctx) = 0;
   virtual void exitLoginPassword(SitesParser::LoginPasswordContext *ctx) = 0;
@@ -199,9 +229,6 @@ public:
   virtual void enterSearchParameterValue(SitesParser::SearchParameterValueContext *ctx) = 0;
   virtual void exitSearchParameterValue(SitesParser::SearchParameterValueContext *ctx) = 0;
 
-  virtual void enterSearchParameterValueString(SitesParser::SearchParameterValueStringContext *ctx) = 0;
-  virtual void exitSearchParameterValueString(SitesParser::SearchParameterValueStringContext *ctx) = 0;
-
   virtual void enterParameterString(SitesParser::ParameterStringContext *ctx) = 0;
   virtual void exitParameterString(SitesParser::ParameterStringContext *ctx) = 0;
 
@@ -210,12 +237,6 @@ public:
 
   virtual void enterConfigParam(SitesParser::ConfigParamContext *ctx) = 0;
   virtual void exitConfigParam(SitesParser::ConfigParamContext *ctx) = 0;
-
-  virtual void enterString(SitesParser::StringContext *ctx) = 0;
-  virtual void exitString(SitesParser::StringContext *ctx) = 0;
-
-  virtual void enterUsString(SitesParser::UsStringContext *ctx) = 0;
-  virtual void exitUsString(SitesParser::UsStringContext *ctx) = 0;
 
   virtual void enterPhone(SitesParser::PhoneContext *ctx) = 0;
   virtual void exitPhone(SitesParser::PhoneContext *ctx) = 0;

@@ -56,146 +56,178 @@ void datalistParserInitialize() {
     std::vector<std::string>{
       "dlist", "dataList", "source", "lastUpdated", "dateTime", "year", 
       "month", "day", "hour", "minute", "second", "timeZone", "tzMod", "tzHour", 
-      "tzMinutes", "startList", "listItem", "listItemContent", "endList", 
-      "url", "uri", "uriPort", "uriPath", "scheme", "host", "hostname", 
-      "domainNameOrIpv4Host", "ipv6Host", "v6host", "v6hostSegment", "v6hostSep", 
-      "v6hostConfigParam", "port", "path", "multiPathChunk", "pathString", 
-      "user", "login", "loginPassword", "password", "frag", "fragString", 
-      "query", "search", "multiSearch", "searchParameter", "searchParameterKey", 
-      "searchParameterValue", "searchParameterValueString", "parameterString", 
-      "parameterName", "configParam", "string", "usString"
+      "tzMinutes", "startList", "listId", "listItem", "listItemContent", 
+      "numericalListItemContent", "complexListItemContent", "dataListString", 
+      "endList", "url", "uri", "uriPort", "uriPath", "scheme", "schemeSeparator", 
+      "uriSchemePrefix", "uriScheme", "host", "hostname", "domainNameOrIpv4Host", 
+      "ipv6Host", "v6host", "v6hostSegment", "v6hostSep", "v6hostConfigParam", 
+      "port", "path", "multiPathChunk", "pathString", "login", "user", "loginPassword", 
+      "password", "frag", "fragString", "query", "search", "multiSearch", 
+      "searchParameter", "searchParameterKey", "searchParameterValue", "parameterString", 
+      "parameterName", "configParam"
     },
     std::vector<std::string>{
       "", "", "'lastUpdated'", "'start-list'", "'end-list'", "'static'", 
-      "", "", "", "'&'", "'@'", "'['", "']'", "'\\u003F'", "", "", "", "", 
-      "", "", "", "", "", "'='", "':'", "'#'", "' '", "'$'", "'/'", "'_'", 
-      "'+'", "'-'", "'%'"
+      "", "", "", "", "", "", "", "", "", "", "", "'.'", "'='", "':'", "'#'", 
+      "' '", "'$'", "'/'", "'_'", "'+'", "'-'", "'%'", "'['", "']'", "'&'", 
+      "'@'", "'\\u003F'"
     },
     std::vector<std::string>{
       "", "SOURCE", "LAST_UPDATED", "START_LIST", "END_LIST", "STATIC_SOURCE", 
-      "SCHEME_SEP", "DBL_DOLLAR", "DBL_COL", "AMP", "AT", "LBRACKET", "RBRACKET", 
-      "Q", "WS", "STRING", "ALPHANUM", "ALPHA", "HEX", "HEX_ALPHA", "DIGITS", 
-      "SINGLE_DIGIT_INT", "ZERO", "EQ", "COL", "HASH", "SPACE", "DOLLAR", 
-      "FS", "US", "PLUS", "HYPH", "PERC"
+      "DBL_DOLLAR", "DBL_COL", "WS", "BASIC_STRING", "STRING", "DIGITS", 
+      "ALPHANUM", "ALPHA", "HEX", "SINGLE_DIGIT_INT", "ZERO", "PERIOD", 
+      "EQ", "COL", "HASH", "SPACE", "DOLLAR", "FS", "US", "PLUS", "HYPH", 
+      "PERC", "LBRACKET", "RBRACKET", "AMP", "AT", "Q"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,32,370,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,32,448,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,7,20,2,21,7,
   	21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,7,27,2,28,7,
   	28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,33,7,33,2,34,7,34,2,35,7,
   	35,2,36,7,36,2,37,7,37,2,38,7,38,2,39,7,39,2,40,7,40,2,41,7,41,2,42,7,
   	42,2,43,7,43,2,44,7,44,2,45,7,45,2,46,7,46,2,47,7,47,2,48,7,48,2,49,7,
-  	49,2,50,7,50,2,51,7,51,2,52,7,52,2,53,7,53,1,0,4,0,110,8,0,11,0,12,0,
-  	111,1,0,1,0,4,0,116,8,0,11,0,12,0,117,1,0,1,0,1,1,1,1,5,1,124,8,1,10,
-  	1,12,1,127,9,1,1,1,1,1,1,2,1,2,1,2,1,2,3,2,135,8,2,1,2,1,2,1,3,1,3,1,
-  	3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,4,3,4,155,8,4,1,4,
-  	1,4,1,5,1,5,1,6,1,6,1,7,1,7,1,8,1,8,1,9,1,9,1,10,1,10,1,11,1,11,1,11,
-  	1,11,3,11,175,8,11,1,12,1,12,1,13,1,13,1,14,1,14,1,15,1,15,1,15,1,16,
-  	1,16,1,16,1,17,1,17,1,17,5,17,192,8,17,10,17,12,17,195,9,17,1,17,1,17,
-  	1,17,5,17,200,8,17,10,17,12,17,203,9,17,3,17,205,8,17,1,18,1,18,3,18,
-  	209,8,18,1,19,1,19,1,20,1,20,1,20,3,20,216,8,20,1,20,1,20,3,20,220,8,
-  	20,1,20,3,20,223,8,20,1,20,3,20,226,8,20,1,20,3,20,229,8,20,1,21,1,21,
-  	1,21,1,22,1,22,3,22,236,8,22,1,23,1,23,1,24,3,24,241,8,24,1,24,1,24,1,
-  	25,1,25,3,25,247,8,25,1,26,1,26,3,26,251,8,26,1,27,1,27,1,27,1,27,1,28,
-  	3,28,258,8,28,1,28,1,28,5,28,262,8,28,10,28,12,28,265,9,28,1,29,1,29,
-  	1,29,1,30,1,30,1,31,1,31,1,32,1,32,1,33,1,33,5,33,278,8,33,10,33,12,33,
-  	281,9,33,1,33,3,33,284,8,33,1,34,1,34,1,34,1,35,1,35,3,35,291,8,35,1,
-  	36,1,36,3,36,295,8,36,1,37,1,37,3,37,299,8,37,1,37,1,37,1,38,1,38,1,38,
-  	1,39,1,39,3,39,308,8,39,1,40,1,40,1,40,1,41,1,41,1,41,3,41,316,8,41,1,
-  	42,1,42,1,42,1,43,1,43,5,43,323,8,43,10,43,12,43,326,9,43,1,44,1,44,1,
-  	44,1,45,1,45,3,45,333,8,45,1,46,1,46,3,46,337,8,46,1,47,1,47,3,47,341,
-  	8,47,1,48,1,48,1,48,1,48,3,48,347,8,48,1,49,1,49,1,49,1,49,1,50,1,50,
-  	5,50,355,8,50,10,50,12,50,358,9,50,1,51,1,51,1,51,3,51,363,8,51,1,52,
-  	1,52,1,53,1,53,1,53,1,53,0,0,54,0,2,4,6,8,10,12,14,16,18,20,22,24,26,
-  	28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,
-  	74,76,78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,0,3,1,0,30,31,
-  	2,0,8,8,24,24,2,0,15,15,20,20,354,0,109,1,0,0,0,2,121,1,0,0,0,4,130,1,
-  	0,0,0,6,138,1,0,0,0,8,143,1,0,0,0,10,158,1,0,0,0,12,160,1,0,0,0,14,162,
-  	1,0,0,0,16,164,1,0,0,0,18,166,1,0,0,0,20,168,1,0,0,0,22,170,1,0,0,0,24,
-  	176,1,0,0,0,26,178,1,0,0,0,28,180,1,0,0,0,30,182,1,0,0,0,32,185,1,0,0,
-  	0,34,204,1,0,0,0,36,206,1,0,0,0,38,210,1,0,0,0,40,212,1,0,0,0,42,230,
-  	1,0,0,0,44,233,1,0,0,0,46,237,1,0,0,0,48,240,1,0,0,0,50,246,1,0,0,0,52,
-  	250,1,0,0,0,54,252,1,0,0,0,56,257,1,0,0,0,58,266,1,0,0,0,60,269,1,0,0,
-  	0,62,271,1,0,0,0,64,273,1,0,0,0,66,275,1,0,0,0,68,285,1,0,0,0,70,290,
-  	1,0,0,0,72,294,1,0,0,0,74,296,1,0,0,0,76,302,1,0,0,0,78,307,1,0,0,0,80,
-  	309,1,0,0,0,82,315,1,0,0,0,84,317,1,0,0,0,86,320,1,0,0,0,88,327,1,0,0,
-  	0,90,330,1,0,0,0,92,336,1,0,0,0,94,338,1,0,0,0,96,346,1,0,0,0,98,348,
-  	1,0,0,0,100,352,1,0,0,0,102,362,1,0,0,0,104,364,1,0,0,0,106,366,1,0,0,
-  	0,108,110,3,4,2,0,109,108,1,0,0,0,110,111,1,0,0,0,111,109,1,0,0,0,111,
-  	112,1,0,0,0,112,113,1,0,0,0,113,115,3,6,3,0,114,116,3,2,1,0,115,114,1,
-  	0,0,0,116,117,1,0,0,0,117,115,1,0,0,0,117,118,1,0,0,0,118,119,1,0,0,0,
-  	119,120,5,0,0,1,120,1,1,0,0,0,121,125,3,30,15,0,122,124,3,32,16,0,123,
-  	122,1,0,0,0,124,127,1,0,0,0,125,123,1,0,0,0,125,126,1,0,0,0,126,128,1,
-  	0,0,0,127,125,1,0,0,0,128,129,3,36,18,0,129,3,1,0,0,0,130,131,5,1,0,0,
-  	131,134,5,23,0,0,132,135,5,5,0,0,133,135,3,38,19,0,134,132,1,0,0,0,134,
-  	133,1,0,0,0,135,136,1,0,0,0,136,137,5,14,0,0,137,5,1,0,0,0,138,139,5,
-  	2,0,0,139,140,5,23,0,0,140,141,3,8,4,0,141,142,5,14,0,0,142,7,1,0,0,0,
-  	143,144,3,10,5,0,144,145,5,31,0,0,145,146,3,12,6,0,146,147,5,31,0,0,147,
-  	148,3,14,7,0,148,149,5,26,0,0,149,150,3,16,8,0,150,151,5,24,0,0,151,154,
-  	3,18,9,0,152,153,5,24,0,0,153,155,3,20,10,0,154,152,1,0,0,0,154,155,1,
-  	0,0,0,155,156,1,0,0,0,156,157,3,22,11,0,157,9,1,0,0,0,158,159,5,20,0,
-  	0,159,11,1,0,0,0,160,161,5,20,0,0,161,13,1,0,0,0,162,163,5,20,0,0,163,
-  	15,1,0,0,0,164,165,5,20,0,0,165,17,1,0,0,0,166,167,5,20,0,0,167,19,1,
-  	0,0,0,168,169,5,20,0,0,169,21,1,0,0,0,170,171,3,24,12,0,171,174,3,26,
-  	13,0,172,173,5,24,0,0,173,175,3,28,14,0,174,172,1,0,0,0,174,175,1,0,0,
-  	0,175,23,1,0,0,0,176,177,7,0,0,0,177,25,1,0,0,0,178,179,5,20,0,0,179,
-  	27,1,0,0,0,180,181,5,20,0,0,181,29,1,0,0,0,182,183,5,3,0,0,183,184,5,
-  	14,0,0,184,31,1,0,0,0,185,186,3,34,17,0,186,187,5,14,0,0,187,33,1,0,0,
-  	0,188,193,5,20,0,0,189,190,5,26,0,0,190,192,5,20,0,0,191,189,1,0,0,0,
-  	192,195,1,0,0,0,193,191,1,0,0,0,193,194,1,0,0,0,194,205,1,0,0,0,195,193,
-  	1,0,0,0,196,201,5,15,0,0,197,198,5,26,0,0,198,200,5,15,0,0,199,197,1,
-  	0,0,0,200,203,1,0,0,0,201,199,1,0,0,0,201,202,1,0,0,0,202,205,1,0,0,0,
-  	203,201,1,0,0,0,204,188,1,0,0,0,204,196,1,0,0,0,205,35,1,0,0,0,206,208,
-  	5,4,0,0,207,209,5,14,0,0,208,207,1,0,0,0,208,209,1,0,0,0,209,37,1,0,0,
-  	0,210,211,3,40,20,0,211,39,1,0,0,0,212,213,3,46,23,0,213,215,5,6,0,0,
-  	214,216,3,74,37,0,215,214,1,0,0,0,215,216,1,0,0,0,216,217,1,0,0,0,217,
-  	219,3,48,24,0,218,220,3,42,21,0,219,218,1,0,0,0,219,220,1,0,0,0,220,222,
-  	1,0,0,0,221,223,3,44,22,0,222,221,1,0,0,0,222,223,1,0,0,0,223,225,1,0,
-  	0,0,224,226,3,84,42,0,225,224,1,0,0,0,225,226,1,0,0,0,226,228,1,0,0,0,
-  	227,229,3,80,40,0,228,227,1,0,0,0,228,229,1,0,0,0,229,41,1,0,0,0,230,
-  	231,5,24,0,0,231,232,3,64,32,0,232,43,1,0,0,0,233,235,5,28,0,0,234,236,
-  	3,66,33,0,235,234,1,0,0,0,235,236,1,0,0,0,236,45,1,0,0,0,237,238,3,104,
-  	52,0,238,47,1,0,0,0,239,241,5,28,0,0,240,239,1,0,0,0,240,241,1,0,0,0,
-  	241,242,1,0,0,0,242,243,3,50,25,0,243,49,1,0,0,0,244,247,3,52,26,0,245,
-  	247,3,54,27,0,246,244,1,0,0,0,246,245,1,0,0,0,247,51,1,0,0,0,248,251,
-  	3,98,49,0,249,251,3,104,52,0,250,248,1,0,0,0,250,249,1,0,0,0,251,53,1,
-  	0,0,0,252,253,5,11,0,0,253,254,3,56,28,0,254,255,5,12,0,0,255,55,1,0,
-  	0,0,256,258,5,8,0,0,257,256,1,0,0,0,257,258,1,0,0,0,258,259,1,0,0,0,259,
-  	263,3,62,31,0,260,262,3,58,29,0,261,260,1,0,0,0,262,265,1,0,0,0,263,261,
-  	1,0,0,0,263,264,1,0,0,0,264,57,1,0,0,0,265,263,1,0,0,0,266,267,3,60,30,
-  	0,267,268,3,62,31,0,268,59,1,0,0,0,269,270,7,1,0,0,270,61,1,0,0,0,271,
-  	272,3,102,51,0,272,63,1,0,0,0,273,274,5,20,0,0,274,65,1,0,0,0,275,279,
-  	3,70,35,0,276,278,3,68,34,0,277,276,1,0,0,0,278,281,1,0,0,0,279,277,1,
-  	0,0,0,279,280,1,0,0,0,280,283,1,0,0,0,281,279,1,0,0,0,282,284,5,28,0,
-  	0,283,282,1,0,0,0,283,284,1,0,0,0,284,67,1,0,0,0,285,286,5,28,0,0,286,
-  	287,3,70,35,0,287,69,1,0,0,0,288,291,3,98,49,0,289,291,3,104,52,0,290,
-  	288,1,0,0,0,290,289,1,0,0,0,291,71,1,0,0,0,292,295,3,98,49,0,293,295,
-  	3,104,52,0,294,292,1,0,0,0,294,293,1,0,0,0,295,73,1,0,0,0,296,298,3,72,
-  	36,0,297,299,3,76,38,0,298,297,1,0,0,0,298,299,1,0,0,0,299,300,1,0,0,
-  	0,300,301,5,10,0,0,301,75,1,0,0,0,302,303,5,24,0,0,303,304,3,78,39,0,
-  	304,77,1,0,0,0,305,308,3,98,49,0,306,308,3,104,52,0,307,305,1,0,0,0,307,
-  	306,1,0,0,0,308,79,1,0,0,0,309,310,5,25,0,0,310,311,3,82,41,0,311,81,
-  	1,0,0,0,312,316,3,98,49,0,313,316,3,104,52,0,314,316,5,20,0,0,315,312,
-  	1,0,0,0,315,313,1,0,0,0,315,314,1,0,0,0,316,83,1,0,0,0,317,318,5,13,0,
-  	0,318,319,3,86,43,0,319,85,1,0,0,0,320,324,3,90,45,0,321,323,3,88,44,
-  	0,322,321,1,0,0,0,323,326,1,0,0,0,324,322,1,0,0,0,324,325,1,0,0,0,325,
-  	87,1,0,0,0,326,324,1,0,0,0,327,328,5,9,0,0,328,329,3,90,45,0,329,89,1,
-  	0,0,0,330,332,3,92,46,0,331,333,3,94,47,0,332,331,1,0,0,0,332,333,1,0,
-  	0,0,333,91,1,0,0,0,334,337,3,98,49,0,335,337,3,104,52,0,336,334,1,0,0,
-  	0,336,335,1,0,0,0,337,93,1,0,0,0,338,340,5,23,0,0,339,341,3,96,48,0,340,
-  	339,1,0,0,0,340,341,1,0,0,0,341,95,1,0,0,0,342,347,3,98,49,0,343,347,
-  	3,104,52,0,344,347,5,20,0,0,345,347,5,18,0,0,346,342,1,0,0,0,346,343,
-  	1,0,0,0,346,344,1,0,0,0,346,345,1,0,0,0,347,97,1,0,0,0,348,349,5,7,0,
-  	0,349,350,3,100,50,0,350,351,5,7,0,0,351,99,1,0,0,0,352,356,3,104,52,
-  	0,353,355,3,106,53,0,354,353,1,0,0,0,355,358,1,0,0,0,356,354,1,0,0,0,
-  	356,357,1,0,0,0,357,101,1,0,0,0,358,356,1,0,0,0,359,363,3,98,49,0,360,
-  	363,3,104,52,0,361,363,5,20,0,0,362,359,1,0,0,0,362,360,1,0,0,0,362,361,
-  	1,0,0,0,363,103,1,0,0,0,364,365,7,2,0,0,365,105,1,0,0,0,366,367,5,29,
-  	0,0,367,368,3,104,52,0,368,107,1,0,0,0,35,111,117,125,134,154,174,193,
-  	201,204,208,215,219,222,225,228,235,240,246,250,257,263,279,283,290,294,
-  	298,307,315,324,332,336,340,346,356,362
+  	49,2,50,7,50,2,51,7,51,2,52,7,52,2,53,7,53,2,54,7,54,2,55,7,55,2,56,7,
+  	56,2,57,7,57,1,0,4,0,118,8,0,11,0,12,0,119,1,0,1,0,4,0,124,8,0,11,0,12,
+  	0,125,1,0,1,0,1,1,1,1,5,1,132,8,1,10,1,12,1,135,9,1,1,1,1,1,1,2,1,2,1,
+  	2,1,2,3,2,143,8,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,4,1,4,1,4,1,4,1,4,1,4,
+  	1,4,1,4,1,4,1,4,1,4,3,4,163,8,4,1,4,1,4,1,5,1,5,1,6,1,6,1,7,1,7,1,8,1,
+  	8,1,9,1,9,1,10,1,10,1,11,1,11,1,11,1,11,3,11,183,8,11,1,12,1,12,1,13,
+  	1,13,1,14,1,14,1,15,1,15,4,15,193,8,15,11,15,12,15,194,1,15,1,15,5,15,
+  	199,8,15,10,15,12,15,202,9,15,1,15,1,15,1,16,1,16,1,17,1,17,1,17,1,18,
+  	1,18,3,18,213,8,18,1,19,1,19,4,19,217,8,19,11,19,12,19,218,1,19,5,19,
+  	222,8,19,10,19,12,19,225,9,19,1,20,1,20,4,20,229,8,20,11,20,12,20,230,
+  	1,20,5,20,234,8,20,10,20,12,20,237,9,20,1,21,1,21,1,22,1,22,4,22,243,
+  	8,22,11,22,12,22,244,1,22,1,22,5,22,249,8,22,10,22,12,22,252,9,22,1,22,
+  	3,22,255,8,22,1,23,1,23,1,24,1,24,1,24,3,24,262,8,24,1,24,1,24,3,24,266,
+  	8,24,1,24,3,24,269,8,24,1,24,3,24,272,8,24,1,24,3,24,275,8,24,1,25,1,
+  	25,1,25,1,26,1,26,3,26,282,8,26,1,27,3,27,285,8,27,1,27,1,27,1,28,1,28,
+  	3,28,291,8,28,1,28,3,28,294,8,28,1,29,1,29,1,30,1,30,1,31,3,31,301,8,
+  	31,1,31,1,31,1,32,1,32,3,32,307,8,32,1,33,1,33,1,33,1,33,3,33,313,8,33,
+  	1,34,1,34,1,34,1,34,1,35,3,35,320,8,35,1,35,1,35,5,35,324,8,35,10,35,
+  	12,35,327,9,35,1,36,1,36,1,36,1,37,1,37,1,38,1,38,1,39,1,39,1,40,4,40,
+  	339,8,40,11,40,12,40,340,1,40,5,40,344,8,40,10,40,12,40,347,9,40,1,40,
+  	3,40,350,8,40,1,41,1,41,4,41,354,8,41,11,41,12,41,355,1,42,1,42,1,42,
+  	1,42,1,42,1,42,3,42,364,8,42,1,43,1,43,3,43,368,8,43,1,43,1,43,1,44,1,
+  	44,1,44,1,44,3,44,376,8,44,1,45,1,45,1,45,1,46,1,46,1,46,1,46,3,46,385,
+  	8,46,1,47,1,47,1,47,1,48,1,48,1,48,1,48,3,48,394,8,48,1,49,1,49,3,49,
+  	398,8,49,1,50,1,50,5,50,402,8,50,10,50,12,50,405,9,50,1,51,1,51,1,51,
+  	1,52,1,52,1,52,5,52,413,8,52,10,52,12,52,416,9,52,1,53,1,53,1,53,1,53,
+  	3,53,422,8,53,1,54,1,54,1,54,1,54,1,54,4,54,429,8,54,11,54,12,54,430,
+  	1,54,3,54,434,8,54,1,55,1,55,1,55,1,55,1,56,1,56,1,57,1,57,1,57,1,57,
+  	3,57,446,8,57,1,57,0,0,58,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,
+  	32,34,36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,70,72,74,76,
+  	78,80,82,84,86,88,90,92,94,96,98,100,102,104,106,108,110,112,114,0,4,
+  	1,0,25,26,1,0,9,10,2,0,7,7,19,19,1,0,9,11,455,0,117,1,0,0,0,2,129,1,0,
+  	0,0,4,138,1,0,0,0,6,146,1,0,0,0,8,151,1,0,0,0,10,166,1,0,0,0,12,168,1,
+  	0,0,0,14,170,1,0,0,0,16,172,1,0,0,0,18,174,1,0,0,0,20,176,1,0,0,0,22,
+  	178,1,0,0,0,24,184,1,0,0,0,26,186,1,0,0,0,28,188,1,0,0,0,30,190,1,0,0,
+  	0,32,205,1,0,0,0,34,207,1,0,0,0,36,212,1,0,0,0,38,214,1,0,0,0,40,226,
+  	1,0,0,0,42,238,1,0,0,0,44,240,1,0,0,0,46,256,1,0,0,0,48,258,1,0,0,0,50,
+  	276,1,0,0,0,52,279,1,0,0,0,54,284,1,0,0,0,56,288,1,0,0,0,58,295,1,0,0,
+  	0,60,297,1,0,0,0,62,300,1,0,0,0,64,306,1,0,0,0,66,312,1,0,0,0,68,314,
+  	1,0,0,0,70,319,1,0,0,0,72,328,1,0,0,0,74,331,1,0,0,0,76,333,1,0,0,0,78,
+  	335,1,0,0,0,80,338,1,0,0,0,82,351,1,0,0,0,84,363,1,0,0,0,86,365,1,0,0,
+  	0,88,375,1,0,0,0,90,377,1,0,0,0,92,384,1,0,0,0,94,386,1,0,0,0,96,393,
+  	1,0,0,0,98,395,1,0,0,0,100,399,1,0,0,0,102,406,1,0,0,0,104,409,1,0,0,
+  	0,106,421,1,0,0,0,108,433,1,0,0,0,110,435,1,0,0,0,112,439,1,0,0,0,114,
+  	445,1,0,0,0,116,118,3,4,2,0,117,116,1,0,0,0,118,119,1,0,0,0,119,117,1,
+  	0,0,0,119,120,1,0,0,0,120,121,1,0,0,0,121,123,3,6,3,0,122,124,3,2,1,0,
+  	123,122,1,0,0,0,124,125,1,0,0,0,125,123,1,0,0,0,125,126,1,0,0,0,126,127,
+  	1,0,0,0,127,128,5,0,0,1,128,1,1,0,0,0,129,133,3,30,15,0,130,132,3,34,
+  	17,0,131,130,1,0,0,0,132,135,1,0,0,0,133,131,1,0,0,0,133,134,1,0,0,0,
+  	134,136,1,0,0,0,135,133,1,0,0,0,136,137,3,44,22,0,137,3,1,0,0,0,138,139,
+  	5,1,0,0,139,142,5,18,0,0,140,143,5,5,0,0,141,143,3,46,23,0,142,140,1,
+  	0,0,0,142,141,1,0,0,0,143,144,1,0,0,0,144,145,5,8,0,0,145,5,1,0,0,0,146,
+  	147,5,2,0,0,147,148,5,18,0,0,148,149,3,8,4,0,149,150,5,8,0,0,150,7,1,
+  	0,0,0,151,152,3,10,5,0,152,153,5,26,0,0,153,154,3,12,6,0,154,155,5,26,
+  	0,0,155,156,3,14,7,0,156,157,5,21,0,0,157,158,3,16,8,0,158,159,5,19,0,
+  	0,159,162,3,18,9,0,160,161,5,19,0,0,161,163,3,20,10,0,162,160,1,0,0,0,
+  	162,163,1,0,0,0,163,164,1,0,0,0,164,165,3,22,11,0,165,9,1,0,0,0,166,167,
+  	5,11,0,0,167,11,1,0,0,0,168,169,5,11,0,0,169,13,1,0,0,0,170,171,5,11,
+  	0,0,171,15,1,0,0,0,172,173,5,11,0,0,173,17,1,0,0,0,174,175,5,11,0,0,175,
+  	19,1,0,0,0,176,177,5,11,0,0,177,21,1,0,0,0,178,179,3,24,12,0,179,182,
+  	3,26,13,0,180,181,5,19,0,0,181,183,3,28,14,0,182,180,1,0,0,0,182,183,
+  	1,0,0,0,183,23,1,0,0,0,184,185,7,0,0,0,185,25,1,0,0,0,186,187,5,11,0,
+  	0,187,27,1,0,0,0,188,189,5,11,0,0,189,29,1,0,0,0,190,192,5,3,0,0,191,
+  	193,5,21,0,0,192,191,1,0,0,0,193,194,1,0,0,0,194,192,1,0,0,0,194,195,
+  	1,0,0,0,195,196,1,0,0,0,196,200,3,32,16,0,197,199,5,21,0,0,198,197,1,
+  	0,0,0,199,202,1,0,0,0,200,198,1,0,0,0,200,201,1,0,0,0,201,203,1,0,0,0,
+  	202,200,1,0,0,0,203,204,5,8,0,0,204,31,1,0,0,0,205,206,5,1,0,0,206,33,
+  	1,0,0,0,207,208,3,36,18,0,208,209,5,8,0,0,209,35,1,0,0,0,210,213,3,38,
+  	19,0,211,213,3,40,20,0,212,210,1,0,0,0,212,211,1,0,0,0,213,37,1,0,0,0,
+  	214,223,5,11,0,0,215,217,5,21,0,0,216,215,1,0,0,0,217,218,1,0,0,0,218,
+  	216,1,0,0,0,218,219,1,0,0,0,219,220,1,0,0,0,220,222,5,11,0,0,221,216,
+  	1,0,0,0,222,225,1,0,0,0,223,221,1,0,0,0,223,224,1,0,0,0,224,39,1,0,0,
+  	0,225,223,1,0,0,0,226,235,3,42,21,0,227,229,5,21,0,0,228,227,1,0,0,0,
+  	229,230,1,0,0,0,230,228,1,0,0,0,230,231,1,0,0,0,231,232,1,0,0,0,232,234,
+  	3,42,21,0,233,228,1,0,0,0,234,237,1,0,0,0,235,233,1,0,0,0,235,236,1,0,
+  	0,0,236,41,1,0,0,0,237,235,1,0,0,0,238,239,7,1,0,0,239,43,1,0,0,0,240,
+  	242,5,4,0,0,241,243,5,21,0,0,242,241,1,0,0,0,243,244,1,0,0,0,244,242,
+  	1,0,0,0,244,245,1,0,0,0,245,246,1,0,0,0,246,250,3,32,16,0,247,249,5,21,
+  	0,0,248,247,1,0,0,0,249,252,1,0,0,0,250,248,1,0,0,0,250,251,1,0,0,0,251,
+  	254,1,0,0,0,252,250,1,0,0,0,253,255,5,8,0,0,254,253,1,0,0,0,254,255,1,
+  	0,0,0,255,45,1,0,0,0,256,257,3,48,24,0,257,47,1,0,0,0,258,259,3,54,27,
+  	0,259,261,3,56,28,0,260,262,3,86,43,0,261,260,1,0,0,0,261,262,1,0,0,0,
+  	262,263,1,0,0,0,263,265,3,62,31,0,264,266,3,50,25,0,265,264,1,0,0,0,265,
+  	266,1,0,0,0,266,268,1,0,0,0,267,269,3,52,26,0,268,267,1,0,0,0,268,269,
+  	1,0,0,0,269,271,1,0,0,0,270,272,3,98,49,0,271,270,1,0,0,0,271,272,1,0,
+  	0,0,272,274,1,0,0,0,273,275,3,94,47,0,274,273,1,0,0,0,274,275,1,0,0,0,
+  	275,49,1,0,0,0,276,277,5,19,0,0,277,278,3,78,39,0,278,51,1,0,0,0,279,
+  	281,5,23,0,0,280,282,3,80,40,0,281,280,1,0,0,0,281,282,1,0,0,0,282,53,
+  	1,0,0,0,283,285,3,58,29,0,284,283,1,0,0,0,284,285,1,0,0,0,285,286,1,0,
+  	0,0,286,287,3,60,30,0,287,55,1,0,0,0,288,290,5,19,0,0,289,291,5,23,0,
+  	0,290,289,1,0,0,0,290,291,1,0,0,0,291,293,1,0,0,0,292,294,5,23,0,0,293,
+  	292,1,0,0,0,293,294,1,0,0,0,294,57,1,0,0,0,295,296,5,9,0,0,296,59,1,0,
+  	0,0,297,298,5,9,0,0,298,61,1,0,0,0,299,301,5,23,0,0,300,299,1,0,0,0,300,
+  	301,1,0,0,0,301,302,1,0,0,0,302,303,3,64,32,0,303,63,1,0,0,0,304,307,
+  	3,66,33,0,305,307,3,68,34,0,306,304,1,0,0,0,306,305,1,0,0,0,307,65,1,
+  	0,0,0,308,313,3,110,55,0,309,313,5,9,0,0,310,313,5,10,0,0,311,313,5,11,
+  	0,0,312,308,1,0,0,0,312,309,1,0,0,0,312,310,1,0,0,0,312,311,1,0,0,0,313,
+  	67,1,0,0,0,314,315,5,28,0,0,315,316,3,70,35,0,316,317,5,29,0,0,317,69,
+  	1,0,0,0,318,320,5,7,0,0,319,318,1,0,0,0,319,320,1,0,0,0,320,321,1,0,0,
+  	0,321,325,3,76,38,0,322,324,3,72,36,0,323,322,1,0,0,0,324,327,1,0,0,0,
+  	325,323,1,0,0,0,325,326,1,0,0,0,326,71,1,0,0,0,327,325,1,0,0,0,328,329,
+  	3,74,37,0,329,330,3,76,38,0,330,73,1,0,0,0,331,332,7,2,0,0,332,75,1,0,
+  	0,0,333,334,3,114,57,0,334,77,1,0,0,0,335,336,5,11,0,0,336,79,1,0,0,0,
+  	337,339,3,84,42,0,338,337,1,0,0,0,339,340,1,0,0,0,340,338,1,0,0,0,340,
+  	341,1,0,0,0,341,345,1,0,0,0,342,344,3,82,41,0,343,342,1,0,0,0,344,347,
+  	1,0,0,0,345,343,1,0,0,0,345,346,1,0,0,0,346,349,1,0,0,0,347,345,1,0,0,
+  	0,348,350,5,23,0,0,349,348,1,0,0,0,349,350,1,0,0,0,350,81,1,0,0,0,351,
+  	353,5,23,0,0,352,354,3,84,42,0,353,352,1,0,0,0,354,355,1,0,0,0,355,353,
+  	1,0,0,0,355,356,1,0,0,0,356,83,1,0,0,0,357,364,3,110,55,0,358,364,5,9,
+  	0,0,359,364,5,10,0,0,360,364,5,11,0,0,361,364,5,26,0,0,362,364,5,24,0,
+  	0,363,357,1,0,0,0,363,358,1,0,0,0,363,359,1,0,0,0,363,360,1,0,0,0,363,
+  	361,1,0,0,0,363,362,1,0,0,0,364,85,1,0,0,0,365,367,3,88,44,0,366,368,
+  	3,90,45,0,367,366,1,0,0,0,367,368,1,0,0,0,368,369,1,0,0,0,369,370,5,31,
+  	0,0,370,87,1,0,0,0,371,376,3,110,55,0,372,376,5,9,0,0,373,376,5,10,0,
+  	0,374,376,5,11,0,0,375,371,1,0,0,0,375,372,1,0,0,0,375,373,1,0,0,0,375,
+  	374,1,0,0,0,376,89,1,0,0,0,377,378,5,19,0,0,378,379,3,92,46,0,379,91,
+  	1,0,0,0,380,385,3,110,55,0,381,385,5,9,0,0,382,385,5,10,0,0,383,385,5,
+  	11,0,0,384,380,1,0,0,0,384,381,1,0,0,0,384,382,1,0,0,0,384,383,1,0,0,
+  	0,385,93,1,0,0,0,386,387,5,20,0,0,387,388,3,96,48,0,388,95,1,0,0,0,389,
+  	394,3,110,55,0,390,394,5,9,0,0,391,394,5,10,0,0,392,394,5,11,0,0,393,
+  	389,1,0,0,0,393,390,1,0,0,0,393,391,1,0,0,0,393,392,1,0,0,0,394,97,1,
+  	0,0,0,395,397,5,32,0,0,396,398,3,100,50,0,397,396,1,0,0,0,397,398,1,0,
+  	0,0,398,99,1,0,0,0,399,403,3,104,52,0,400,402,3,102,51,0,401,400,1,0,
+  	0,0,402,405,1,0,0,0,403,401,1,0,0,0,403,404,1,0,0,0,404,101,1,0,0,0,405,
+  	403,1,0,0,0,406,407,5,30,0,0,407,408,3,104,52,0,408,103,1,0,0,0,409,410,
+  	3,106,53,0,410,414,5,18,0,0,411,413,3,108,54,0,412,411,1,0,0,0,413,416,
+  	1,0,0,0,414,412,1,0,0,0,414,415,1,0,0,0,415,105,1,0,0,0,416,414,1,0,0,
+  	0,417,422,3,110,55,0,418,422,5,9,0,0,419,422,5,10,0,0,420,422,5,11,0,
+  	0,421,417,1,0,0,0,421,418,1,0,0,0,421,419,1,0,0,0,421,420,1,0,0,0,422,
+  	107,1,0,0,0,423,434,3,110,55,0,424,434,5,9,0,0,425,434,5,10,0,0,426,434,
+  	5,11,0,0,427,429,5,14,0,0,428,427,1,0,0,0,429,430,1,0,0,0,430,428,1,0,
+  	0,0,430,431,1,0,0,0,431,434,1,0,0,0,432,434,5,19,0,0,433,423,1,0,0,0,
+  	433,424,1,0,0,0,433,425,1,0,0,0,433,426,1,0,0,0,433,428,1,0,0,0,433,432,
+  	1,0,0,0,434,109,1,0,0,0,435,436,5,6,0,0,436,437,3,112,56,0,437,438,5,
+  	6,0,0,438,111,1,0,0,0,439,440,7,3,0,0,440,113,1,0,0,0,441,446,3,110,55,
+  	0,442,446,5,9,0,0,443,446,5,10,0,0,444,446,5,11,0,0,445,441,1,0,0,0,445,
+  	442,1,0,0,0,445,443,1,0,0,0,445,444,1,0,0,0,446,115,1,0,0,0,46,119,125,
+  	133,142,162,182,194,200,212,218,223,230,235,244,250,254,261,265,268,271,
+  	274,281,284,290,293,300,306,312,319,325,340,345,349,355,363,367,375,384,
+  	393,397,403,414,421,430,433,445
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -313,29 +345,29 @@ DataListParser::DlistContext* DataListParser::dlist() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(109); 
+    setState(117); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(108);
+      setState(116);
       source();
-      setState(111); 
+      setState(119); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while (_la == DataListParser::SOURCE);
-    setState(113);
+    setState(121);
     lastUpdated();
-    setState(115); 
+    setState(123); 
     _errHandler->sync(this);
     _la = _input->LA(1);
     do {
-      setState(114);
+      setState(122);
       dataList();
-      setState(117); 
+      setState(125); 
       _errHandler->sync(this);
       _la = _input->LA(1);
     } while (_la == DataListParser::START_LIST);
-    setState(119);
+    setState(127);
     match(DataListParser::EOF);
    
   }
@@ -409,21 +441,20 @@ DataListParser::DataListContext* DataListParser::dataList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(121);
+    setState(129);
     startList();
-    setState(125);
+    setState(133);
     _errHandler->sync(this);
     _la = _input->LA(1);
-    while (_la == DataListParser::STRING
-
-    || _la == DataListParser::DIGITS) {
-      setState(122);
+    while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 3584) != 0)) {
+      setState(130);
       listItem();
-      setState(127);
+      setState(135);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
-    setState(128);
+    setState(136);
     endList();
    
   }
@@ -500,22 +531,21 @@ DataListParser::SourceContext* DataListParser::source() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(130);
+    setState(138);
     match(DataListParser::SOURCE);
-    setState(131);
+    setState(139);
     match(DataListParser::EQ);
-    setState(134);
+    setState(142);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::STATIC_SOURCE: {
-        setState(132);
+        setState(140);
         match(DataListParser::STATIC_SOURCE);
         break;
       }
 
-      case DataListParser::STRING:
-      case DataListParser::DIGITS: {
-        setState(133);
+      case DataListParser::BASIC_STRING: {
+        setState(141);
         url();
         break;
       }
@@ -523,7 +553,7 @@ DataListParser::SourceContext* DataListParser::source() {
     default:
       throw NoViableAltException(this);
     }
-    setState(136);
+    setState(144);
     match(DataListParser::WS);
    
   }
@@ -596,13 +626,13 @@ DataListParser::LastUpdatedContext* DataListParser::lastUpdated() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(138);
+    setState(146);
     match(DataListParser::LAST_UPDATED);
-    setState(139);
+    setState(147);
     match(DataListParser::EQ);
-    setState(140);
+    setState(148);
     dateTime();
-    setState(141);
+    setState(149);
     match(DataListParser::WS);
    
   }
@@ -708,35 +738,35 @@ DataListParser::DateTimeContext* DataListParser::dateTime() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(143);
-    year();
-    setState(144);
-    match(DataListParser::HYPH);
-    setState(145);
-    month();
-    setState(146);
-    match(DataListParser::HYPH);
-    setState(147);
-    day();
-    setState(148);
-    match(DataListParser::SPACE);
-    setState(149);
-    hour();
-    setState(150);
-    match(DataListParser::COL);
     setState(151);
-    minute();
+    year();
+    setState(152);
+    match(DataListParser::HYPH);
+    setState(153);
+    month();
     setState(154);
+    match(DataListParser::HYPH);
+    setState(155);
+    day();
+    setState(156);
+    match(DataListParser::SPACE);
+    setState(157);
+    hour();
+    setState(158);
+    match(DataListParser::COL);
+    setState(159);
+    minute();
+    setState(162);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::COL) {
-      setState(152);
+      setState(160);
       match(DataListParser::COL);
-      setState(153);
+      setState(161);
       second();
     }
-    setState(156);
+    setState(164);
     timeZone();
    
   }
@@ -797,7 +827,7 @@ DataListParser::YearContext* DataListParser::year() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(158);
+    setState(166);
     match(DataListParser::DIGITS);
    
   }
@@ -858,7 +888,7 @@ DataListParser::MonthContext* DataListParser::month() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(160);
+    setState(168);
     match(DataListParser::DIGITS);
    
   }
@@ -919,7 +949,7 @@ DataListParser::DayContext* DataListParser::day() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(162);
+    setState(170);
     match(DataListParser::DIGITS);
    
   }
@@ -980,7 +1010,7 @@ DataListParser::HourContext* DataListParser::hour() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(164);
+    setState(172);
     match(DataListParser::DIGITS);
    
   }
@@ -1041,7 +1071,7 @@ DataListParser::MinuteContext* DataListParser::minute() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(166);
+    setState(174);
     match(DataListParser::DIGITS);
    
   }
@@ -1102,7 +1132,7 @@ DataListParser::SecondContext* DataListParser::second() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(168);
+    setState(176);
     match(DataListParser::DIGITS);
    
   }
@@ -1176,18 +1206,18 @@ DataListParser::TimeZoneContext* DataListParser::timeZone() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(170);
+    setState(178);
     tzMod();
-    setState(171);
+    setState(179);
     tzHour();
-    setState(174);
+    setState(182);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::COL) {
-      setState(172);
+      setState(180);
       match(DataListParser::COL);
-      setState(173);
+      setState(181);
       tzMinutes();
     }
    
@@ -1254,7 +1284,7 @@ DataListParser::TzModContext* DataListParser::tzMod() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(176);
+    setState(184);
     _la = _input->LA(1);
     if (!(_la == DataListParser::PLUS
 
@@ -1324,7 +1354,7 @@ DataListParser::TzHourContext* DataListParser::tzHour() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(178);
+    setState(186);
     match(DataListParser::DIGITS);
    
   }
@@ -1385,7 +1415,7 @@ DataListParser::TzMinutesContext* DataListParser::tzMinutes() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(180);
+    setState(188);
     match(DataListParser::DIGITS);
    
   }
@@ -1408,8 +1438,20 @@ tree::TerminalNode* DataListParser::StartListContext::START_LIST() {
   return getToken(DataListParser::START_LIST, 0);
 }
 
+DataListParser::ListIdContext* DataListParser::StartListContext::listId() {
+  return getRuleContext<DataListParser::ListIdContext>(0);
+}
+
 tree::TerminalNode* DataListParser::StartListContext::WS() {
   return getToken(DataListParser::WS, 0);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::StartListContext::SPACE() {
+  return getTokens(DataListParser::SPACE);
+}
+
+tree::TerminalNode* DataListParser::StartListContext::SPACE(size_t i) {
+  return getToken(DataListParser::SPACE, i);
 }
 
 
@@ -1440,6 +1482,7 @@ std::any DataListParser::StartListContext::accept(tree::ParseTreeVisitor *visito
 DataListParser::StartListContext* DataListParser::startList() {
   StartListContext *_localctx = _tracker.createInstance<StartListContext>(_ctx, getState());
   enterRule(_localctx, 30, DataListParser::RuleStartList);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1450,10 +1493,93 @@ DataListParser::StartListContext* DataListParser::startList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(182);
+    setState(190);
     match(DataListParser::START_LIST);
-    setState(183);
+    setState(192); 
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    do {
+      setState(191);
+      match(DataListParser::SPACE);
+      setState(194); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while (_la == DataListParser::SPACE);
+    setState(196);
+    listId();
+    setState(200);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == DataListParser::SPACE) {
+      setState(197);
+      match(DataListParser::SPACE);
+      setState(202);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+    setState(203);
     match(DataListParser::WS);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- ListIdContext ------------------------------------------------------------------
+
+DataListParser::ListIdContext::ListIdContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* DataListParser::ListIdContext::SOURCE() {
+  return getToken(DataListParser::SOURCE, 0);
+}
+
+
+size_t DataListParser::ListIdContext::getRuleIndex() const {
+  return DataListParser::RuleListId;
+}
+
+void DataListParser::ListIdContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterListId(this);
+}
+
+void DataListParser::ListIdContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitListId(this);
+}
+
+
+std::any DataListParser::ListIdContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitListId(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::ListIdContext* DataListParser::listId() {
+  ListIdContext *_localctx = _tracker.createInstance<ListIdContext>(_ctx, getState());
+  enterRule(_localctx, 32, DataListParser::RuleListId);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(205);
+    match(DataListParser::SOURCE);
    
   }
   catch (RecognitionException &e) {
@@ -1506,7 +1632,7 @@ std::any DataListParser::ListItemContext::accept(tree::ParseTreeVisitor *visitor
 
 DataListParser::ListItemContext* DataListParser::listItem() {
   ListItemContext *_localctx = _tracker.createInstance<ListItemContext>(_ctx, getState());
-  enterRule(_localctx, 32, DataListParser::RuleListItem);
+  enterRule(_localctx, 34, DataListParser::RuleListItem);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1517,9 +1643,9 @@ DataListParser::ListItemContext* DataListParser::listItem() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(185);
+    setState(207);
     listItemContent();
-    setState(186);
+    setState(208);
     match(DataListParser::WS);
    
   }
@@ -1538,28 +1664,12 @@ DataListParser::ListItemContentContext::ListItemContentContext(ParserRuleContext
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<tree::TerminalNode *> DataListParser::ListItemContentContext::DIGITS() {
-  return getTokens(DataListParser::DIGITS);
+DataListParser::NumericalListItemContentContext* DataListParser::ListItemContentContext::numericalListItemContent() {
+  return getRuleContext<DataListParser::NumericalListItemContentContext>(0);
 }
 
-tree::TerminalNode* DataListParser::ListItemContentContext::DIGITS(size_t i) {
-  return getToken(DataListParser::DIGITS, i);
-}
-
-std::vector<tree::TerminalNode *> DataListParser::ListItemContentContext::SPACE() {
-  return getTokens(DataListParser::SPACE);
-}
-
-tree::TerminalNode* DataListParser::ListItemContentContext::SPACE(size_t i) {
-  return getToken(DataListParser::SPACE, i);
-}
-
-std::vector<tree::TerminalNode *> DataListParser::ListItemContentContext::STRING() {
-  return getTokens(DataListParser::STRING);
-}
-
-tree::TerminalNode* DataListParser::ListItemContentContext::STRING(size_t i) {
-  return getToken(DataListParser::STRING, i);
+DataListParser::ComplexListItemContentContext* DataListParser::ListItemContentContext::complexListItemContent() {
+  return getRuleContext<DataListParser::ComplexListItemContentContext>(0);
 }
 
 
@@ -1589,7 +1699,98 @@ std::any DataListParser::ListItemContentContext::accept(tree::ParseTreeVisitor *
 
 DataListParser::ListItemContentContext* DataListParser::listItemContent() {
   ListItemContentContext *_localctx = _tracker.createInstance<ListItemContentContext>(_ctx, getState());
-  enterRule(_localctx, 34, DataListParser::RuleListItemContent);
+  enterRule(_localctx, 36, DataListParser::RuleListItemContent);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    setState(212);
+    _errHandler->sync(this);
+    switch (_input->LA(1)) {
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 1);
+        setState(210);
+        numericalListItemContent();
+        break;
+      }
+
+      case DataListParser::BASIC_STRING:
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(211);
+        complexListItemContent();
+        break;
+      }
+
+    default:
+      throw NoViableAltException(this);
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- NumericalListItemContentContext ------------------------------------------------------------------
+
+DataListParser::NumericalListItemContentContext::NumericalListItemContentContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+std::vector<tree::TerminalNode *> DataListParser::NumericalListItemContentContext::DIGITS() {
+  return getTokens(DataListParser::DIGITS);
+}
+
+tree::TerminalNode* DataListParser::NumericalListItemContentContext::DIGITS(size_t i) {
+  return getToken(DataListParser::DIGITS, i);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::NumericalListItemContentContext::SPACE() {
+  return getTokens(DataListParser::SPACE);
+}
+
+tree::TerminalNode* DataListParser::NumericalListItemContentContext::SPACE(size_t i) {
+  return getToken(DataListParser::SPACE, i);
+}
+
+
+size_t DataListParser::NumericalListItemContentContext::getRuleIndex() const {
+  return DataListParser::RuleNumericalListItemContent;
+}
+
+void DataListParser::NumericalListItemContentContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterNumericalListItemContent(this);
+}
+
+void DataListParser::NumericalListItemContentContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitNumericalListItemContent(this);
+}
+
+
+std::any DataListParser::NumericalListItemContentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitNumericalListItemContent(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::NumericalListItemContentContext* DataListParser::numericalListItemContent() {
+  NumericalListItemContentContext *_localctx = _tracker.createInstance<NumericalListItemContentContext>(_ctx, getState());
+  enterRule(_localctx, 38, DataListParser::RuleNumericalListItemContent);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1600,49 +1801,197 @@ DataListParser::ListItemContentContext* DataListParser::listItemContent() {
     exitRule();
   });
   try {
-    setState(204);
+    enterOuterAlt(_localctx, 1);
+    setState(214);
+    match(DataListParser::DIGITS);
+    setState(223);
     _errHandler->sync(this);
-    switch (_input->LA(1)) {
-      case DataListParser::DIGITS: {
-        enterOuterAlt(_localctx, 1);
-        setState(188);
-        match(DataListParser::DIGITS);
-        setState(193);
+    _la = _input->LA(1);
+    while (_la == DataListParser::SPACE) {
+      setState(216); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+      do {
+        setState(215);
+        match(DataListParser::SPACE);
+        setState(218); 
         _errHandler->sync(this);
         _la = _input->LA(1);
-        while (_la == DataListParser::SPACE) {
-          setState(189);
-          match(DataListParser::SPACE);
-          setState(190);
-          match(DataListParser::DIGITS);
-          setState(195);
-          _errHandler->sync(this);
-          _la = _input->LA(1);
-        }
-        break;
-      }
+      } while (_la == DataListParser::SPACE);
+      setState(220);
+      match(DataListParser::DIGITS);
+      setState(225);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
 
-      case DataListParser::STRING: {
-        enterOuterAlt(_localctx, 2);
-        setState(196);
-        match(DataListParser::STRING);
-        setState(201);
+  return _localctx;
+}
+
+//----------------- ComplexListItemContentContext ------------------------------------------------------------------
+
+DataListParser::ComplexListItemContentContext::ComplexListItemContentContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+std::vector<DataListParser::DataListStringContext *> DataListParser::ComplexListItemContentContext::dataListString() {
+  return getRuleContexts<DataListParser::DataListStringContext>();
+}
+
+DataListParser::DataListStringContext* DataListParser::ComplexListItemContentContext::dataListString(size_t i) {
+  return getRuleContext<DataListParser::DataListStringContext>(i);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::ComplexListItemContentContext::SPACE() {
+  return getTokens(DataListParser::SPACE);
+}
+
+tree::TerminalNode* DataListParser::ComplexListItemContentContext::SPACE(size_t i) {
+  return getToken(DataListParser::SPACE, i);
+}
+
+
+size_t DataListParser::ComplexListItemContentContext::getRuleIndex() const {
+  return DataListParser::RuleComplexListItemContent;
+}
+
+void DataListParser::ComplexListItemContentContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterComplexListItemContent(this);
+}
+
+void DataListParser::ComplexListItemContentContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitComplexListItemContent(this);
+}
+
+
+std::any DataListParser::ComplexListItemContentContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitComplexListItemContent(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::ComplexListItemContentContext* DataListParser::complexListItemContent() {
+  ComplexListItemContentContext *_localctx = _tracker.createInstance<ComplexListItemContentContext>(_ctx, getState());
+  enterRule(_localctx, 40, DataListParser::RuleComplexListItemContent);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(226);
+    dataListString();
+    setState(235);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == DataListParser::SPACE) {
+      setState(228); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+      do {
+        setState(227);
+        match(DataListParser::SPACE);
+        setState(230); 
         _errHandler->sync(this);
         _la = _input->LA(1);
-        while (_la == DataListParser::SPACE) {
-          setState(197);
-          match(DataListParser::SPACE);
-          setState(198);
-          match(DataListParser::STRING);
-          setState(203);
-          _errHandler->sync(this);
-          _la = _input->LA(1);
-        }
-        break;
-      }
+      } while (_la == DataListParser::SPACE);
+      setState(232);
+      dataListString();
+      setState(237);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
 
-    default:
-      throw NoViableAltException(this);
+  return _localctx;
+}
+
+//----------------- DataListStringContext ------------------------------------------------------------------
+
+DataListParser::DataListStringContext::DataListStringContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* DataListParser::DataListStringContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::DataListStringContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+
+size_t DataListParser::DataListStringContext::getRuleIndex() const {
+  return DataListParser::RuleDataListString;
+}
+
+void DataListParser::DataListStringContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterDataListString(this);
+}
+
+void DataListParser::DataListStringContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitDataListString(this);
+}
+
+
+std::any DataListParser::DataListStringContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitDataListString(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::DataListStringContext* DataListParser::dataListString() {
+  DataListStringContext *_localctx = _tracker.createInstance<DataListStringContext>(_ctx, getState());
+  enterRule(_localctx, 42, DataListParser::RuleDataListString);
+  size_t _la = 0;
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(238);
+    _la = _input->LA(1);
+    if (!(_la == DataListParser::BASIC_STRING
+
+    || _la == DataListParser::STRING)) {
+    _errHandler->recoverInline(this);
+    }
+    else {
+      _errHandler->reportMatch(this);
+      consume();
     }
    
   }
@@ -1663,6 +2012,18 @@ DataListParser::EndListContext::EndListContext(ParserRuleContext *parent, size_t
 
 tree::TerminalNode* DataListParser::EndListContext::END_LIST() {
   return getToken(DataListParser::END_LIST, 0);
+}
+
+DataListParser::ListIdContext* DataListParser::EndListContext::listId() {
+  return getRuleContext<DataListParser::ListIdContext>(0);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::EndListContext::SPACE() {
+  return getTokens(DataListParser::SPACE);
+}
+
+tree::TerminalNode* DataListParser::EndListContext::SPACE(size_t i) {
+  return getToken(DataListParser::SPACE, i);
 }
 
 tree::TerminalNode* DataListParser::EndListContext::WS() {
@@ -1696,7 +2057,7 @@ std::any DataListParser::EndListContext::accept(tree::ParseTreeVisitor *visitor)
 
 DataListParser::EndListContext* DataListParser::endList() {
   EndListContext *_localctx = _tracker.createInstance<EndListContext>(_ctx, getState());
-  enterRule(_localctx, 36, DataListParser::RuleEndList);
+  enterRule(_localctx, 44, DataListParser::RuleEndList);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1708,14 +2069,36 @@ DataListParser::EndListContext* DataListParser::endList() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(206);
+    setState(240);
     match(DataListParser::END_LIST);
-    setState(208);
+    setState(242); 
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    do {
+      setState(241);
+      match(DataListParser::SPACE);
+      setState(244); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while (_la == DataListParser::SPACE);
+    setState(246);
+    listId();
+    setState(250);
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    while (_la == DataListParser::SPACE) {
+      setState(247);
+      match(DataListParser::SPACE);
+      setState(252);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    }
+    setState(254);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::WS) {
-      setState(207);
+      setState(253);
       match(DataListParser::WS);
     }
    
@@ -1766,7 +2149,7 @@ std::any DataListParser::UrlContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::UrlContext* DataListParser::url() {
   UrlContext *_localctx = _tracker.createInstance<UrlContext>(_ctx, getState());
-  enterRule(_localctx, 38, DataListParser::RuleUrl);
+  enterRule(_localctx, 46, DataListParser::RuleUrl);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1777,7 +2160,7 @@ DataListParser::UrlContext* DataListParser::url() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(210);
+    setState(256);
     uri();
    
   }
@@ -1800,8 +2183,8 @@ DataListParser::SchemeContext* DataListParser::UriContext::scheme() {
   return getRuleContext<DataListParser::SchemeContext>(0);
 }
 
-tree::TerminalNode* DataListParser::UriContext::SCHEME_SEP() {
-  return getToken(DataListParser::SCHEME_SEP, 0);
+DataListParser::SchemeSeparatorContext* DataListParser::UriContext::schemeSeparator() {
+  return getRuleContext<DataListParser::SchemeSeparatorContext>(0);
 }
 
 DataListParser::HostContext* DataListParser::UriContext::host() {
@@ -1855,7 +2238,7 @@ std::any DataListParser::UriContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::UriContext* DataListParser::uri() {
   UriContext *_localctx = _tracker.createInstance<UriContext>(_ctx, getState());
-  enterRule(_localctx, 40, DataListParser::RuleUri);
+  enterRule(_localctx, 48, DataListParser::RuleUri);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1867,16 +2250,16 @@ DataListParser::UriContext* DataListParser::uri() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(212);
+    setState(258);
     scheme();
-    setState(213);
-    match(DataListParser::SCHEME_SEP);
-    setState(215);
+    setState(259);
+    schemeSeparator();
+    setState(261);
     _errHandler->sync(this);
 
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 10, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 16, _ctx)) {
     case 1: {
-      setState(214);
+      setState(260);
       login();
       break;
     }
@@ -1884,38 +2267,38 @@ DataListParser::UriContext* DataListParser::uri() {
     default:
       break;
     }
-    setState(217);
+    setState(263);
     host();
-    setState(219);
+    setState(265);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::COL) {
-      setState(218);
+      setState(264);
       uriPort();
     }
-    setState(222);
+    setState(268);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::FS) {
-      setState(221);
+      setState(267);
       uriPath();
     }
-    setState(225);
+    setState(271);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::Q) {
-      setState(224);
+      setState(270);
       query();
     }
-    setState(228);
+    setState(274);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::HASH) {
-      setState(227);
+      setState(273);
       frag();
     }
    
@@ -1970,7 +2353,7 @@ std::any DataListParser::UriPortContext::accept(tree::ParseTreeVisitor *visitor)
 
 DataListParser::UriPortContext* DataListParser::uriPort() {
   UriPortContext *_localctx = _tracker.createInstance<UriPortContext>(_ctx, getState());
-  enterRule(_localctx, 42, DataListParser::RuleUriPort);
+  enterRule(_localctx, 50, DataListParser::RuleUriPort);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1981,9 +2364,9 @@ DataListParser::UriPortContext* DataListParser::uriPort() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(230);
+    setState(276);
     match(DataListParser::COL);
-    setState(231);
+    setState(277);
     port();
    
   }
@@ -2037,7 +2420,7 @@ std::any DataListParser::UriPathContext::accept(tree::ParseTreeVisitor *visitor)
 
 DataListParser::UriPathContext* DataListParser::uriPath() {
   UriPathContext *_localctx = _tracker.createInstance<UriPathContext>(_ctx, getState());
-  enterRule(_localctx, 44, DataListParser::RuleUriPath);
+  enterRule(_localctx, 52, DataListParser::RuleUriPath);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2049,15 +2432,15 @@ DataListParser::UriPathContext* DataListParser::uriPath() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(233);
+    setState(279);
     match(DataListParser::FS);
-    setState(235);
+    setState(281);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 1081472) != 0)) {
-      setState(234);
+      ((1ULL << _la) & 83889728) != 0)) {
+      setState(280);
       path();
     }
    
@@ -2077,8 +2460,12 @@ DataListParser::SchemeContext::SchemeContext(ParserRuleContext *parent, size_t i
   : ParserRuleContext(parent, invokingState) {
 }
 
-DataListParser::StringContext* DataListParser::SchemeContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+DataListParser::UriSchemeContext* DataListParser::SchemeContext::uriScheme() {
+  return getRuleContext<DataListParser::UriSchemeContext>(0);
+}
+
+DataListParser::UriSchemePrefixContext* DataListParser::SchemeContext::uriSchemePrefix() {
+  return getRuleContext<DataListParser::UriSchemePrefixContext>(0);
 }
 
 
@@ -2108,7 +2495,7 @@ std::any DataListParser::SchemeContext::accept(tree::ParseTreeVisitor *visitor) 
 
 DataListParser::SchemeContext* DataListParser::scheme() {
   SchemeContext *_localctx = _tracker.createInstance<SchemeContext>(_ctx, getState());
-  enterRule(_localctx, 46, DataListParser::RuleScheme);
+  enterRule(_localctx, 54, DataListParser::RuleScheme);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2119,8 +2506,238 @@ DataListParser::SchemeContext* DataListParser::scheme() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(237);
-    string();
+    setState(284);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 22, _ctx)) {
+    case 1: {
+      setState(283);
+      uriSchemePrefix();
+      break;
+    }
+
+    default:
+      break;
+    }
+    setState(286);
+    uriScheme();
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- SchemeSeparatorContext ------------------------------------------------------------------
+
+DataListParser::SchemeSeparatorContext::SchemeSeparatorContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* DataListParser::SchemeSeparatorContext::COL() {
+  return getToken(DataListParser::COL, 0);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::SchemeSeparatorContext::FS() {
+  return getTokens(DataListParser::FS);
+}
+
+tree::TerminalNode* DataListParser::SchemeSeparatorContext::FS(size_t i) {
+  return getToken(DataListParser::FS, i);
+}
+
+
+size_t DataListParser::SchemeSeparatorContext::getRuleIndex() const {
+  return DataListParser::RuleSchemeSeparator;
+}
+
+void DataListParser::SchemeSeparatorContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterSchemeSeparator(this);
+}
+
+void DataListParser::SchemeSeparatorContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitSchemeSeparator(this);
+}
+
+
+std::any DataListParser::SchemeSeparatorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitSchemeSeparator(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::SchemeSeparatorContext* DataListParser::schemeSeparator() {
+  SchemeSeparatorContext *_localctx = _tracker.createInstance<SchemeSeparatorContext>(_ctx, getState());
+  enterRule(_localctx, 56, DataListParser::RuleSchemeSeparator);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(288);
+    match(DataListParser::COL);
+    setState(290);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 23, _ctx)) {
+    case 1: {
+      setState(289);
+      match(DataListParser::FS);
+      break;
+    }
+
+    default:
+      break;
+    }
+    setState(293);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 24, _ctx)) {
+    case 1: {
+      setState(292);
+      match(DataListParser::FS);
+      break;
+    }
+
+    default:
+      break;
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UriSchemePrefixContext ------------------------------------------------------------------
+
+DataListParser::UriSchemePrefixContext::UriSchemePrefixContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* DataListParser::UriSchemePrefixContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+
+size_t DataListParser::UriSchemePrefixContext::getRuleIndex() const {
+  return DataListParser::RuleUriSchemePrefix;
+}
+
+void DataListParser::UriSchemePrefixContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUriSchemePrefix(this);
+}
+
+void DataListParser::UriSchemePrefixContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUriSchemePrefix(this);
+}
+
+
+std::any DataListParser::UriSchemePrefixContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitUriSchemePrefix(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::UriSchemePrefixContext* DataListParser::uriSchemePrefix() {
+  UriSchemePrefixContext *_localctx = _tracker.createInstance<UriSchemePrefixContext>(_ctx, getState());
+  enterRule(_localctx, 58, DataListParser::RuleUriSchemePrefix);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(295);
+    match(DataListParser::BASIC_STRING);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UriSchemeContext ------------------------------------------------------------------
+
+DataListParser::UriSchemeContext::UriSchemeContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* DataListParser::UriSchemeContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+
+size_t DataListParser::UriSchemeContext::getRuleIndex() const {
+  return DataListParser::RuleUriScheme;
+}
+
+void DataListParser::UriSchemeContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUriScheme(this);
+}
+
+void DataListParser::UriSchemeContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUriScheme(this);
+}
+
+
+std::any DataListParser::UriSchemeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitUriScheme(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::UriSchemeContext* DataListParser::uriScheme() {
+  UriSchemeContext *_localctx = _tracker.createInstance<UriSchemeContext>(_ctx, getState());
+  enterRule(_localctx, 60, DataListParser::RuleUriScheme);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(297);
+    match(DataListParser::BASIC_STRING);
    
   }
   catch (RecognitionException &e) {
@@ -2173,7 +2790,7 @@ std::any DataListParser::HostContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::HostContext* DataListParser::host() {
   HostContext *_localctx = _tracker.createInstance<HostContext>(_ctx, getState());
-  enterRule(_localctx, 48, DataListParser::RuleHost);
+  enterRule(_localctx, 62, DataListParser::RuleHost);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2185,15 +2802,15 @@ DataListParser::HostContext* DataListParser::host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(240);
+    setState(300);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::FS) {
-      setState(239);
+      setState(299);
       match(DataListParser::FS);
     }
-    setState(242);
+    setState(302);
     hostname();
    
   }
@@ -2247,7 +2864,7 @@ std::any DataListParser::HostnameContext::accept(tree::ParseTreeVisitor *visitor
 
 DataListParser::HostnameContext* DataListParser::hostname() {
   HostnameContext *_localctx = _tracker.createInstance<HostnameContext>(_ctx, getState());
-  enterRule(_localctx, 50, DataListParser::RuleHostname);
+  enterRule(_localctx, 64, DataListParser::RuleHostname);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2257,21 +2874,22 @@ DataListParser::HostnameContext* DataListParser::hostname() {
     exitRule();
   });
   try {
-    setState(246);
+    setState(306);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::DBL_DOLLAR:
+      case DataListParser::BASIC_STRING:
       case DataListParser::STRING:
       case DataListParser::DIGITS: {
         enterOuterAlt(_localctx, 1);
-        setState(244);
+        setState(304);
         domainNameOrIpv4Host();
         break;
       }
 
       case DataListParser::LBRACKET: {
         enterOuterAlt(_localctx, 2);
-        setState(245);
+        setState(305);
         ipv6Host();
         break;
       }
@@ -2300,8 +2918,16 @@ DataListParser::ParameterStringContext* DataListParser::DomainNameOrIpv4HostCont
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::DomainNameOrIpv4HostContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::DomainNameOrIpv4HostContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::DomainNameOrIpv4HostContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::DomainNameOrIpv4HostContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
 }
 
 
@@ -2331,7 +2957,7 @@ std::any DataListParser::DomainNameOrIpv4HostContext::accept(tree::ParseTreeVisi
 
 DataListParser::DomainNameOrIpv4HostContext* DataListParser::domainNameOrIpv4Host() {
   DomainNameOrIpv4HostContext *_localctx = _tracker.createInstance<DomainNameOrIpv4HostContext>(_ctx, getState());
-  enterRule(_localctx, 52, DataListParser::RuleDomainNameOrIpv4Host);
+  enterRule(_localctx, 66, DataListParser::RuleDomainNameOrIpv4Host);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2341,21 +2967,34 @@ DataListParser::DomainNameOrIpv4HostContext* DataListParser::domainNameOrIpv4Hos
     exitRule();
   });
   try {
-    setState(250);
+    setState(312);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(248);
+        setState(308);
         parameterString();
         break;
       }
 
-      case DataListParser::STRING:
-      case DataListParser::DIGITS: {
+      case DataListParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(249);
-        string();
+        setState(309);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
+
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(310);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(311);
+        match(DataListParser::DIGITS);
         break;
       }
 
@@ -2418,7 +3057,7 @@ std::any DataListParser::Ipv6HostContext::accept(tree::ParseTreeVisitor *visitor
 
 DataListParser::Ipv6HostContext* DataListParser::ipv6Host() {
   Ipv6HostContext *_localctx = _tracker.createInstance<Ipv6HostContext>(_ctx, getState());
-  enterRule(_localctx, 54, DataListParser::RuleIpv6Host);
+  enterRule(_localctx, 68, DataListParser::RuleIpv6Host);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2429,11 +3068,11 @@ DataListParser::Ipv6HostContext* DataListParser::ipv6Host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(252);
+    setState(314);
     match(DataListParser::LBRACKET);
-    setState(253);
+    setState(315);
     v6host();
-    setState(254);
+    setState(316);
     match(DataListParser::RBRACKET);
    
   }
@@ -2495,7 +3134,7 @@ std::any DataListParser::V6hostContext::accept(tree::ParseTreeVisitor *visitor) 
 
 DataListParser::V6hostContext* DataListParser::v6host() {
   V6hostContext *_localctx = _tracker.createInstance<V6hostContext>(_ctx, getState());
-  enterRule(_localctx, 56, DataListParser::RuleV6host);
+  enterRule(_localctx, 70, DataListParser::RuleV6host);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2507,25 +3146,25 @@ DataListParser::V6hostContext* DataListParser::v6host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(257);
+    setState(319);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::DBL_COL) {
-      setState(256);
+      setState(318);
       match(DataListParser::DBL_COL);
     }
-    setState(259);
+    setState(321);
     v6hostConfigParam();
-    setState(263);
+    setState(325);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == DataListParser::DBL_COL
 
     || _la == DataListParser::COL) {
-      setState(260);
+      setState(322);
       v6hostSegment();
-      setState(265);
+      setState(327);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -2581,7 +3220,7 @@ std::any DataListParser::V6hostSegmentContext::accept(tree::ParseTreeVisitor *vi
 
 DataListParser::V6hostSegmentContext* DataListParser::v6hostSegment() {
   V6hostSegmentContext *_localctx = _tracker.createInstance<V6hostSegmentContext>(_ctx, getState());
-  enterRule(_localctx, 58, DataListParser::RuleV6hostSegment);
+  enterRule(_localctx, 72, DataListParser::RuleV6hostSegment);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2592,9 +3231,9 @@ DataListParser::V6hostSegmentContext* DataListParser::v6hostSegment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(266);
+    setState(328);
     v6hostSep();
-    setState(267);
+    setState(329);
     v6hostConfigParam();
    
   }
@@ -2648,7 +3287,7 @@ std::any DataListParser::V6hostSepContext::accept(tree::ParseTreeVisitor *visito
 
 DataListParser::V6hostSepContext* DataListParser::v6hostSep() {
   V6hostSepContext *_localctx = _tracker.createInstance<V6hostSepContext>(_ctx, getState());
-  enterRule(_localctx, 60, DataListParser::RuleV6hostSep);
+  enterRule(_localctx, 74, DataListParser::RuleV6hostSep);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2660,7 +3299,7 @@ DataListParser::V6hostSepContext* DataListParser::v6hostSep() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(269);
+    setState(331);
     _la = _input->LA(1);
     if (!(_la == DataListParser::DBL_COL
 
@@ -2719,7 +3358,7 @@ std::any DataListParser::V6hostConfigParamContext::accept(tree::ParseTreeVisitor
 
 DataListParser::V6hostConfigParamContext* DataListParser::v6hostConfigParam() {
   V6hostConfigParamContext *_localctx = _tracker.createInstance<V6hostConfigParamContext>(_ctx, getState());
-  enterRule(_localctx, 62, DataListParser::RuleV6hostConfigParam);
+  enterRule(_localctx, 76, DataListParser::RuleV6hostConfigParam);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2730,7 +3369,7 @@ DataListParser::V6hostConfigParamContext* DataListParser::v6hostConfigParam() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(271);
+    setState(333);
     configParam();
    
   }
@@ -2780,7 +3419,7 @@ std::any DataListParser::PortContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::PortContext* DataListParser::port() {
   PortContext *_localctx = _tracker.createInstance<PortContext>(_ctx, getState());
-  enterRule(_localctx, 64, DataListParser::RulePort);
+  enterRule(_localctx, 78, DataListParser::RulePort);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2791,7 +3430,7 @@ DataListParser::PortContext* DataListParser::port() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(273);
+    setState(335);
     match(DataListParser::DIGITS);
    
   }
@@ -2810,8 +3449,12 @@ DataListParser::PathContext::PathContext(ParserRuleContext *parent, size_t invok
   : ParserRuleContext(parent, invokingState) {
 }
 
-DataListParser::PathStringContext* DataListParser::PathContext::pathString() {
-  return getRuleContext<DataListParser::PathStringContext>(0);
+std::vector<DataListParser::PathStringContext *> DataListParser::PathContext::pathString() {
+  return getRuleContexts<DataListParser::PathStringContext>();
+}
+
+DataListParser::PathStringContext* DataListParser::PathContext::pathString(size_t i) {
+  return getRuleContext<DataListParser::PathStringContext>(i);
 }
 
 std::vector<DataListParser::MultiPathChunkContext *> DataListParser::PathContext::multiPathChunk() {
@@ -2853,7 +3496,7 @@ std::any DataListParser::PathContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::PathContext* DataListParser::path() {
   PathContext *_localctx = _tracker.createInstance<PathContext>(_ctx, getState());
-  enterRule(_localctx, 66, DataListParser::RulePath);
+  enterRule(_localctx, 80, DataListParser::RulePath);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2866,26 +3509,35 @@ DataListParser::PathContext* DataListParser::path() {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(275);
-    pathString();
-    setState(279);
+    setState(338); 
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 21, _ctx);
+    _la = _input->LA(1);
+    do {
+      setState(337);
+      pathString();
+      setState(340); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 83889728) != 0));
+    setState(345);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 31, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
       if (alt == 1) {
-        setState(276);
+        setState(342);
         multiPathChunk(); 
       }
-      setState(281);
+      setState(347);
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 21, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 31, _ctx);
     }
-    setState(283);
+    setState(349);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::FS) {
-      setState(282);
+      setState(348);
       match(DataListParser::FS);
     }
    
@@ -2909,8 +3561,12 @@ tree::TerminalNode* DataListParser::MultiPathChunkContext::FS() {
   return getToken(DataListParser::FS, 0);
 }
 
-DataListParser::PathStringContext* DataListParser::MultiPathChunkContext::pathString() {
-  return getRuleContext<DataListParser::PathStringContext>(0);
+std::vector<DataListParser::PathStringContext *> DataListParser::MultiPathChunkContext::pathString() {
+  return getRuleContexts<DataListParser::PathStringContext>();
+}
+
+DataListParser::PathStringContext* DataListParser::MultiPathChunkContext::pathString(size_t i) {
+  return getRuleContext<DataListParser::PathStringContext>(i);
 }
 
 
@@ -2940,7 +3596,8 @@ std::any DataListParser::MultiPathChunkContext::accept(tree::ParseTreeVisitor *v
 
 DataListParser::MultiPathChunkContext* DataListParser::multiPathChunk() {
   MultiPathChunkContext *_localctx = _tracker.createInstance<MultiPathChunkContext>(_ctx, getState());
-  enterRule(_localctx, 68, DataListParser::RuleMultiPathChunk);
+  enterRule(_localctx, 82, DataListParser::RuleMultiPathChunk);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2951,10 +3608,19 @@ DataListParser::MultiPathChunkContext* DataListParser::multiPathChunk() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(285);
+    setState(351);
     match(DataListParser::FS);
-    setState(286);
-    pathString();
+    setState(353); 
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    do {
+      setState(352);
+      pathString();
+      setState(355); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 83889728) != 0));
    
   }
   catch (RecognitionException &e) {
@@ -2976,8 +3642,24 @@ DataListParser::ParameterStringContext* DataListParser::PathStringContext::param
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::PathStringContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::PathStringContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::PathStringContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::PathStringContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
+}
+
+tree::TerminalNode* DataListParser::PathStringContext::HYPH() {
+  return getToken(DataListParser::HYPH, 0);
+}
+
+tree::TerminalNode* DataListParser::PathStringContext::US() {
+  return getToken(DataListParser::US, 0);
 }
 
 
@@ -3007,7 +3689,7 @@ std::any DataListParser::PathStringContext::accept(tree::ParseTreeVisitor *visit
 
 DataListParser::PathStringContext* DataListParser::pathString() {
   PathStringContext *_localctx = _tracker.createInstance<PathStringContext>(_ctx, getState());
-  enterRule(_localctx, 70, DataListParser::RulePathString);
+  enterRule(_localctx, 84, DataListParser::RulePathString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3017,104 +3699,48 @@ DataListParser::PathStringContext* DataListParser::pathString() {
     exitRule();
   });
   try {
-    setState(290);
+    setState(363);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(288);
+        setState(357);
         parameterString();
         break;
       }
 
-      case DataListParser::STRING:
-      case DataListParser::DIGITS: {
+      case DataListParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(289);
-        string();
+        setState(358);
+        match(DataListParser::BASIC_STRING);
         break;
       }
 
-    default:
-      throw NoViableAltException(this);
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- UserContext ------------------------------------------------------------------
-
-DataListParser::UserContext::UserContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-DataListParser::ParameterStringContext* DataListParser::UserContext::parameterString() {
-  return getRuleContext<DataListParser::ParameterStringContext>(0);
-}
-
-DataListParser::StringContext* DataListParser::UserContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
-}
-
-
-size_t DataListParser::UserContext::getRuleIndex() const {
-  return DataListParser::RuleUser;
-}
-
-void DataListParser::UserContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterUser(this);
-}
-
-void DataListParser::UserContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitUser(this);
-}
-
-
-std::any DataListParser::UserContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
-    return parserVisitor->visitUser(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-DataListParser::UserContext* DataListParser::user() {
-  UserContext *_localctx = _tracker.createInstance<UserContext>(_ctx, getState());
-  enterRule(_localctx, 72, DataListParser::RuleUser);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    setState(294);
-    _errHandler->sync(this);
-    switch (_input->LA(1)) {
-      case DataListParser::DBL_DOLLAR: {
-        enterOuterAlt(_localctx, 1);
-        setState(292);
-        parameterString();
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(359);
+        match(DataListParser::STRING);
         break;
       }
 
-      case DataListParser::STRING:
       case DataListParser::DIGITS: {
-        enterOuterAlt(_localctx, 2);
-        setState(293);
-        string();
+        enterOuterAlt(_localctx, 4);
+        setState(360);
+        match(DataListParser::DIGITS);
+        break;
+      }
+
+      case DataListParser::HYPH: {
+        enterOuterAlt(_localctx, 5);
+        setState(361);
+        match(DataListParser::HYPH);
+        break;
+      }
+
+      case DataListParser::US: {
+        enterOuterAlt(_localctx, 6);
+        setState(362);
+        match(DataListParser::US);
         break;
       }
 
@@ -3177,7 +3803,7 @@ std::any DataListParser::LoginContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::LoginContext* DataListParser::login() {
   LoginContext *_localctx = _tracker.createInstance<LoginContext>(_ctx, getState());
-  enterRule(_localctx, 74, DataListParser::RuleLogin);
+  enterRule(_localctx, 86, DataListParser::RuleLogin);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3189,18 +3815,122 @@ DataListParser::LoginContext* DataListParser::login() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(296);
+    setState(365);
     user();
-    setState(298);
+    setState(367);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == DataListParser::COL) {
-      setState(297);
+      setState(366);
       loginPassword();
     }
-    setState(300);
+    setState(369);
     match(DataListParser::AT);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UserContext ------------------------------------------------------------------
+
+DataListParser::UserContext::UserContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+DataListParser::ParameterStringContext* DataListParser::UserContext::parameterString() {
+  return getRuleContext<DataListParser::ParameterStringContext>(0);
+}
+
+tree::TerminalNode* DataListParser::UserContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::UserContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::UserContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
+}
+
+
+size_t DataListParser::UserContext::getRuleIndex() const {
+  return DataListParser::RuleUser;
+}
+
+void DataListParser::UserContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUser(this);
+}
+
+void DataListParser::UserContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<DataListListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUser(this);
+}
+
+
+std::any DataListParser::UserContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
+    return parserVisitor->visitUser(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+DataListParser::UserContext* DataListParser::user() {
+  UserContext *_localctx = _tracker.createInstance<UserContext>(_ctx, getState());
+  enterRule(_localctx, 88, DataListParser::RuleUser);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    setState(375);
+    _errHandler->sync(this);
+    switch (_input->LA(1)) {
+      case DataListParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(371);
+        parameterString();
+        break;
+      }
+
+      case DataListParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(372);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
+
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(373);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(374);
+        match(DataListParser::DIGITS);
+        break;
+      }
+
+    default:
+      throw NoViableAltException(this);
+    }
    
   }
   catch (RecognitionException &e) {
@@ -3253,7 +3983,7 @@ std::any DataListParser::LoginPasswordContext::accept(tree::ParseTreeVisitor *vi
 
 DataListParser::LoginPasswordContext* DataListParser::loginPassword() {
   LoginPasswordContext *_localctx = _tracker.createInstance<LoginPasswordContext>(_ctx, getState());
-  enterRule(_localctx, 76, DataListParser::RuleLoginPassword);
+  enterRule(_localctx, 90, DataListParser::RuleLoginPassword);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3264,9 +3994,9 @@ DataListParser::LoginPasswordContext* DataListParser::loginPassword() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(302);
+    setState(377);
     match(DataListParser::COL);
-    setState(303);
+    setState(378);
     password();
    
   }
@@ -3289,8 +4019,16 @@ DataListParser::ParameterStringContext* DataListParser::PasswordContext::paramet
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::PasswordContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::PasswordContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::PasswordContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::PasswordContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
 }
 
 
@@ -3320,7 +4058,7 @@ std::any DataListParser::PasswordContext::accept(tree::ParseTreeVisitor *visitor
 
 DataListParser::PasswordContext* DataListParser::password() {
   PasswordContext *_localctx = _tracker.createInstance<PasswordContext>(_ctx, getState());
-  enterRule(_localctx, 78, DataListParser::RulePassword);
+  enterRule(_localctx, 92, DataListParser::RulePassword);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3330,21 +4068,34 @@ DataListParser::PasswordContext* DataListParser::password() {
     exitRule();
   });
   try {
-    setState(307);
+    setState(384);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(305);
+        setState(380);
         parameterString();
         break;
       }
 
-      case DataListParser::STRING:
-      case DataListParser::DIGITS: {
+      case DataListParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(306);
-        string();
+        setState(381);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
+
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(382);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(383);
+        match(DataListParser::DIGITS);
         break;
       }
 
@@ -3403,7 +4154,7 @@ std::any DataListParser::FragContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::FragContext* DataListParser::frag() {
   FragContext *_localctx = _tracker.createInstance<FragContext>(_ctx, getState());
-  enterRule(_localctx, 80, DataListParser::RuleFrag);
+  enterRule(_localctx, 94, DataListParser::RuleFrag);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3414,9 +4165,9 @@ DataListParser::FragContext* DataListParser::frag() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(309);
+    setState(386);
     match(DataListParser::HASH);
-    setState(310);
+    setState(387);
     fragString();
    
   }
@@ -3439,8 +4190,12 @@ DataListParser::ParameterStringContext* DataListParser::FragStringContext::param
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::FragStringContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::FragStringContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::FragStringContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
 }
 
 tree::TerminalNode* DataListParser::FragStringContext::DIGITS() {
@@ -3474,7 +4229,7 @@ std::any DataListParser::FragStringContext::accept(tree::ParseTreeVisitor *visit
 
 DataListParser::FragStringContext* DataListParser::fragString() {
   FragStringContext *_localctx = _tracker.createInstance<FragStringContext>(_ctx, getState());
-  enterRule(_localctx, 82, DataListParser::RuleFragString);
+  enterRule(_localctx, 96, DataListParser::RuleFragString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3484,32 +4239,39 @@ DataListParser::FragStringContext* DataListParser::fragString() {
     exitRule();
   });
   try {
-    setState(315);
+    setState(393);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 27, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(312);
-      parameterString();
-      break;
-    }
+    switch (_input->LA(1)) {
+      case DataListParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(389);
+        parameterString();
+        break;
+      }
 
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(313);
-      string();
-      break;
-    }
+      case DataListParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(390);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
 
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(314);
-      match(DataListParser::DIGITS);
-      break;
-    }
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(391);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(392);
+        match(DataListParser::DIGITS);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
    
   }
@@ -3563,7 +4325,8 @@ std::any DataListParser::QueryContext::accept(tree::ParseTreeVisitor *visitor) {
 
 DataListParser::QueryContext* DataListParser::query() {
   QueryContext *_localctx = _tracker.createInstance<QueryContext>(_ctx, getState());
-  enterRule(_localctx, 84, DataListParser::RuleQuery);
+  enterRule(_localctx, 98, DataListParser::RuleQuery);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3574,10 +4337,17 @@ DataListParser::QueryContext* DataListParser::query() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(317);
+    setState(395);
     match(DataListParser::Q);
-    setState(318);
-    search();
+    setState(397);
+    _errHandler->sync(this);
+
+    _la = _input->LA(1);
+    if ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 3648) != 0)) {
+      setState(396);
+      search();
+    }
    
   }
   catch (RecognitionException &e) {
@@ -3634,7 +4404,7 @@ std::any DataListParser::SearchContext::accept(tree::ParseTreeVisitor *visitor) 
 
 DataListParser::SearchContext* DataListParser::search() {
   SearchContext *_localctx = _tracker.createInstance<SearchContext>(_ctx, getState());
-  enterRule(_localctx, 86, DataListParser::RuleSearch);
+  enterRule(_localctx, 100, DataListParser::RuleSearch);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3646,15 +4416,15 @@ DataListParser::SearchContext* DataListParser::search() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(320);
+    setState(399);
     searchParameter();
-    setState(324);
+    setState(403);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == DataListParser::AMP) {
-      setState(321);
+      setState(400);
       multiSearch();
-      setState(326);
+      setState(405);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -3710,7 +4480,7 @@ std::any DataListParser::MultiSearchContext::accept(tree::ParseTreeVisitor *visi
 
 DataListParser::MultiSearchContext* DataListParser::multiSearch() {
   MultiSearchContext *_localctx = _tracker.createInstance<MultiSearchContext>(_ctx, getState());
-  enterRule(_localctx, 88, DataListParser::RuleMultiSearch);
+  enterRule(_localctx, 102, DataListParser::RuleMultiSearch);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3721,9 +4491,9 @@ DataListParser::MultiSearchContext* DataListParser::multiSearch() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(327);
+    setState(406);
     match(DataListParser::AMP);
-    setState(328);
+    setState(407);
     searchParameter();
    
   }
@@ -3746,8 +4516,16 @@ DataListParser::SearchParameterKeyContext* DataListParser::SearchParameterContex
   return getRuleContext<DataListParser::SearchParameterKeyContext>(0);
 }
 
-DataListParser::SearchParameterValueContext* DataListParser::SearchParameterContext::searchParameterValue() {
-  return getRuleContext<DataListParser::SearchParameterValueContext>(0);
+tree::TerminalNode* DataListParser::SearchParameterContext::EQ() {
+  return getToken(DataListParser::EQ, 0);
+}
+
+std::vector<DataListParser::SearchParameterValueContext *> DataListParser::SearchParameterContext::searchParameterValue() {
+  return getRuleContexts<DataListParser::SearchParameterValueContext>();
+}
+
+DataListParser::SearchParameterValueContext* DataListParser::SearchParameterContext::searchParameterValue(size_t i) {
+  return getRuleContext<DataListParser::SearchParameterValueContext>(i);
 }
 
 
@@ -3777,7 +4555,7 @@ std::any DataListParser::SearchParameterContext::accept(tree::ParseTreeVisitor *
 
 DataListParser::SearchParameterContext* DataListParser::searchParameter() {
   SearchParameterContext *_localctx = _tracker.createInstance<SearchParameterContext>(_ctx, getState());
-  enterRule(_localctx, 90, DataListParser::RuleSearchParameter);
+  enterRule(_localctx, 104, DataListParser::RuleSearchParameter);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -3789,15 +4567,20 @@ DataListParser::SearchParameterContext* DataListParser::searchParameter() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(330);
+    setState(409);
     searchParameterKey();
-    setState(332);
+    setState(410);
+    match(DataListParser::EQ);
+    setState(414);
     _errHandler->sync(this);
-
     _la = _input->LA(1);
-    if (_la == DataListParser::EQ) {
-      setState(331);
+    while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 544320) != 0)) {
+      setState(411);
       searchParameterValue();
+      setState(416);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
     }
    
   }
@@ -3820,8 +4603,16 @@ DataListParser::ParameterStringContext* DataListParser::SearchParameterKeyContex
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::SearchParameterKeyContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::SearchParameterKeyContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterKeyContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterKeyContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
 }
 
 
@@ -3851,7 +4642,7 @@ std::any DataListParser::SearchParameterKeyContext::accept(tree::ParseTreeVisito
 
 DataListParser::SearchParameterKeyContext* DataListParser::searchParameterKey() {
   SearchParameterKeyContext *_localctx = _tracker.createInstance<SearchParameterKeyContext>(_ctx, getState());
-  enterRule(_localctx, 92, DataListParser::RuleSearchParameterKey);
+  enterRule(_localctx, 106, DataListParser::RuleSearchParameterKey);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3861,21 +4652,34 @@ DataListParser::SearchParameterKeyContext* DataListParser::searchParameterKey() 
     exitRule();
   });
   try {
-    setState(336);
+    setState(421);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case DataListParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(334);
+        setState(417);
         parameterString();
         break;
       }
 
-      case DataListParser::STRING:
-      case DataListParser::DIGITS: {
+      case DataListParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(335);
-        string();
+        setState(418);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
+
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(419);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(420);
+        match(DataListParser::DIGITS);
         break;
       }
 
@@ -3899,12 +4703,32 @@ DataListParser::SearchParameterValueContext::SearchParameterValueContext(ParserR
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* DataListParser::SearchParameterValueContext::EQ() {
-  return getToken(DataListParser::EQ, 0);
+DataListParser::ParameterStringContext* DataListParser::SearchParameterValueContext::parameterString() {
+  return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::SearchParameterValueStringContext* DataListParser::SearchParameterValueContext::searchParameterValueString() {
-  return getRuleContext<DataListParser::SearchParameterValueStringContext>(0);
+tree::TerminalNode* DataListParser::SearchParameterValueContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterValueContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterValueContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
+}
+
+std::vector<tree::TerminalNode *> DataListParser::SearchParameterValueContext::HEX() {
+  return getTokens(DataListParser::HEX);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterValueContext::HEX(size_t i) {
+  return getToken(DataListParser::HEX, i);
+}
+
+tree::TerminalNode* DataListParser::SearchParameterValueContext::COL() {
+  return getToken(DataListParser::COL, 0);
 }
 
 
@@ -3934,8 +4758,7 @@ std::any DataListParser::SearchParameterValueContext::accept(tree::ParseTreeVisi
 
 DataListParser::SearchParameterValueContext* DataListParser::searchParameterValue() {
   SearchParameterValueContext *_localctx = _tracker.createInstance<SearchParameterValueContext>(_ctx, getState());
-  enterRule(_localctx, 94, DataListParser::RuleSearchParameterValue);
-  size_t _la = 0;
+  enterRule(_localctx, 108, DataListParser::RuleSearchParameterValue);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -3945,121 +4768,70 @@ DataListParser::SearchParameterValueContext* DataListParser::searchParameterValu
     exitRule();
   });
   try {
-    enterOuterAlt(_localctx, 1);
-    setState(338);
-    match(DataListParser::EQ);
-    setState(340);
+    size_t alt;
+    setState(433);
     _errHandler->sync(this);
+    switch (_input->LA(1)) {
+      case DataListParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(423);
+        parameterString();
+        break;
+      }
 
-    _la = _input->LA(1);
-    if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 1343616) != 0)) {
-      setState(339);
-      searchParameterValueString();
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
+      case DataListParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(424);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
 
-  return _localctx;
-}
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(425);
+        match(DataListParser::STRING);
+        break;
+      }
 
-//----------------- SearchParameterValueStringContext ------------------------------------------------------------------
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(426);
+        match(DataListParser::DIGITS);
+        break;
+      }
 
-DataListParser::SearchParameterValueStringContext::SearchParameterValueStringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
+      case DataListParser::HEX: {
+        enterOuterAlt(_localctx, 5);
+        setState(428); 
+        _errHandler->sync(this);
+        alt = 1;
+        do {
+          switch (alt) {
+            case 1: {
+                  setState(427);
+                  match(DataListParser::HEX);
+                  break;
+                }
 
-DataListParser::ParameterStringContext* DataListParser::SearchParameterValueStringContext::parameterString() {
-  return getRuleContext<DataListParser::ParameterStringContext>(0);
-}
+          default:
+            throw NoViableAltException(this);
+          }
+          setState(430); 
+          _errHandler->sync(this);
+          alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 43, _ctx);
+        } while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER);
+        break;
+      }
 
-DataListParser::StringContext* DataListParser::SearchParameterValueStringContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
-}
-
-tree::TerminalNode* DataListParser::SearchParameterValueStringContext::DIGITS() {
-  return getToken(DataListParser::DIGITS, 0);
-}
-
-tree::TerminalNode* DataListParser::SearchParameterValueStringContext::HEX() {
-  return getToken(DataListParser::HEX, 0);
-}
-
-
-size_t DataListParser::SearchParameterValueStringContext::getRuleIndex() const {
-  return DataListParser::RuleSearchParameterValueString;
-}
-
-void DataListParser::SearchParameterValueStringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterSearchParameterValueString(this);
-}
-
-void DataListParser::SearchParameterValueStringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitSearchParameterValueString(this);
-}
-
-
-std::any DataListParser::SearchParameterValueStringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
-    return parserVisitor->visitSearchParameterValueString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-DataListParser::SearchParameterValueStringContext* DataListParser::searchParameterValueString() {
-  SearchParameterValueStringContext *_localctx = _tracker.createInstance<SearchParameterValueStringContext>(_ctx, getState());
-  enterRule(_localctx, 96, DataListParser::RuleSearchParameterValueString);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    setState(346);
-    _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 32, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(342);
-      parameterString();
-      break;
-    }
-
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(343);
-      string();
-      break;
-    }
-
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(344);
-      match(DataListParser::DIGITS);
-      break;
-    }
-
-    case 4: {
-      enterOuterAlt(_localctx, 4);
-      setState(345);
-      match(DataListParser::HEX);
-      break;
-    }
+      case DataListParser::COL: {
+        enterOuterAlt(_localctx, 6);
+        setState(432);
+        match(DataListParser::COL);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
    
   }
@@ -4117,7 +4889,7 @@ std::any DataListParser::ParameterStringContext::accept(tree::ParseTreeVisitor *
 
 DataListParser::ParameterStringContext* DataListParser::parameterString() {
   ParameterStringContext *_localctx = _tracker.createInstance<ParameterStringContext>(_ctx, getState());
-  enterRule(_localctx, 98, DataListParser::RuleParameterString);
+  enterRule(_localctx, 110, DataListParser::RuleParameterString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -4128,11 +4900,11 @@ DataListParser::ParameterStringContext* DataListParser::parameterString() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(348);
+    setState(435);
     match(DataListParser::DBL_DOLLAR);
-    setState(349);
+    setState(436);
     parameterName();
-    setState(350);
+    setState(437);
     match(DataListParser::DBL_DOLLAR);
    
   }
@@ -4151,16 +4923,16 @@ DataListParser::ParameterNameContext::ParameterNameContext(ParserRuleContext *pa
   : ParserRuleContext(parent, invokingState) {
 }
 
-DataListParser::StringContext* DataListParser::ParameterNameContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::ParameterNameContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
 }
 
-std::vector<DataListParser::UsStringContext *> DataListParser::ParameterNameContext::usString() {
-  return getRuleContexts<DataListParser::UsStringContext>();
+tree::TerminalNode* DataListParser::ParameterNameContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
 }
 
-DataListParser::UsStringContext* DataListParser::ParameterNameContext::usString(size_t i) {
-  return getRuleContext<DataListParser::UsStringContext>(i);
+tree::TerminalNode* DataListParser::ParameterNameContext::DIGITS() {
+  return getToken(DataListParser::DIGITS, 0);
 }
 
 
@@ -4190,7 +4962,7 @@ std::any DataListParser::ParameterNameContext::accept(tree::ParseTreeVisitor *vi
 
 DataListParser::ParameterNameContext* DataListParser::parameterName() {
   ParameterNameContext *_localctx = _tracker.createInstance<ParameterNameContext>(_ctx, getState());
-  enterRule(_localctx, 100, DataListParser::RuleParameterName);
+  enterRule(_localctx, 112, DataListParser::RuleParameterName);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -4202,17 +4974,15 @@ DataListParser::ParameterNameContext* DataListParser::parameterName() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(352);
-    string();
-    setState(356);
-    _errHandler->sync(this);
+    setState(439);
     _la = _input->LA(1);
-    while (_la == DataListParser::US) {
-      setState(353);
-      usString();
-      setState(358);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
+    if (!((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 3584) != 0))) {
+    _errHandler->recoverInline(this);
+    }
+    else {
+      _errHandler->reportMatch(this);
+      consume();
     }
    
   }
@@ -4235,8 +5005,12 @@ DataListParser::ParameterStringContext* DataListParser::ConfigParamContext::para
   return getRuleContext<DataListParser::ParameterStringContext>(0);
 }
 
-DataListParser::StringContext* DataListParser::ConfigParamContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
+tree::TerminalNode* DataListParser::ConfigParamContext::BASIC_STRING() {
+  return getToken(DataListParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* DataListParser::ConfigParamContext::STRING() {
+  return getToken(DataListParser::STRING, 0);
 }
 
 tree::TerminalNode* DataListParser::ConfigParamContext::DIGITS() {
@@ -4270,7 +5044,7 @@ std::any DataListParser::ConfigParamContext::accept(tree::ParseTreeVisitor *visi
 
 DataListParser::ConfigParamContext* DataListParser::configParam() {
   ConfigParamContext *_localctx = _tracker.createInstance<ConfigParamContext>(_ctx, getState());
-  enterRule(_localctx, 102, DataListParser::RuleConfigParam);
+  enterRule(_localctx, 114, DataListParser::RuleConfigParam);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -4280,175 +5054,40 @@ DataListParser::ConfigParamContext* DataListParser::configParam() {
     exitRule();
   });
   try {
-    setState(362);
+    setState(445);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 34, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(359);
-      parameterString();
-      break;
-    }
+    switch (_input->LA(1)) {
+      case DataListParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(441);
+        parameterString();
+        break;
+      }
 
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(360);
-      string();
-      break;
-    }
+      case DataListParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(442);
+        match(DataListParser::BASIC_STRING);
+        break;
+      }
 
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(361);
-      match(DataListParser::DIGITS);
-      break;
-    }
+      case DataListParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(443);
+        match(DataListParser::STRING);
+        break;
+      }
+
+      case DataListParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(444);
+        match(DataListParser::DIGITS);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- StringContext ------------------------------------------------------------------
-
-DataListParser::StringContext::StringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* DataListParser::StringContext::STRING() {
-  return getToken(DataListParser::STRING, 0);
-}
-
-tree::TerminalNode* DataListParser::StringContext::DIGITS() {
-  return getToken(DataListParser::DIGITS, 0);
-}
-
-
-size_t DataListParser::StringContext::getRuleIndex() const {
-  return DataListParser::RuleString;
-}
-
-void DataListParser::StringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterString(this);
-}
-
-void DataListParser::StringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitString(this);
-}
-
-
-std::any DataListParser::StringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
-    return parserVisitor->visitString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-DataListParser::StringContext* DataListParser::string() {
-  StringContext *_localctx = _tracker.createInstance<StringContext>(_ctx, getState());
-  enterRule(_localctx, 104, DataListParser::RuleString);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(364);
-    _la = _input->LA(1);
-    if (!(_la == DataListParser::STRING
-
-    || _la == DataListParser::DIGITS)) {
-    _errHandler->recoverInline(this);
-    }
-    else {
-      _errHandler->reportMatch(this);
-      consume();
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- UsStringContext ------------------------------------------------------------------
-
-DataListParser::UsStringContext::UsStringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* DataListParser::UsStringContext::US() {
-  return getToken(DataListParser::US, 0);
-}
-
-DataListParser::StringContext* DataListParser::UsStringContext::string() {
-  return getRuleContext<DataListParser::StringContext>(0);
-}
-
-
-size_t DataListParser::UsStringContext::getRuleIndex() const {
-  return DataListParser::RuleUsString;
-}
-
-void DataListParser::UsStringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterUsString(this);
-}
-
-void DataListParser::UsStringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<DataListListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitUsString(this);
-}
-
-
-std::any DataListParser::UsStringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<DataListVisitor*>(visitor))
-    return parserVisitor->visitUsString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-DataListParser::UsStringContext* DataListParser::usString() {
-  UsStringContext *_localctx = _tracker.createInstance<UsStringContext>(_ctx, getState());
-  enterRule(_localctx, 106, DataListParser::RuleUsString);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(366);
-    match(DataListParser::US);
-    setState(367);
-    string();
    
   }
   catch (RecognitionException &e) {

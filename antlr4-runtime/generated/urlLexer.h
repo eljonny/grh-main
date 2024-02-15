@@ -13,11 +13,11 @@ namespace antlrcpp {
 class  urlLexer : public antlr4::Lexer {
 public:
   enum {
-    SCHEME_SEP = 1, DBL_DOLLAR = 2, DBL_COL = 3, AMP = 4, AT = 5, LBRACKET = 6, 
-    RBRACKET = 7, Q = 8, WS = 9, STRING = 10, ALPHANUM = 11, ALPHA = 12, 
-    HEX = 13, HEX_ALPHA = 14, DIGITS = 15, SINGLE_DIGIT_INT = 16, ZERO = 17, 
-    EQ = 18, COL = 19, HASH = 20, SPACE = 21, DOLLAR = 22, FS = 23, US = 24, 
-    PLUS = 25, HYPH = 26, PERC = 27
+    DBL_DOLLAR = 1, DBL_COL = 2, WS = 3, BASIC_STRING = 4, STRING = 5, DIGITS = 6, 
+    ALPHANUM = 7, ALPHA = 8, HEX = 9, SINGLE_DIGIT_INT = 10, ZERO = 11, 
+    PERIOD = 12, EQ = 13, COL = 14, HASH = 15, SPACE = 16, DOLLAR = 17, 
+    FS = 18, US = 19, PLUS = 20, HYPH = 21, PERC = 22, LBRACKET = 23, RBRACKET = 24, 
+    AMP = 25, AT = 26, Q = 27
   };
 
   explicit urlLexer(antlr4::CharStream *input);

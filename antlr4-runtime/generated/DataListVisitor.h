@@ -52,9 +52,17 @@ public:
 
     virtual std::any visitStartList(DataListParser::StartListContext *context) = 0;
 
+    virtual std::any visitListId(DataListParser::ListIdContext *context) = 0;
+
     virtual std::any visitListItem(DataListParser::ListItemContext *context) = 0;
 
     virtual std::any visitListItemContent(DataListParser::ListItemContentContext *context) = 0;
+
+    virtual std::any visitNumericalListItemContent(DataListParser::NumericalListItemContentContext *context) = 0;
+
+    virtual std::any visitComplexListItemContent(DataListParser::ComplexListItemContentContext *context) = 0;
+
+    virtual std::any visitDataListString(DataListParser::DataListStringContext *context) = 0;
 
     virtual std::any visitEndList(DataListParser::EndListContext *context) = 0;
 
@@ -67,6 +75,12 @@ public:
     virtual std::any visitUriPath(DataListParser::UriPathContext *context) = 0;
 
     virtual std::any visitScheme(DataListParser::SchemeContext *context) = 0;
+
+    virtual std::any visitSchemeSeparator(DataListParser::SchemeSeparatorContext *context) = 0;
+
+    virtual std::any visitUriSchemePrefix(DataListParser::UriSchemePrefixContext *context) = 0;
+
+    virtual std::any visitUriScheme(DataListParser::UriSchemeContext *context) = 0;
 
     virtual std::any visitHost(DataListParser::HostContext *context) = 0;
 
@@ -92,9 +106,9 @@ public:
 
     virtual std::any visitPathString(DataListParser::PathStringContext *context) = 0;
 
-    virtual std::any visitUser(DataListParser::UserContext *context) = 0;
-
     virtual std::any visitLogin(DataListParser::LoginContext *context) = 0;
+
+    virtual std::any visitUser(DataListParser::UserContext *context) = 0;
 
     virtual std::any visitLoginPassword(DataListParser::LoginPasswordContext *context) = 0;
 
@@ -116,17 +130,11 @@ public:
 
     virtual std::any visitSearchParameterValue(DataListParser::SearchParameterValueContext *context) = 0;
 
-    virtual std::any visitSearchParameterValueString(DataListParser::SearchParameterValueStringContext *context) = 0;
-
     virtual std::any visitParameterString(DataListParser::ParameterStringContext *context) = 0;
 
     virtual std::any visitParameterName(DataListParser::ParameterNameContext *context) = 0;
 
     virtual std::any visitConfigParam(DataListParser::ConfigParamContext *context) = 0;
-
-    virtual std::any visitString(DataListParser::StringContext *context) = 0;
-
-    virtual std::any visitUsString(DataListParser::UsStringContext *context) = 0;
 
 
 };

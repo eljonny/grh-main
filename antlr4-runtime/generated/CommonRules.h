@@ -13,9 +13,10 @@ namespace antlrcpp {
 class  CommonRules : public antlr4::Lexer {
 public:
   enum {
-    WS = 1, STRING = 2, ALPHANUM = 3, ALPHA = 4, HEX = 5, HEX_ALPHA = 6, 
-    DIGITS = 7, SINGLE_DIGIT_INT = 8, ZERO = 9, EQ = 10, COL = 11, HASH = 12, 
-    SPACE = 13, DOLLAR = 14, FS = 15, US = 16, PLUS = 17, HYPH = 18, PERC = 19
+    WS = 1, BASIC_STRING = 2, STRING = 3, DIGITS = 4, ALPHANUM = 5, ALPHA = 6, 
+    HEX = 7, SINGLE_DIGIT_INT = 8, ZERO = 9, PERIOD = 10, EQ = 11, COL = 12, 
+    HASH = 13, SPACE = 14, DOLLAR = 15, FS = 16, US = 17, PLUS = 18, HYPH = 19, 
+    PERC = 20, LBRACKET = 21, RBRACKET = 22, AMP = 23, AT = 24, Q = 25
   };
 
   explicit CommonRules(antlr4::CharStream *input);

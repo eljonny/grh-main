@@ -16,38 +16,40 @@ public:
     ANY = 1, TEXT = 2, CALL = 3, CHAT = 4, TEST = 5, CALL_LIST = 6, LITERATURE = 7, 
     READING = 8, STORE = 9, BULLETIN = 10, US_IN_PERSON = 11, INTL_IN_PERSON = 12, 
     ALL_IN_PERSON = 13, CA_IN_PERSON = 14, VIRTUAL = 15, PHONE = 16, MEETINGS = 17, 
-    FELLOWSHIP = 18, ORGANIZATION = 19, RESOURCE = 20, GRAVE = 21, COMMA = 22, 
-    SCHEME_SEP = 23, DBL_DOLLAR = 24, DBL_COL = 25, AMP = 26, AT = 27, LBRACKET = 28, 
-    RBRACKET = 29, Q = 30, WS = 31, STRING = 32, ALPHANUM = 33, ALPHA = 34, 
-    HEX = 35, HEX_ALPHA = 36, DIGITS = 37, SINGLE_DIGIT_INT = 38, ZERO = 39, 
-    EQ = 40, COL = 41, HASH = 42, SPACE = 43, DOLLAR = 44, FS = 45, US = 46, 
-    PLUS = 47, HYPH = 48, PERC = 49, LPAREN = 50, RPAREN = 51
+    FELLOWSHIP = 18, ORGANIZATION = 19, RESOURCE = 20, GRAVE = 21, DQUOTE = 22, 
+    COMMA = 23, DBL_DOLLAR = 24, DBL_COL = 25, WS = 26, BASIC_STRING = 27, 
+    STRING = 28, DIGITS = 29, ALPHANUM = 30, ALPHA = 31, HEX = 32, SINGLE_DIGIT_INT = 33, 
+    ZERO = 34, PERIOD = 35, EQ = 36, COL = 37, HASH = 38, SPACE = 39, DOLLAR = 40, 
+    FS = 41, US = 42, PLUS = 43, HYPH = 44, PERC = 45, LBRACKET = 46, RBRACKET = 47, 
+    AMP = 48, AT = 49, Q = 50, LPAREN = 51, RPAREN = 52
   };
 
   enum {
     RuleSites = 0, RuleSitesList = 1, RuleSiteListEntry = 2, RuleComment = 3, 
-    RuleCommentTextFragment = 4, RuleSite = 5, RuleSiteDetail = 6, RuleMeetings = 7, 
-    RuleFellowshipId = 8, RuleMeetingLocationType = 9, RuleMeetingsDataUrl = 10, 
-    RuleFellowship = 11, RuleFellowshipName = 12, RuleFellowshipUrl = 13, 
-    RuleOrganization = 14, RuleOrganizationId = 15, RuleOrganizationName = 16, 
-    RuleOrganizationUrl = 17, RuleResource = 18, RuleResourceEntityId = 19, 
-    RuleResourceType = 20, RuleResourceDataPrimary = 21, RuleResourceTextNumber = 22, 
-    RuleResourcePhoneNumber = 23, RuleResourceUrl = 24, RuleResourceOptional = 25, 
-    RuleResourceDataContext = 26, RuleResourceDataContextSpecifier = 27, 
-    RuleEntityId = 28, RuleEntityIdSegment = 29, RuleEntityName = 30, RuleEntityNameSegment = 31, 
-    RuleUrl = 32, RuleUri = 33, RuleUriPort = 34, RuleUriPath = 35, RuleScheme = 36, 
-    RuleHost = 37, RuleHostname = 38, RuleDomainNameOrIpv4Host = 39, RuleIpv6Host = 40, 
-    RuleV6host = 41, RuleV6hostSegment = 42, RuleV6hostSep = 43, RuleV6hostConfigParam = 44, 
-    RulePort = 45, RulePath = 46, RuleMultiPathChunk = 47, RulePathString = 48, 
-    RuleUser = 49, RuleLogin = 50, RuleLoginPassword = 51, RulePassword = 52, 
-    RuleFrag = 53, RuleFragString = 54, RuleQuery = 55, RuleSearch = 56, 
-    RuleMultiSearch = 57, RuleSearchParameter = 58, RuleSearchParameterKey = 59, 
-    RuleSearchParameterValue = 60, RuleSearchParameterValueString = 61, 
-    RuleParameterString = 62, RuleParameterName = 63, RuleConfigParam = 64, 
-    RuleString = 65, RuleUsString = 66, RulePhone = 67, RuleCountryCode = 68, 
-    RuleAreaCode = 69, RulePhoneNumber = 70, RuleLocalPhone = 71, RuleLocalArea = 72, 
-    RuleLocalizer = 73, RuleDtmf = 74, RuleDtmfWithLocal = 75, RuleLocalAreaWithDtmf = 76, 
-    RuleDtmfAll = 77, RuleDtmfLocalizer = 78, RulePhoneSep = 79
+    RuleCommentTextFragment = 4, RuleSiteFormat = 5, RuleSiteType = 6, RuleSiteDetailFormat = 7, 
+    RuleSiteFormatElement = 8, RuleSiteFormatId = 9, RuleOptionalDataElement = 10, 
+    RuleOptionalSiteFormatId = 11, RuleSite = 12, RuleSiteDetail = 13, RuleMeetings = 14, 
+    RuleFellowshipId = 15, RuleMeetingLocationType = 16, RuleMeetingsDataUrl = 17, 
+    RuleFellowship = 18, RuleFellowshipName = 19, RuleFellowshipUrl = 20, 
+    RuleOrganization = 21, RuleOrganizationId = 22, RuleOrganizationName = 23, 
+    RuleOrganizationUrl = 24, RuleResource = 25, RuleResourceEntityId = 26, 
+    RuleResourceType = 27, RuleResourceDataPrimary = 28, RuleResourceTextNumber = 29, 
+    RuleResourcePhoneNumber = 30, RuleResourceUrl = 31, RuleResourceOptional = 32, 
+    RuleResourceDataContext = 33, RuleResourceDataContextSpecifier = 34, 
+    RuleEntityId = 35, RuleEntityIdSegment = 36, RuleEntityName = 37, RuleEntityNameSegment = 38, 
+    RuleUrl = 39, RuleUri = 40, RuleUriPort = 41, RuleUriPath = 42, RuleScheme = 43, 
+    RuleSchemeSeparator = 44, RuleUriSchemePrefix = 45, RuleUriScheme = 46, 
+    RuleHost = 47, RuleHostname = 48, RuleDomainNameOrIpv4Host = 49, RuleIpv6Host = 50, 
+    RuleV6host = 51, RuleV6hostSegment = 52, RuleV6hostSep = 53, RuleV6hostConfigParam = 54, 
+    RulePort = 55, RulePath = 56, RuleMultiPathChunk = 57, RulePathString = 58, 
+    RuleLogin = 59, RuleUser = 60, RuleLoginPassword = 61, RulePassword = 62, 
+    RuleFrag = 63, RuleFragString = 64, RuleQuery = 65, RuleSearch = 66, 
+    RuleMultiSearch = 67, RuleSearchParameter = 68, RuleSearchParameterKey = 69, 
+    RuleSearchParameterValue = 70, RuleParameterString = 71, RuleParameterName = 72, 
+    RuleConfigParam = 73, RulePhone = 74, RuleCountryCode = 75, RuleAreaCode = 76, 
+    RulePhoneNumber = 77, RuleLocalPhone = 78, RuleLocalArea = 79, RuleLocalizer = 80, 
+    RuleDtmf = 81, RuleDtmfWithLocal = 82, RuleLocalAreaWithDtmf = 83, RuleDtmfAll = 84, 
+    RuleDtmfLocalizer = 85, RulePhoneSep = 86
   };
 
   explicit SitesParser(antlr4::TokenStream *input);
@@ -72,6 +74,13 @@ public:
   class SiteListEntryContext;
   class CommentContext;
   class CommentTextFragmentContext;
+  class SiteFormatContext;
+  class SiteTypeContext;
+  class SiteDetailFormatContext;
+  class SiteFormatElementContext;
+  class SiteFormatIdContext;
+  class OptionalDataElementContext;
+  class OptionalSiteFormatIdContext;
   class SiteContext;
   class SiteDetailContext;
   class MeetingsContext;
@@ -104,6 +113,9 @@ public:
   class UriPortContext;
   class UriPathContext;
   class SchemeContext;
+  class SchemeSeparatorContext;
+  class UriSchemePrefixContext;
+  class UriSchemeContext;
   class HostContext;
   class HostnameContext;
   class DomainNameOrIpv4HostContext;
@@ -116,8 +128,8 @@ public:
   class PathContext;
   class MultiPathChunkContext;
   class PathStringContext;
-  class UserContext;
   class LoginContext;
+  class UserContext;
   class LoginPasswordContext;
   class PasswordContext;
   class FragContext;
@@ -128,12 +140,9 @@ public:
   class SearchParameterContext;
   class SearchParameterKeyContext;
   class SearchParameterValueContext;
-  class SearchParameterValueStringContext;
   class ParameterStringContext;
   class ParameterNameContext;
   class ConfigParamContext;
-  class StringContext;
-  class UsStringContext;
   class PhoneContext;
   class CountryCodeContext;
   class AreaCodeContext;
@@ -218,14 +227,44 @@ public:
   public:
     CommentTextFragmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *BASIC_STRING();
     antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *SPACE();
     antlr4::tree::TerminalNode *GRAVE();
     antlr4::tree::TerminalNode *DOLLAR();
+    antlr4::tree::TerminalNode *DBL_DOLLAR();
+    antlr4::tree::TerminalNode *HYPH();
     antlr4::tree::TerminalNode *COMMA();
     antlr4::tree::TerminalNode *COL();
     antlr4::tree::TerminalNode *DIGITS();
     antlr4::tree::TerminalNode *FS();
+    antlr4::tree::TerminalNode *DQUOTE();
+    antlr4::tree::TerminalNode *HASH();
+    antlr4::tree::TerminalNode *MEETINGS();
+    antlr4::tree::TerminalNode *FELLOWSHIP();
+    antlr4::tree::TerminalNode *ORGANIZATION();
+    antlr4::tree::TerminalNode *RESOURCE();
+    antlr4::tree::TerminalNode *TEXT();
+    antlr4::tree::TerminalNode *CALL();
+    antlr4::tree::TerminalNode *CHAT();
+    antlr4::tree::TerminalNode *TEST();
+    antlr4::tree::TerminalNode *CALL_LIST();
+    antlr4::tree::TerminalNode *LITERATURE();
+    antlr4::tree::TerminalNode *READING();
+    antlr4::tree::TerminalNode *STORE();
+    antlr4::tree::TerminalNode *BULLETIN();
+    antlr4::tree::TerminalNode *US_IN_PERSON();
+    antlr4::tree::TerminalNode *INTL_IN_PERSON();
+    antlr4::tree::TerminalNode *ALL_IN_PERSON();
+    antlr4::tree::TerminalNode *CA_IN_PERSON();
+    antlr4::tree::TerminalNode *VIRTUAL();
+    antlr4::tree::TerminalNode *PHONE();
+    antlr4::tree::TerminalNode *LBRACKET();
+    antlr4::tree::TerminalNode *RBRACKET();
+    antlr4::tree::TerminalNode *AMP();
+    antlr4::tree::TerminalNode *AT();
+    antlr4::tree::TerminalNode *Q();
+    SiteFormatContext *siteFormat();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -235,6 +274,125 @@ public:
   };
 
   CommentTextFragmentContext* commentTextFragment();
+
+  class  SiteFormatContext : public antlr4::ParserRuleContext {
+  public:
+    SiteFormatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<antlr4::tree::TerminalNode *> GRAVE();
+    antlr4::tree::TerminalNode* GRAVE(size_t i);
+    SiteTypeContext *siteType();
+    SiteDetailFormatContext *siteDetailFormat();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SiteFormatContext* siteFormat();
+
+  class  SiteTypeContext : public antlr4::ParserRuleContext {
+  public:
+    SiteTypeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *MEETINGS();
+    antlr4::tree::TerminalNode *FELLOWSHIP();
+    antlr4::tree::TerminalNode *ORGANIZATION();
+    antlr4::tree::TerminalNode *RESOURCE();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SiteTypeContext* siteType();
+
+  class  SiteDetailFormatContext : public antlr4::ParserRuleContext {
+  public:
+    SiteDetailFormatContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    std::vector<SiteFormatElementContext *> siteFormatElement();
+    SiteFormatElementContext* siteFormatElement(size_t i);
+    std::vector<OptionalDataElementContext *> optionalDataElement();
+    OptionalDataElementContext* optionalDataElement(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SiteDetailFormatContext* siteDetailFormat();
+
+  class  SiteFormatElementContext : public antlr4::ParserRuleContext {
+  public:
+    SiteFormatElementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *COMMA();
+    SiteFormatIdContext *siteFormatId();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SiteFormatElementContext* siteFormatElement();
+
+  class  SiteFormatIdContext : public antlr4::ParserRuleContext {
+  public:
+    SiteFormatIdContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SiteFormatIdContext* siteFormatId();
+
+  class  OptionalDataElementContext : public antlr4::ParserRuleContext {
+  public:
+    OptionalDataElementContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *LBRACKET();
+    antlr4::tree::TerminalNode *COMMA();
+    OptionalSiteFormatIdContext *optionalSiteFormatId();
+    antlr4::tree::TerminalNode *RBRACKET();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  OptionalDataElementContext* optionalDataElement();
+
+  class  OptionalSiteFormatIdContext : public antlr4::ParserRuleContext {
+  public:
+    OptionalSiteFormatIdContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    SiteFormatIdContext *siteFormatId();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  OptionalSiteFormatIdContext* optionalSiteFormatId();
 
   class  SiteContext : public antlr4::ParserRuleContext {
   public:
@@ -536,8 +694,10 @@ public:
   public:
     ResourceTextNumberContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> DIGITS();
+    antlr4::tree::TerminalNode* DIGITS(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> BASIC_STRING();
+    antlr4::tree::TerminalNode* BASIC_STRING(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -614,6 +774,7 @@ public:
   public:
     ResourceDataContextSpecifierContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *BASIC_STRING();
     antlr4::tree::TerminalNode *STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -645,7 +806,8 @@ public:
   public:
     EntityIdSegmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *ALPHA();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *HYPH();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -661,7 +823,8 @@ public:
   public:
     EntityNameContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *ALPHA();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
     std::vector<EntityNameSegmentContext *> entityNameSegment();
     EntityNameSegmentContext* entityNameSegment(size_t i);
 
@@ -679,7 +842,8 @@ public:
     EntityNameSegmentContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *SPACE();
-    antlr4::tree::TerminalNode *ALPHA();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *HYPH();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -711,7 +875,7 @@ public:
     UriContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     SchemeContext *scheme();
-    antlr4::tree::TerminalNode *SCHEME_SEP();
+    SchemeSeparatorContext *schemeSeparator();
     HostContext *host();
     LoginContext *login();
     UriPortContext *uriPort();
@@ -764,7 +928,8 @@ public:
   public:
     SchemeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    StringContext *string();
+    UriSchemeContext *uriScheme();
+    UriSchemePrefixContext *uriSchemePrefix();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -774,6 +939,53 @@ public:
   };
 
   SchemeContext* scheme();
+
+  class  SchemeSeparatorContext : public antlr4::ParserRuleContext {
+  public:
+    SchemeSeparatorContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *COL();
+    std::vector<antlr4::tree::TerminalNode *> FS();
+    antlr4::tree::TerminalNode* FS(size_t i);
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  SchemeSeparatorContext* schemeSeparator();
+
+  class  UriSchemePrefixContext : public antlr4::ParserRuleContext {
+  public:
+    UriSchemePrefixContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *BASIC_STRING();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  UriSchemePrefixContext* uriSchemePrefix();
+
+  class  UriSchemeContext : public antlr4::ParserRuleContext {
+  public:
+    UriSchemeContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    antlr4::tree::TerminalNode *BASIC_STRING();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  UriSchemeContext* uriScheme();
 
   class  HostContext : public antlr4::ParserRuleContext {
   public:
@@ -812,7 +1024,9 @@ public:
     DomainNameOrIpv4HostContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -924,7 +1138,8 @@ public:
   public:
     PathContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    PathStringContext *pathString();
+    std::vector<PathStringContext *> pathString();
+    PathStringContext* pathString(size_t i);
     std::vector<MultiPathChunkContext *> multiPathChunk();
     MultiPathChunkContext* multiPathChunk(size_t i);
     antlr4::tree::TerminalNode *FS();
@@ -943,7 +1158,8 @@ public:
     MultiPathChunkContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *FS();
-    PathStringContext *pathString();
+    std::vector<PathStringContext *> pathString();
+    PathStringContext* pathString(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -959,7 +1175,11 @@ public:
     PathStringContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
+    antlr4::tree::TerminalNode *HYPH();
+    antlr4::tree::TerminalNode *US();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -969,22 +1189,6 @@ public:
   };
 
   PathStringContext* pathString();
-
-  class  UserContext : public antlr4::ParserRuleContext {
-  public:
-    UserContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    ParameterStringContext *parameterString();
-    StringContext *string();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  UserContext* user();
 
   class  LoginContext : public antlr4::ParserRuleContext {
   public:
@@ -1002,6 +1206,24 @@ public:
   };
 
   LoginContext* login();
+
+  class  UserContext : public antlr4::ParserRuleContext {
+  public:
+    UserContext(antlr4::ParserRuleContext *parent, size_t invokingState);
+    virtual size_t getRuleIndex() const override;
+    ParameterStringContext *parameterString();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
+
+    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
+    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
+
+    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
+   
+  };
+
+  UserContext* user();
 
   class  LoginPasswordContext : public antlr4::ParserRuleContext {
   public:
@@ -1024,7 +1246,9 @@ public:
     PasswordContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1056,7 +1280,8 @@ public:
     FragStringContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1122,7 +1347,9 @@ public:
     SearchParameterContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     SearchParameterKeyContext *searchParameterKey();
-    SearchParameterValueContext *searchParameterValue();
+    antlr4::tree::TerminalNode *EQ();
+    std::vector<SearchParameterValueContext *> searchParameterValue();
+    SearchParameterValueContext* searchParameterValue(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1138,7 +1365,9 @@ public:
     SearchParameterKeyContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1153,8 +1382,13 @@ public:
   public:
     SearchParameterValueContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *EQ();
-    SearchParameterValueStringContext *searchParameterValueString();
+    ParameterStringContext *parameterString();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
+    std::vector<antlr4::tree::TerminalNode *> HEX();
+    antlr4::tree::TerminalNode* HEX(size_t i);
+    antlr4::tree::TerminalNode *COL();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1164,24 +1398,6 @@ public:
   };
 
   SearchParameterValueContext* searchParameterValue();
-
-  class  SearchParameterValueStringContext : public antlr4::ParserRuleContext {
-  public:
-    SearchParameterValueStringContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    ParameterStringContext *parameterString();
-    StringContext *string();
-    antlr4::tree::TerminalNode *DIGITS();
-    antlr4::tree::TerminalNode *HEX();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  SearchParameterValueStringContext* searchParameterValueString();
 
   class  ParameterStringContext : public antlr4::ParserRuleContext {
   public:
@@ -1204,9 +1420,9 @@ public:
   public:
     ParameterNameContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    StringContext *string();
-    std::vector<UsStringContext *> usString();
-    UsStringContext* usString(size_t i);
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
+    antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1222,7 +1438,8 @@ public:
     ConfigParamContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
     ParameterStringContext *parameterString();
-    StringContext *string();
+    antlr4::tree::TerminalNode *BASIC_STRING();
+    antlr4::tree::TerminalNode *STRING();
     antlr4::tree::TerminalNode *DIGITS();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1234,38 +1451,6 @@ public:
 
   ConfigParamContext* configParam();
 
-  class  StringContext : public antlr4::ParserRuleContext {
-  public:
-    StringContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *STRING();
-    antlr4::tree::TerminalNode *DIGITS();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  StringContext* string();
-
-  class  UsStringContext : public antlr4::ParserRuleContext {
-  public:
-    UsStringContext(antlr4::ParserRuleContext *parent, size_t invokingState);
-    virtual size_t getRuleIndex() const override;
-    antlr4::tree::TerminalNode *US();
-    StringContext *string();
-
-    virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
-    virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
-
-    virtual std::any accept(antlr4::tree::ParseTreeVisitor *visitor) override;
-   
-  };
-
-  UsStringContext* usString();
-
   class  PhoneContext : public antlr4::ParserRuleContext {
   public:
     PhoneContext(antlr4::ParserRuleContext *parent, size_t invokingState);
@@ -1275,6 +1460,7 @@ public:
     PhoneSepContext* phoneSep(size_t i);
     AreaCodeContext *areaCode();
     PhoneNumberContext *phoneNumber();
+    antlr4::tree::TerminalNode *EOF();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1418,8 +1604,10 @@ public:
   public:
     LocalAreaWithDtmfContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> DIGITS();
+    antlr4::tree::TerminalNode* DIGITS(size_t i);
+    std::vector<antlr4::tree::TerminalNode *> BASIC_STRING();
+    antlr4::tree::TerminalNode* BASIC_STRING(size_t i);
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1434,8 +1622,7 @@ public:
   public:
     DtmfAllContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    antlr4::tree::TerminalNode *BASIC_STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1450,8 +1637,7 @@ public:
   public:
     DtmfLocalizerContext(antlr4::ParserRuleContext *parent, size_t invokingState);
     virtual size_t getRuleIndex() const override;
-    std::vector<antlr4::tree::TerminalNode *> ALPHANUM();
-    antlr4::tree::TerminalNode* ALPHANUM(size_t i);
+    antlr4::tree::TerminalNode *BASIC_STRING();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;
@@ -1468,6 +1654,7 @@ public:
     virtual size_t getRuleIndex() const override;
     antlr4::tree::TerminalNode *SPACE();
     antlr4::tree::TerminalNode *HYPH();
+    antlr4::tree::TerminalNode *PERIOD();
 
     virtual void enterRule(antlr4::tree::ParseTreeListener *listener) override;
     virtual void exitRule(antlr4::tree::ParseTreeListener *listener) override;

@@ -31,6 +31,15 @@ public:
   virtual void enterScheme(urlParser::SchemeContext *ctx) = 0;
   virtual void exitScheme(urlParser::SchemeContext *ctx) = 0;
 
+  virtual void enterSchemeSeparator(urlParser::SchemeSeparatorContext *ctx) = 0;
+  virtual void exitSchemeSeparator(urlParser::SchemeSeparatorContext *ctx) = 0;
+
+  virtual void enterUriSchemePrefix(urlParser::UriSchemePrefixContext *ctx) = 0;
+  virtual void exitUriSchemePrefix(urlParser::UriSchemePrefixContext *ctx) = 0;
+
+  virtual void enterUriScheme(urlParser::UriSchemeContext *ctx) = 0;
+  virtual void exitUriScheme(urlParser::UriSchemeContext *ctx) = 0;
+
   virtual void enterHost(urlParser::HostContext *ctx) = 0;
   virtual void exitHost(urlParser::HostContext *ctx) = 0;
 
@@ -67,11 +76,11 @@ public:
   virtual void enterPathString(urlParser::PathStringContext *ctx) = 0;
   virtual void exitPathString(urlParser::PathStringContext *ctx) = 0;
 
-  virtual void enterUser(urlParser::UserContext *ctx) = 0;
-  virtual void exitUser(urlParser::UserContext *ctx) = 0;
-
   virtual void enterLogin(urlParser::LoginContext *ctx) = 0;
   virtual void exitLogin(urlParser::LoginContext *ctx) = 0;
+
+  virtual void enterUser(urlParser::UserContext *ctx) = 0;
+  virtual void exitUser(urlParser::UserContext *ctx) = 0;
 
   virtual void enterLoginPassword(urlParser::LoginPasswordContext *ctx) = 0;
   virtual void exitLoginPassword(urlParser::LoginPasswordContext *ctx) = 0;
@@ -103,9 +112,6 @@ public:
   virtual void enterSearchParameterValue(urlParser::SearchParameterValueContext *ctx) = 0;
   virtual void exitSearchParameterValue(urlParser::SearchParameterValueContext *ctx) = 0;
 
-  virtual void enterSearchParameterValueString(urlParser::SearchParameterValueStringContext *ctx) = 0;
-  virtual void exitSearchParameterValueString(urlParser::SearchParameterValueStringContext *ctx) = 0;
-
   virtual void enterParameterString(urlParser::ParameterStringContext *ctx) = 0;
   virtual void exitParameterString(urlParser::ParameterStringContext *ctx) = 0;
 
@@ -114,12 +120,6 @@ public:
 
   virtual void enterConfigParam(urlParser::ConfigParamContext *ctx) = 0;
   virtual void exitConfigParam(urlParser::ConfigParamContext *ctx) = 0;
-
-  virtual void enterString(urlParser::StringContext *ctx) = 0;
-  virtual void exitString(urlParser::StringContext *ctx) = 0;
-
-  virtual void enterUsString(urlParser::UsStringContext *ctx) = 0;
-  virtual void exitUsString(urlParser::UsStringContext *ctx) = 0;
 
 
 };

@@ -33,6 +33,15 @@ public:
   virtual void enterScheme(urlParser::SchemeContext * /*ctx*/) override { }
   virtual void exitScheme(urlParser::SchemeContext * /*ctx*/) override { }
 
+  virtual void enterSchemeSeparator(urlParser::SchemeSeparatorContext * /*ctx*/) override { }
+  virtual void exitSchemeSeparator(urlParser::SchemeSeparatorContext * /*ctx*/) override { }
+
+  virtual void enterUriSchemePrefix(urlParser::UriSchemePrefixContext * /*ctx*/) override { }
+  virtual void exitUriSchemePrefix(urlParser::UriSchemePrefixContext * /*ctx*/) override { }
+
+  virtual void enterUriScheme(urlParser::UriSchemeContext * /*ctx*/) override { }
+  virtual void exitUriScheme(urlParser::UriSchemeContext * /*ctx*/) override { }
+
   virtual void enterHost(urlParser::HostContext * /*ctx*/) override { }
   virtual void exitHost(urlParser::HostContext * /*ctx*/) override { }
 
@@ -69,11 +78,11 @@ public:
   virtual void enterPathString(urlParser::PathStringContext * /*ctx*/) override { }
   virtual void exitPathString(urlParser::PathStringContext * /*ctx*/) override { }
 
-  virtual void enterUser(urlParser::UserContext * /*ctx*/) override { }
-  virtual void exitUser(urlParser::UserContext * /*ctx*/) override { }
-
   virtual void enterLogin(urlParser::LoginContext * /*ctx*/) override { }
   virtual void exitLogin(urlParser::LoginContext * /*ctx*/) override { }
+
+  virtual void enterUser(urlParser::UserContext * /*ctx*/) override { }
+  virtual void exitUser(urlParser::UserContext * /*ctx*/) override { }
 
   virtual void enterLoginPassword(urlParser::LoginPasswordContext * /*ctx*/) override { }
   virtual void exitLoginPassword(urlParser::LoginPasswordContext * /*ctx*/) override { }
@@ -105,9 +114,6 @@ public:
   virtual void enterSearchParameterValue(urlParser::SearchParameterValueContext * /*ctx*/) override { }
   virtual void exitSearchParameterValue(urlParser::SearchParameterValueContext * /*ctx*/) override { }
 
-  virtual void enterSearchParameterValueString(urlParser::SearchParameterValueStringContext * /*ctx*/) override { }
-  virtual void exitSearchParameterValueString(urlParser::SearchParameterValueStringContext * /*ctx*/) override { }
-
   virtual void enterParameterString(urlParser::ParameterStringContext * /*ctx*/) override { }
   virtual void exitParameterString(urlParser::ParameterStringContext * /*ctx*/) override { }
 
@@ -116,12 +122,6 @@ public:
 
   virtual void enterConfigParam(urlParser::ConfigParamContext * /*ctx*/) override { }
   virtual void exitConfigParam(urlParser::ConfigParamContext * /*ctx*/) override { }
-
-  virtual void enterString(urlParser::StringContext * /*ctx*/) override { }
-  virtual void exitString(urlParser::StringContext * /*ctx*/) override { }
-
-  virtual void enterUsString(urlParser::UsStringContext * /*ctx*/) override { }
-  virtual void exitUsString(urlParser::UsStringContext * /*ctx*/) override { }
 
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }

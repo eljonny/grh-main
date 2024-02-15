@@ -64,11 +64,23 @@ public:
   virtual void enterStartList(DataListParser::StartListContext *ctx) = 0;
   virtual void exitStartList(DataListParser::StartListContext *ctx) = 0;
 
+  virtual void enterListId(DataListParser::ListIdContext *ctx) = 0;
+  virtual void exitListId(DataListParser::ListIdContext *ctx) = 0;
+
   virtual void enterListItem(DataListParser::ListItemContext *ctx) = 0;
   virtual void exitListItem(DataListParser::ListItemContext *ctx) = 0;
 
   virtual void enterListItemContent(DataListParser::ListItemContentContext *ctx) = 0;
   virtual void exitListItemContent(DataListParser::ListItemContentContext *ctx) = 0;
+
+  virtual void enterNumericalListItemContent(DataListParser::NumericalListItemContentContext *ctx) = 0;
+  virtual void exitNumericalListItemContent(DataListParser::NumericalListItemContentContext *ctx) = 0;
+
+  virtual void enterComplexListItemContent(DataListParser::ComplexListItemContentContext *ctx) = 0;
+  virtual void exitComplexListItemContent(DataListParser::ComplexListItemContentContext *ctx) = 0;
+
+  virtual void enterDataListString(DataListParser::DataListStringContext *ctx) = 0;
+  virtual void exitDataListString(DataListParser::DataListStringContext *ctx) = 0;
 
   virtual void enterEndList(DataListParser::EndListContext *ctx) = 0;
   virtual void exitEndList(DataListParser::EndListContext *ctx) = 0;
@@ -87,6 +99,15 @@ public:
 
   virtual void enterScheme(DataListParser::SchemeContext *ctx) = 0;
   virtual void exitScheme(DataListParser::SchemeContext *ctx) = 0;
+
+  virtual void enterSchemeSeparator(DataListParser::SchemeSeparatorContext *ctx) = 0;
+  virtual void exitSchemeSeparator(DataListParser::SchemeSeparatorContext *ctx) = 0;
+
+  virtual void enterUriSchemePrefix(DataListParser::UriSchemePrefixContext *ctx) = 0;
+  virtual void exitUriSchemePrefix(DataListParser::UriSchemePrefixContext *ctx) = 0;
+
+  virtual void enterUriScheme(DataListParser::UriSchemeContext *ctx) = 0;
+  virtual void exitUriScheme(DataListParser::UriSchemeContext *ctx) = 0;
 
   virtual void enterHost(DataListParser::HostContext *ctx) = 0;
   virtual void exitHost(DataListParser::HostContext *ctx) = 0;
@@ -124,11 +145,11 @@ public:
   virtual void enterPathString(DataListParser::PathStringContext *ctx) = 0;
   virtual void exitPathString(DataListParser::PathStringContext *ctx) = 0;
 
-  virtual void enterUser(DataListParser::UserContext *ctx) = 0;
-  virtual void exitUser(DataListParser::UserContext *ctx) = 0;
-
   virtual void enterLogin(DataListParser::LoginContext *ctx) = 0;
   virtual void exitLogin(DataListParser::LoginContext *ctx) = 0;
+
+  virtual void enterUser(DataListParser::UserContext *ctx) = 0;
+  virtual void exitUser(DataListParser::UserContext *ctx) = 0;
 
   virtual void enterLoginPassword(DataListParser::LoginPasswordContext *ctx) = 0;
   virtual void exitLoginPassword(DataListParser::LoginPasswordContext *ctx) = 0;
@@ -160,9 +181,6 @@ public:
   virtual void enterSearchParameterValue(DataListParser::SearchParameterValueContext *ctx) = 0;
   virtual void exitSearchParameterValue(DataListParser::SearchParameterValueContext *ctx) = 0;
 
-  virtual void enterSearchParameterValueString(DataListParser::SearchParameterValueStringContext *ctx) = 0;
-  virtual void exitSearchParameterValueString(DataListParser::SearchParameterValueStringContext *ctx) = 0;
-
   virtual void enterParameterString(DataListParser::ParameterStringContext *ctx) = 0;
   virtual void exitParameterString(DataListParser::ParameterStringContext *ctx) = 0;
 
@@ -171,12 +189,6 @@ public:
 
   virtual void enterConfigParam(DataListParser::ConfigParamContext *ctx) = 0;
   virtual void exitConfigParam(DataListParser::ConfigParamContext *ctx) = 0;
-
-  virtual void enterString(DataListParser::StringContext *ctx) = 0;
-  virtual void exitString(DataListParser::StringContext *ctx) = 0;
-
-  virtual void enterUsString(DataListParser::UsStringContext *ctx) = 0;
-  virtual void exitUsString(DataListParser::UsStringContext *ctx) = 0;
 
 
 };

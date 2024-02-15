@@ -54,99 +54,113 @@ void urlParserInitialize() {
 #endif
   auto staticData = std::make_unique<UrlParserStaticData>(
     std::vector<std::string>{
-      "url", "uri", "uriPort", "uriPath", "scheme", "host", "hostname", 
-      "domainNameOrIpv4Host", "ipv6Host", "v6host", "v6hostSegment", "v6hostSep", 
-      "v6hostConfigParam", "port", "path", "multiPathChunk", "pathString", 
-      "user", "login", "loginPassword", "password", "frag", "fragString", 
-      "query", "search", "multiSearch", "searchParameter", "searchParameterKey", 
-      "searchParameterValue", "searchParameterValueString", "parameterString", 
-      "parameterName", "configParam", "string", "usString"
+      "url", "uri", "uriPort", "uriPath", "scheme", "schemeSeparator", "uriSchemePrefix", 
+      "uriScheme", "host", "hostname", "domainNameOrIpv4Host", "ipv6Host", 
+      "v6host", "v6hostSegment", "v6hostSep", "v6hostConfigParam", "port", 
+      "path", "multiPathChunk", "pathString", "login", "user", "loginPassword", 
+      "password", "frag", "fragString", "query", "search", "multiSearch", 
+      "searchParameter", "searchParameterKey", "searchParameterValue", "parameterString", 
+      "parameterName", "configParam"
     },
     std::vector<std::string>{
-      "", "", "", "", "'&'", "'@'", "'['", "']'", "'\\u003F'", "", "", "", 
-      "", "", "", "", "", "", "'='", "':'", "'#'", "' '", "'$'", "'/'", 
-      "'_'", "'+'", "'-'", "'%'"
+      "", "", "", "", "", "", "", "", "", "", "", "", "'.'", "'='", "':'", 
+      "'#'", "' '", "'$'", "'/'", "'_'", "'+'", "'-'", "'%'", "'['", "']'", 
+      "'&'", "'@'", "'\\u003F'"
     },
     std::vector<std::string>{
-      "", "SCHEME_SEP", "DBL_DOLLAR", "DBL_COL", "AMP", "AT", "LBRACKET", 
-      "RBRACKET", "Q", "WS", "STRING", "ALPHANUM", "ALPHA", "HEX", "HEX_ALPHA", 
-      "DIGITS", "SINGLE_DIGIT_INT", "ZERO", "EQ", "COL", "HASH", "SPACE", 
-      "DOLLAR", "FS", "US", "PLUS", "HYPH", "PERC"
+      "", "DBL_DOLLAR", "DBL_COL", "WS", "BASIC_STRING", "STRING", "DIGITS", 
+      "ALPHANUM", "ALPHA", "HEX", "SINGLE_DIGIT_INT", "ZERO", "PERIOD", 
+      "EQ", "COL", "HASH", "SPACE", "DOLLAR", "FS", "US", "PLUS", "HYPH", 
+      "PERC", "LBRACKET", "RBRACKET", "AMP", "AT", "Q"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,27,230,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
+  	4,1,27,262,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,
   	7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,2,14,7,
   	14,2,15,7,15,2,16,7,16,2,17,7,17,2,18,7,18,2,19,7,19,2,20,7,20,2,21,7,
   	21,2,22,7,22,2,23,7,23,2,24,7,24,2,25,7,25,2,26,7,26,2,27,7,27,2,28,7,
   	28,2,29,7,29,2,30,7,30,2,31,7,31,2,32,7,32,2,33,7,33,2,34,7,34,1,0,1,
   	0,1,1,1,1,1,1,3,1,76,8,1,1,1,1,1,3,1,80,8,1,1,1,3,1,83,8,1,1,1,3,1,86,
-  	8,1,1,1,3,1,89,8,1,1,2,1,2,1,2,1,3,1,3,3,3,96,8,3,1,4,1,4,1,5,3,5,101,
-  	8,5,1,5,1,5,1,6,1,6,3,6,107,8,6,1,7,1,7,3,7,111,8,7,1,8,1,8,1,8,1,8,1,
-  	9,3,9,118,8,9,1,9,1,9,5,9,122,8,9,10,9,12,9,125,9,9,1,10,1,10,1,10,1,
-  	11,1,11,1,12,1,12,1,13,1,13,1,14,1,14,5,14,138,8,14,10,14,12,14,141,9,
-  	14,1,14,3,14,144,8,14,1,15,1,15,1,15,1,16,1,16,3,16,151,8,16,1,17,1,17,
-  	3,17,155,8,17,1,18,1,18,3,18,159,8,18,1,18,1,18,1,19,1,19,1,19,1,20,1,
-  	20,3,20,168,8,20,1,21,1,21,1,21,1,22,1,22,1,22,3,22,176,8,22,1,23,1,23,
-  	1,23,1,24,1,24,5,24,183,8,24,10,24,12,24,186,9,24,1,25,1,25,1,25,1,26,
-  	1,26,3,26,193,8,26,1,27,1,27,3,27,197,8,27,1,28,1,28,3,28,201,8,28,1,
-  	29,1,29,1,29,1,29,3,29,207,8,29,1,30,1,30,1,30,1,30,1,31,1,31,5,31,215,
-  	8,31,10,31,12,31,218,9,31,1,32,1,32,1,32,3,32,223,8,32,1,33,1,33,1,34,
-  	1,34,1,34,1,34,0,0,35,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,
-  	36,38,40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,0,2,2,0,3,3,19,19,
-  	2,0,10,10,15,15,223,0,70,1,0,0,0,2,72,1,0,0,0,4,90,1,0,0,0,6,93,1,0,0,
-  	0,8,97,1,0,0,0,10,100,1,0,0,0,12,106,1,0,0,0,14,110,1,0,0,0,16,112,1,
-  	0,0,0,18,117,1,0,0,0,20,126,1,0,0,0,22,129,1,0,0,0,24,131,1,0,0,0,26,
-  	133,1,0,0,0,28,135,1,0,0,0,30,145,1,0,0,0,32,150,1,0,0,0,34,154,1,0,0,
-  	0,36,156,1,0,0,0,38,162,1,0,0,0,40,167,1,0,0,0,42,169,1,0,0,0,44,175,
-  	1,0,0,0,46,177,1,0,0,0,48,180,1,0,0,0,50,187,1,0,0,0,52,190,1,0,0,0,54,
-  	196,1,0,0,0,56,198,1,0,0,0,58,206,1,0,0,0,60,208,1,0,0,0,62,212,1,0,0,
-  	0,64,222,1,0,0,0,66,224,1,0,0,0,68,226,1,0,0,0,70,71,3,2,1,0,71,1,1,0,
-  	0,0,72,73,3,8,4,0,73,75,5,1,0,0,74,76,3,36,18,0,75,74,1,0,0,0,75,76,1,
-  	0,0,0,76,77,1,0,0,0,77,79,3,10,5,0,78,80,3,4,2,0,79,78,1,0,0,0,79,80,
-  	1,0,0,0,80,82,1,0,0,0,81,83,3,6,3,0,82,81,1,0,0,0,82,83,1,0,0,0,83,85,
-  	1,0,0,0,84,86,3,46,23,0,85,84,1,0,0,0,85,86,1,0,0,0,86,88,1,0,0,0,87,
-  	89,3,42,21,0,88,87,1,0,0,0,88,89,1,0,0,0,89,3,1,0,0,0,90,91,5,19,0,0,
-  	91,92,3,26,13,0,92,5,1,0,0,0,93,95,5,23,0,0,94,96,3,28,14,0,95,94,1,0,
-  	0,0,95,96,1,0,0,0,96,7,1,0,0,0,97,98,3,66,33,0,98,9,1,0,0,0,99,101,5,
-  	23,0,0,100,99,1,0,0,0,100,101,1,0,0,0,101,102,1,0,0,0,102,103,3,12,6,
-  	0,103,11,1,0,0,0,104,107,3,14,7,0,105,107,3,16,8,0,106,104,1,0,0,0,106,
-  	105,1,0,0,0,107,13,1,0,0,0,108,111,3,60,30,0,109,111,3,66,33,0,110,108,
-  	1,0,0,0,110,109,1,0,0,0,111,15,1,0,0,0,112,113,5,6,0,0,113,114,3,18,9,
-  	0,114,115,5,7,0,0,115,17,1,0,0,0,116,118,5,3,0,0,117,116,1,0,0,0,117,
-  	118,1,0,0,0,118,119,1,0,0,0,119,123,3,24,12,0,120,122,3,20,10,0,121,120,
-  	1,0,0,0,122,125,1,0,0,0,123,121,1,0,0,0,123,124,1,0,0,0,124,19,1,0,0,
-  	0,125,123,1,0,0,0,126,127,3,22,11,0,127,128,3,24,12,0,128,21,1,0,0,0,
-  	129,130,7,0,0,0,130,23,1,0,0,0,131,132,3,64,32,0,132,25,1,0,0,0,133,134,
-  	5,15,0,0,134,27,1,0,0,0,135,139,3,32,16,0,136,138,3,30,15,0,137,136,1,
-  	0,0,0,138,141,1,0,0,0,139,137,1,0,0,0,139,140,1,0,0,0,140,143,1,0,0,0,
-  	141,139,1,0,0,0,142,144,5,23,0,0,143,142,1,0,0,0,143,144,1,0,0,0,144,
-  	29,1,0,0,0,145,146,5,23,0,0,146,147,3,32,16,0,147,31,1,0,0,0,148,151,
-  	3,60,30,0,149,151,3,66,33,0,150,148,1,0,0,0,150,149,1,0,0,0,151,33,1,
-  	0,0,0,152,155,3,60,30,0,153,155,3,66,33,0,154,152,1,0,0,0,154,153,1,0,
-  	0,0,155,35,1,0,0,0,156,158,3,34,17,0,157,159,3,38,19,0,158,157,1,0,0,
-  	0,158,159,1,0,0,0,159,160,1,0,0,0,160,161,5,5,0,0,161,37,1,0,0,0,162,
-  	163,5,19,0,0,163,164,3,40,20,0,164,39,1,0,0,0,165,168,3,60,30,0,166,168,
-  	3,66,33,0,167,165,1,0,0,0,167,166,1,0,0,0,168,41,1,0,0,0,169,170,5,20,
-  	0,0,170,171,3,44,22,0,171,43,1,0,0,0,172,176,3,60,30,0,173,176,3,66,33,
-  	0,174,176,5,15,0,0,175,172,1,0,0,0,175,173,1,0,0,0,175,174,1,0,0,0,176,
-  	45,1,0,0,0,177,178,5,8,0,0,178,179,3,48,24,0,179,47,1,0,0,0,180,184,3,
-  	52,26,0,181,183,3,50,25,0,182,181,1,0,0,0,183,186,1,0,0,0,184,182,1,0,
-  	0,0,184,185,1,0,0,0,185,49,1,0,0,0,186,184,1,0,0,0,187,188,5,4,0,0,188,
-  	189,3,52,26,0,189,51,1,0,0,0,190,192,3,54,27,0,191,193,3,56,28,0,192,
-  	191,1,0,0,0,192,193,1,0,0,0,193,53,1,0,0,0,194,197,3,60,30,0,195,197,
-  	3,66,33,0,196,194,1,0,0,0,196,195,1,0,0,0,197,55,1,0,0,0,198,200,5,18,
-  	0,0,199,201,3,58,29,0,200,199,1,0,0,0,200,201,1,0,0,0,201,57,1,0,0,0,
-  	202,207,3,60,30,0,203,207,3,66,33,0,204,207,5,15,0,0,205,207,5,13,0,0,
-  	206,202,1,0,0,0,206,203,1,0,0,0,206,204,1,0,0,0,206,205,1,0,0,0,207,59,
-  	1,0,0,0,208,209,5,2,0,0,209,210,3,62,31,0,210,211,5,2,0,0,211,61,1,0,
-  	0,0,212,216,3,66,33,0,213,215,3,68,34,0,214,213,1,0,0,0,215,218,1,0,0,
-  	0,216,214,1,0,0,0,216,217,1,0,0,0,217,63,1,0,0,0,218,216,1,0,0,0,219,
-  	223,3,60,30,0,220,223,3,66,33,0,221,223,5,15,0,0,222,219,1,0,0,0,222,
-  	220,1,0,0,0,222,221,1,0,0,0,223,65,1,0,0,0,224,225,7,1,0,0,225,67,1,0,
-  	0,0,226,227,5,24,0,0,227,228,3,66,33,0,228,69,1,0,0,0,25,75,79,82,85,
-  	88,95,100,106,110,117,123,139,143,150,154,158,167,175,184,192,196,200,
-  	206,216,222
+  	8,1,1,1,3,1,89,8,1,1,2,1,2,1,2,1,3,1,3,3,3,96,8,3,1,4,3,4,99,8,4,1,4,
+  	1,4,1,5,1,5,3,5,105,8,5,1,5,3,5,108,8,5,1,6,1,6,1,7,1,7,1,8,3,8,115,8,
+  	8,1,8,1,8,1,9,1,9,3,9,121,8,9,1,10,1,10,1,10,1,10,3,10,127,8,10,1,11,
+  	1,11,1,11,1,11,1,12,3,12,134,8,12,1,12,1,12,5,12,138,8,12,10,12,12,12,
+  	141,9,12,1,13,1,13,1,13,1,14,1,14,1,15,1,15,1,16,1,16,1,17,4,17,153,8,
+  	17,11,17,12,17,154,1,17,5,17,158,8,17,10,17,12,17,161,9,17,1,17,3,17,
+  	164,8,17,1,18,1,18,4,18,168,8,18,11,18,12,18,169,1,19,1,19,1,19,1,19,
+  	1,19,1,19,3,19,178,8,19,1,20,1,20,3,20,182,8,20,1,20,1,20,1,21,1,21,1,
+  	21,1,21,3,21,190,8,21,1,22,1,22,1,22,1,23,1,23,1,23,1,23,3,23,199,8,23,
+  	1,24,1,24,1,24,1,25,1,25,1,25,1,25,3,25,208,8,25,1,26,1,26,3,26,212,8,
+  	26,1,27,1,27,5,27,216,8,27,10,27,12,27,219,9,27,1,28,1,28,1,28,1,29,1,
+  	29,1,29,5,29,227,8,29,10,29,12,29,230,9,29,1,30,1,30,1,30,1,30,3,30,236,
+  	8,30,1,31,1,31,1,31,1,31,1,31,4,31,243,8,31,11,31,12,31,244,1,31,3,31,
+  	248,8,31,1,32,1,32,1,32,1,32,1,33,1,33,1,34,1,34,1,34,1,34,3,34,260,8,
+  	34,1,34,0,0,35,0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,
+  	40,42,44,46,48,50,52,54,56,58,60,62,64,66,68,0,2,2,0,2,2,14,14,1,0,4,
+  	6,276,0,70,1,0,0,0,2,72,1,0,0,0,4,90,1,0,0,0,6,93,1,0,0,0,8,98,1,0,0,
+  	0,10,102,1,0,0,0,12,109,1,0,0,0,14,111,1,0,0,0,16,114,1,0,0,0,18,120,
+  	1,0,0,0,20,126,1,0,0,0,22,128,1,0,0,0,24,133,1,0,0,0,26,142,1,0,0,0,28,
+  	145,1,0,0,0,30,147,1,0,0,0,32,149,1,0,0,0,34,152,1,0,0,0,36,165,1,0,0,
+  	0,38,177,1,0,0,0,40,179,1,0,0,0,42,189,1,0,0,0,44,191,1,0,0,0,46,198,
+  	1,0,0,0,48,200,1,0,0,0,50,207,1,0,0,0,52,209,1,0,0,0,54,213,1,0,0,0,56,
+  	220,1,0,0,0,58,223,1,0,0,0,60,235,1,0,0,0,62,247,1,0,0,0,64,249,1,0,0,
+  	0,66,253,1,0,0,0,68,259,1,0,0,0,70,71,3,2,1,0,71,1,1,0,0,0,72,73,3,8,
+  	4,0,73,75,3,10,5,0,74,76,3,40,20,0,75,74,1,0,0,0,75,76,1,0,0,0,76,77,
+  	1,0,0,0,77,79,3,16,8,0,78,80,3,4,2,0,79,78,1,0,0,0,79,80,1,0,0,0,80,82,
+  	1,0,0,0,81,83,3,6,3,0,82,81,1,0,0,0,82,83,1,0,0,0,83,85,1,0,0,0,84,86,
+  	3,52,26,0,85,84,1,0,0,0,85,86,1,0,0,0,86,88,1,0,0,0,87,89,3,48,24,0,88,
+  	87,1,0,0,0,88,89,1,0,0,0,89,3,1,0,0,0,90,91,5,14,0,0,91,92,3,32,16,0,
+  	92,5,1,0,0,0,93,95,5,18,0,0,94,96,3,34,17,0,95,94,1,0,0,0,95,96,1,0,0,
+  	0,96,7,1,0,0,0,97,99,3,12,6,0,98,97,1,0,0,0,98,99,1,0,0,0,99,100,1,0,
+  	0,0,100,101,3,14,7,0,101,9,1,0,0,0,102,104,5,14,0,0,103,105,5,18,0,0,
+  	104,103,1,0,0,0,104,105,1,0,0,0,105,107,1,0,0,0,106,108,5,18,0,0,107,
+  	106,1,0,0,0,107,108,1,0,0,0,108,11,1,0,0,0,109,110,5,4,0,0,110,13,1,0,
+  	0,0,111,112,5,4,0,0,112,15,1,0,0,0,113,115,5,18,0,0,114,113,1,0,0,0,114,
+  	115,1,0,0,0,115,116,1,0,0,0,116,117,3,18,9,0,117,17,1,0,0,0,118,121,3,
+  	20,10,0,119,121,3,22,11,0,120,118,1,0,0,0,120,119,1,0,0,0,121,19,1,0,
+  	0,0,122,127,3,64,32,0,123,127,5,4,0,0,124,127,5,5,0,0,125,127,5,6,0,0,
+  	126,122,1,0,0,0,126,123,1,0,0,0,126,124,1,0,0,0,126,125,1,0,0,0,127,21,
+  	1,0,0,0,128,129,5,23,0,0,129,130,3,24,12,0,130,131,5,24,0,0,131,23,1,
+  	0,0,0,132,134,5,2,0,0,133,132,1,0,0,0,133,134,1,0,0,0,134,135,1,0,0,0,
+  	135,139,3,30,15,0,136,138,3,26,13,0,137,136,1,0,0,0,138,141,1,0,0,0,139,
+  	137,1,0,0,0,139,140,1,0,0,0,140,25,1,0,0,0,141,139,1,0,0,0,142,143,3,
+  	28,14,0,143,144,3,30,15,0,144,27,1,0,0,0,145,146,7,0,0,0,146,29,1,0,0,
+  	0,147,148,3,68,34,0,148,31,1,0,0,0,149,150,5,6,0,0,150,33,1,0,0,0,151,
+  	153,3,38,19,0,152,151,1,0,0,0,153,154,1,0,0,0,154,152,1,0,0,0,154,155,
+  	1,0,0,0,155,159,1,0,0,0,156,158,3,36,18,0,157,156,1,0,0,0,158,161,1,0,
+  	0,0,159,157,1,0,0,0,159,160,1,0,0,0,160,163,1,0,0,0,161,159,1,0,0,0,162,
+  	164,5,18,0,0,163,162,1,0,0,0,163,164,1,0,0,0,164,35,1,0,0,0,165,167,5,
+  	18,0,0,166,168,3,38,19,0,167,166,1,0,0,0,168,169,1,0,0,0,169,167,1,0,
+  	0,0,169,170,1,0,0,0,170,37,1,0,0,0,171,178,3,64,32,0,172,178,5,4,0,0,
+  	173,178,5,5,0,0,174,178,5,6,0,0,175,178,5,21,0,0,176,178,5,19,0,0,177,
+  	171,1,0,0,0,177,172,1,0,0,0,177,173,1,0,0,0,177,174,1,0,0,0,177,175,1,
+  	0,0,0,177,176,1,0,0,0,178,39,1,0,0,0,179,181,3,42,21,0,180,182,3,44,22,
+  	0,181,180,1,0,0,0,181,182,1,0,0,0,182,183,1,0,0,0,183,184,5,26,0,0,184,
+  	41,1,0,0,0,185,190,3,64,32,0,186,190,5,4,0,0,187,190,5,5,0,0,188,190,
+  	5,6,0,0,189,185,1,0,0,0,189,186,1,0,0,0,189,187,1,0,0,0,189,188,1,0,0,
+  	0,190,43,1,0,0,0,191,192,5,14,0,0,192,193,3,46,23,0,193,45,1,0,0,0,194,
+  	199,3,64,32,0,195,199,5,4,0,0,196,199,5,5,0,0,197,199,5,6,0,0,198,194,
+  	1,0,0,0,198,195,1,0,0,0,198,196,1,0,0,0,198,197,1,0,0,0,199,47,1,0,0,
+  	0,200,201,5,15,0,0,201,202,3,50,25,0,202,49,1,0,0,0,203,208,3,64,32,0,
+  	204,208,5,4,0,0,205,208,5,5,0,0,206,208,5,6,0,0,207,203,1,0,0,0,207,204,
+  	1,0,0,0,207,205,1,0,0,0,207,206,1,0,0,0,208,51,1,0,0,0,209,211,5,27,0,
+  	0,210,212,3,54,27,0,211,210,1,0,0,0,211,212,1,0,0,0,212,53,1,0,0,0,213,
+  	217,3,58,29,0,214,216,3,56,28,0,215,214,1,0,0,0,216,219,1,0,0,0,217,215,
+  	1,0,0,0,217,218,1,0,0,0,218,55,1,0,0,0,219,217,1,0,0,0,220,221,5,25,0,
+  	0,221,222,3,58,29,0,222,57,1,0,0,0,223,224,3,60,30,0,224,228,5,13,0,0,
+  	225,227,3,62,31,0,226,225,1,0,0,0,227,230,1,0,0,0,228,226,1,0,0,0,228,
+  	229,1,0,0,0,229,59,1,0,0,0,230,228,1,0,0,0,231,236,3,64,32,0,232,236,
+  	5,4,0,0,233,236,5,5,0,0,234,236,5,6,0,0,235,231,1,0,0,0,235,232,1,0,0,
+  	0,235,233,1,0,0,0,235,234,1,0,0,0,236,61,1,0,0,0,237,248,3,64,32,0,238,
+  	248,5,4,0,0,239,248,5,5,0,0,240,248,5,6,0,0,241,243,5,9,0,0,242,241,1,
+  	0,0,0,243,244,1,0,0,0,244,242,1,0,0,0,244,245,1,0,0,0,245,248,1,0,0,0,
+  	246,248,5,14,0,0,247,237,1,0,0,0,247,238,1,0,0,0,247,239,1,0,0,0,247,
+  	240,1,0,0,0,247,242,1,0,0,0,247,246,1,0,0,0,248,63,1,0,0,0,249,250,5,
+  	1,0,0,250,251,3,66,33,0,251,252,5,1,0,0,252,65,1,0,0,0,253,254,7,1,0,
+  	0,254,67,1,0,0,0,255,260,3,64,32,0,256,260,5,4,0,0,257,260,5,5,0,0,258,
+  	260,5,6,0,0,259,255,1,0,0,0,259,256,1,0,0,0,259,257,1,0,0,0,259,258,1,
+  	0,0,0,260,69,1,0,0,0,30,75,79,82,85,88,95,98,104,107,114,120,126,133,
+  	139,154,159,163,169,177,181,189,198,207,211,217,228,235,244,247,259
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -266,8 +280,8 @@ urlParser::SchemeContext* urlParser::UriContext::scheme() {
   return getRuleContext<urlParser::SchemeContext>(0);
 }
 
-tree::TerminalNode* urlParser::UriContext::SCHEME_SEP() {
-  return getToken(urlParser::SCHEME_SEP, 0);
+urlParser::SchemeSeparatorContext* urlParser::UriContext::schemeSeparator() {
+  return getRuleContext<urlParser::SchemeSeparatorContext>(0);
 }
 
 urlParser::HostContext* urlParser::UriContext::host() {
@@ -336,7 +350,7 @@ urlParser::UriContext* urlParser::uri() {
     setState(72);
     scheme();
     setState(73);
-    match(urlParser::SCHEME_SEP);
+    schemeSeparator();
     setState(75);
     _errHandler->sync(this);
 
@@ -522,7 +536,7 @@ urlParser::UriPathContext* urlParser::uriPath() {
 
     _la = _input->LA(1);
     if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 33796) != 0)) {
+      ((1ULL << _la) & 2621554) != 0)) {
       setState(94);
       path();
     }
@@ -543,8 +557,12 @@ urlParser::SchemeContext::SchemeContext(ParserRuleContext *parent, size_t invoki
   : ParserRuleContext(parent, invokingState) {
 }
 
-urlParser::StringContext* urlParser::SchemeContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+urlParser::UriSchemeContext* urlParser::SchemeContext::uriScheme() {
+  return getRuleContext<urlParser::UriSchemeContext>(0);
+}
+
+urlParser::UriSchemePrefixContext* urlParser::SchemeContext::uriSchemePrefix() {
+  return getRuleContext<urlParser::UriSchemePrefixContext>(0);
 }
 
 
@@ -585,8 +603,238 @@ urlParser::SchemeContext* urlParser::scheme() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(97);
-    string();
+    setState(98);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx)) {
+    case 1: {
+      setState(97);
+      uriSchemePrefix();
+      break;
+    }
+
+    default:
+      break;
+    }
+    setState(100);
+    uriScheme();
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- SchemeSeparatorContext ------------------------------------------------------------------
+
+urlParser::SchemeSeparatorContext::SchemeSeparatorContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* urlParser::SchemeSeparatorContext::COL() {
+  return getToken(urlParser::COL, 0);
+}
+
+std::vector<tree::TerminalNode *> urlParser::SchemeSeparatorContext::FS() {
+  return getTokens(urlParser::FS);
+}
+
+tree::TerminalNode* urlParser::SchemeSeparatorContext::FS(size_t i) {
+  return getToken(urlParser::FS, i);
+}
+
+
+size_t urlParser::SchemeSeparatorContext::getRuleIndex() const {
+  return urlParser::RuleSchemeSeparator;
+}
+
+void urlParser::SchemeSeparatorContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterSchemeSeparator(this);
+}
+
+void urlParser::SchemeSeparatorContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitSchemeSeparator(this);
+}
+
+
+std::any urlParser::SchemeSeparatorContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
+    return parserVisitor->visitSchemeSeparator(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+urlParser::SchemeSeparatorContext* urlParser::schemeSeparator() {
+  SchemeSeparatorContext *_localctx = _tracker.createInstance<SchemeSeparatorContext>(_ctx, getState());
+  enterRule(_localctx, 10, urlParser::RuleSchemeSeparator);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(102);
+    match(urlParser::COL);
+    setState(104);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 7, _ctx)) {
+    case 1: {
+      setState(103);
+      match(urlParser::FS);
+      break;
+    }
+
+    default:
+      break;
+    }
+    setState(107);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 8, _ctx)) {
+    case 1: {
+      setState(106);
+      match(urlParser::FS);
+      break;
+    }
+
+    default:
+      break;
+    }
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UriSchemePrefixContext ------------------------------------------------------------------
+
+urlParser::UriSchemePrefixContext::UriSchemePrefixContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* urlParser::UriSchemePrefixContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+
+size_t urlParser::UriSchemePrefixContext::getRuleIndex() const {
+  return urlParser::RuleUriSchemePrefix;
+}
+
+void urlParser::UriSchemePrefixContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUriSchemePrefix(this);
+}
+
+void urlParser::UriSchemePrefixContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUriSchemePrefix(this);
+}
+
+
+std::any urlParser::UriSchemePrefixContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
+    return parserVisitor->visitUriSchemePrefix(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+urlParser::UriSchemePrefixContext* urlParser::uriSchemePrefix() {
+  UriSchemePrefixContext *_localctx = _tracker.createInstance<UriSchemePrefixContext>(_ctx, getState());
+  enterRule(_localctx, 12, urlParser::RuleUriSchemePrefix);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(109);
+    match(urlParser::BASIC_STRING);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UriSchemeContext ------------------------------------------------------------------
+
+urlParser::UriSchemeContext::UriSchemeContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+tree::TerminalNode* urlParser::UriSchemeContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+
+size_t urlParser::UriSchemeContext::getRuleIndex() const {
+  return urlParser::RuleUriScheme;
+}
+
+void urlParser::UriSchemeContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUriScheme(this);
+}
+
+void urlParser::UriSchemeContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUriScheme(this);
+}
+
+
+std::any urlParser::UriSchemeContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
+    return parserVisitor->visitUriScheme(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+urlParser::UriSchemeContext* urlParser::uriScheme() {
+  UriSchemeContext *_localctx = _tracker.createInstance<UriSchemeContext>(_ctx, getState());
+  enterRule(_localctx, 14, urlParser::RuleUriScheme);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    enterOuterAlt(_localctx, 1);
+    setState(111);
+    match(urlParser::BASIC_STRING);
    
   }
   catch (RecognitionException &e) {
@@ -639,7 +887,7 @@ std::any urlParser::HostContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::HostContext* urlParser::host() {
   HostContext *_localctx = _tracker.createInstance<HostContext>(_ctx, getState());
-  enterRule(_localctx, 10, urlParser::RuleHost);
+  enterRule(_localctx, 16, urlParser::RuleHost);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -651,15 +899,15 @@ urlParser::HostContext* urlParser::host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(100);
+    setState(114);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == urlParser::FS) {
-      setState(99);
+      setState(113);
       match(urlParser::FS);
     }
-    setState(102);
+    setState(116);
     hostname();
    
   }
@@ -713,7 +961,7 @@ std::any urlParser::HostnameContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::HostnameContext* urlParser::hostname() {
   HostnameContext *_localctx = _tracker.createInstance<HostnameContext>(_ctx, getState());
-  enterRule(_localctx, 12, urlParser::RuleHostname);
+  enterRule(_localctx, 18, urlParser::RuleHostname);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -723,21 +971,22 @@ urlParser::HostnameContext* urlParser::hostname() {
     exitRule();
   });
   try {
-    setState(106);
+    setState(120);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case urlParser::DBL_DOLLAR:
+      case urlParser::BASIC_STRING:
       case urlParser::STRING:
       case urlParser::DIGITS: {
         enterOuterAlt(_localctx, 1);
-        setState(104);
+        setState(118);
         domainNameOrIpv4Host();
         break;
       }
 
       case urlParser::LBRACKET: {
         enterOuterAlt(_localctx, 2);
-        setState(105);
+        setState(119);
         ipv6Host();
         break;
       }
@@ -766,8 +1015,16 @@ urlParser::ParameterStringContext* urlParser::DomainNameOrIpv4HostContext::param
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::DomainNameOrIpv4HostContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::DomainNameOrIpv4HostContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::DomainNameOrIpv4HostContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::DomainNameOrIpv4HostContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
 }
 
 
@@ -797,7 +1054,7 @@ std::any urlParser::DomainNameOrIpv4HostContext::accept(tree::ParseTreeVisitor *
 
 urlParser::DomainNameOrIpv4HostContext* urlParser::domainNameOrIpv4Host() {
   DomainNameOrIpv4HostContext *_localctx = _tracker.createInstance<DomainNameOrIpv4HostContext>(_ctx, getState());
-  enterRule(_localctx, 14, urlParser::RuleDomainNameOrIpv4Host);
+  enterRule(_localctx, 20, urlParser::RuleDomainNameOrIpv4Host);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -807,21 +1064,34 @@ urlParser::DomainNameOrIpv4HostContext* urlParser::domainNameOrIpv4Host() {
     exitRule();
   });
   try {
-    setState(110);
+    setState(126);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case urlParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(108);
+        setState(122);
         parameterString();
         break;
       }
 
-      case urlParser::STRING:
-      case urlParser::DIGITS: {
+      case urlParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(109);
-        string();
+        setState(123);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
+
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(124);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(125);
+        match(urlParser::DIGITS);
         break;
       }
 
@@ -884,7 +1154,7 @@ std::any urlParser::Ipv6HostContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::Ipv6HostContext* urlParser::ipv6Host() {
   Ipv6HostContext *_localctx = _tracker.createInstance<Ipv6HostContext>(_ctx, getState());
-  enterRule(_localctx, 16, urlParser::RuleIpv6Host);
+  enterRule(_localctx, 22, urlParser::RuleIpv6Host);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -895,11 +1165,11 @@ urlParser::Ipv6HostContext* urlParser::ipv6Host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(112);
+    setState(128);
     match(urlParser::LBRACKET);
-    setState(113);
+    setState(129);
     v6host();
-    setState(114);
+    setState(130);
     match(urlParser::RBRACKET);
    
   }
@@ -961,7 +1231,7 @@ std::any urlParser::V6hostContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::V6hostContext* urlParser::v6host() {
   V6hostContext *_localctx = _tracker.createInstance<V6hostContext>(_ctx, getState());
-  enterRule(_localctx, 18, urlParser::RuleV6host);
+  enterRule(_localctx, 24, urlParser::RuleV6host);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -973,25 +1243,25 @@ urlParser::V6hostContext* urlParser::v6host() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(117);
+    setState(133);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == urlParser::DBL_COL) {
-      setState(116);
+      setState(132);
       match(urlParser::DBL_COL);
     }
-    setState(119);
+    setState(135);
     v6hostConfigParam();
-    setState(123);
+    setState(139);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == urlParser::DBL_COL
 
     || _la == urlParser::COL) {
-      setState(120);
+      setState(136);
       v6hostSegment();
-      setState(125);
+      setState(141);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -1047,7 +1317,7 @@ std::any urlParser::V6hostSegmentContext::accept(tree::ParseTreeVisitor *visitor
 
 urlParser::V6hostSegmentContext* urlParser::v6hostSegment() {
   V6hostSegmentContext *_localctx = _tracker.createInstance<V6hostSegmentContext>(_ctx, getState());
-  enterRule(_localctx, 20, urlParser::RuleV6hostSegment);
+  enterRule(_localctx, 26, urlParser::RuleV6hostSegment);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1058,9 +1328,9 @@ urlParser::V6hostSegmentContext* urlParser::v6hostSegment() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(126);
+    setState(142);
     v6hostSep();
-    setState(127);
+    setState(143);
     v6hostConfigParam();
    
   }
@@ -1114,7 +1384,7 @@ std::any urlParser::V6hostSepContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::V6hostSepContext* urlParser::v6hostSep() {
   V6hostSepContext *_localctx = _tracker.createInstance<V6hostSepContext>(_ctx, getState());
-  enterRule(_localctx, 22, urlParser::RuleV6hostSep);
+  enterRule(_localctx, 28, urlParser::RuleV6hostSep);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1126,7 +1396,7 @@ urlParser::V6hostSepContext* urlParser::v6hostSep() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(129);
+    setState(145);
     _la = _input->LA(1);
     if (!(_la == urlParser::DBL_COL
 
@@ -1185,7 +1455,7 @@ std::any urlParser::V6hostConfigParamContext::accept(tree::ParseTreeVisitor *vis
 
 urlParser::V6hostConfigParamContext* urlParser::v6hostConfigParam() {
   V6hostConfigParamContext *_localctx = _tracker.createInstance<V6hostConfigParamContext>(_ctx, getState());
-  enterRule(_localctx, 24, urlParser::RuleV6hostConfigParam);
+  enterRule(_localctx, 30, urlParser::RuleV6hostConfigParam);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1196,7 +1466,7 @@ urlParser::V6hostConfigParamContext* urlParser::v6hostConfigParam() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(131);
+    setState(147);
     configParam();
    
   }
@@ -1246,7 +1516,7 @@ std::any urlParser::PortContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::PortContext* urlParser::port() {
   PortContext *_localctx = _tracker.createInstance<PortContext>(_ctx, getState());
-  enterRule(_localctx, 26, urlParser::RulePort);
+  enterRule(_localctx, 32, urlParser::RulePort);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1257,7 +1527,7 @@ urlParser::PortContext* urlParser::port() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(133);
+    setState(149);
     match(urlParser::DIGITS);
    
   }
@@ -1276,8 +1546,12 @@ urlParser::PathContext::PathContext(ParserRuleContext *parent, size_t invokingSt
   : ParserRuleContext(parent, invokingState) {
 }
 
-urlParser::PathStringContext* urlParser::PathContext::pathString() {
-  return getRuleContext<urlParser::PathStringContext>(0);
+std::vector<urlParser::PathStringContext *> urlParser::PathContext::pathString() {
+  return getRuleContexts<urlParser::PathStringContext>();
+}
+
+urlParser::PathStringContext* urlParser::PathContext::pathString(size_t i) {
+  return getRuleContext<urlParser::PathStringContext>(i);
 }
 
 std::vector<urlParser::MultiPathChunkContext *> urlParser::PathContext::multiPathChunk() {
@@ -1319,7 +1593,7 @@ std::any urlParser::PathContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::PathContext* urlParser::path() {
   PathContext *_localctx = _tracker.createInstance<PathContext>(_ctx, getState());
-  enterRule(_localctx, 28, urlParser::RulePath);
+  enterRule(_localctx, 34, urlParser::RulePath);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1332,26 +1606,35 @@ urlParser::PathContext* urlParser::path() {
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(135);
-    pathString();
-    setState(139);
+    setState(152); 
     _errHandler->sync(this);
-    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 11, _ctx);
+    _la = _input->LA(1);
+    do {
+      setState(151);
+      pathString();
+      setState(154); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 2621554) != 0));
+    setState(159);
+    _errHandler->sync(this);
+    alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 15, _ctx);
     while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER) {
       if (alt == 1) {
-        setState(136);
+        setState(156);
         multiPathChunk(); 
       }
-      setState(141);
+      setState(161);
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 11, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 15, _ctx);
     }
-    setState(143);
+    setState(163);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == urlParser::FS) {
-      setState(142);
+      setState(162);
       match(urlParser::FS);
     }
    
@@ -1375,8 +1658,12 @@ tree::TerminalNode* urlParser::MultiPathChunkContext::FS() {
   return getToken(urlParser::FS, 0);
 }
 
-urlParser::PathStringContext* urlParser::MultiPathChunkContext::pathString() {
-  return getRuleContext<urlParser::PathStringContext>(0);
+std::vector<urlParser::PathStringContext *> urlParser::MultiPathChunkContext::pathString() {
+  return getRuleContexts<urlParser::PathStringContext>();
+}
+
+urlParser::PathStringContext* urlParser::MultiPathChunkContext::pathString(size_t i) {
+  return getRuleContext<urlParser::PathStringContext>(i);
 }
 
 
@@ -1406,7 +1693,8 @@ std::any urlParser::MultiPathChunkContext::accept(tree::ParseTreeVisitor *visito
 
 urlParser::MultiPathChunkContext* urlParser::multiPathChunk() {
   MultiPathChunkContext *_localctx = _tracker.createInstance<MultiPathChunkContext>(_ctx, getState());
-  enterRule(_localctx, 30, urlParser::RuleMultiPathChunk);
+  enterRule(_localctx, 36, urlParser::RuleMultiPathChunk);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1417,10 +1705,19 @@ urlParser::MultiPathChunkContext* urlParser::multiPathChunk() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(145);
+    setState(165);
     match(urlParser::FS);
-    setState(146);
-    pathString();
+    setState(167); 
+    _errHandler->sync(this);
+    _la = _input->LA(1);
+    do {
+      setState(166);
+      pathString();
+      setState(169); 
+      _errHandler->sync(this);
+      _la = _input->LA(1);
+    } while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 2621554) != 0));
    
   }
   catch (RecognitionException &e) {
@@ -1442,8 +1739,24 @@ urlParser::ParameterStringContext* urlParser::PathStringContext::parameterString
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::PathStringContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::PathStringContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::PathStringContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::PathStringContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
+}
+
+tree::TerminalNode* urlParser::PathStringContext::HYPH() {
+  return getToken(urlParser::HYPH, 0);
+}
+
+tree::TerminalNode* urlParser::PathStringContext::US() {
+  return getToken(urlParser::US, 0);
 }
 
 
@@ -1473,7 +1786,7 @@ std::any urlParser::PathStringContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::PathStringContext* urlParser::pathString() {
   PathStringContext *_localctx = _tracker.createInstance<PathStringContext>(_ctx, getState());
-  enterRule(_localctx, 32, urlParser::RulePathString);
+  enterRule(_localctx, 38, urlParser::RulePathString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1483,104 +1796,48 @@ urlParser::PathStringContext* urlParser::pathString() {
     exitRule();
   });
   try {
-    setState(150);
+    setState(177);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case urlParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(148);
+        setState(171);
         parameterString();
         break;
       }
 
-      case urlParser::STRING:
-      case urlParser::DIGITS: {
+      case urlParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(149);
-        string();
+        setState(172);
+        match(urlParser::BASIC_STRING);
         break;
       }
 
-    default:
-      throw NoViableAltException(this);
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- UserContext ------------------------------------------------------------------
-
-urlParser::UserContext::UserContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-urlParser::ParameterStringContext* urlParser::UserContext::parameterString() {
-  return getRuleContext<urlParser::ParameterStringContext>(0);
-}
-
-urlParser::StringContext* urlParser::UserContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
-}
-
-
-size_t urlParser::UserContext::getRuleIndex() const {
-  return urlParser::RuleUser;
-}
-
-void urlParser::UserContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterUser(this);
-}
-
-void urlParser::UserContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitUser(this);
-}
-
-
-std::any urlParser::UserContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
-    return parserVisitor->visitUser(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-urlParser::UserContext* urlParser::user() {
-  UserContext *_localctx = _tracker.createInstance<UserContext>(_ctx, getState());
-  enterRule(_localctx, 34, urlParser::RuleUser);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    setState(154);
-    _errHandler->sync(this);
-    switch (_input->LA(1)) {
-      case urlParser::DBL_DOLLAR: {
-        enterOuterAlt(_localctx, 1);
-        setState(152);
-        parameterString();
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(173);
+        match(urlParser::STRING);
         break;
       }
 
-      case urlParser::STRING:
       case urlParser::DIGITS: {
-        enterOuterAlt(_localctx, 2);
-        setState(153);
-        string();
+        enterOuterAlt(_localctx, 4);
+        setState(174);
+        match(urlParser::DIGITS);
+        break;
+      }
+
+      case urlParser::HYPH: {
+        enterOuterAlt(_localctx, 5);
+        setState(175);
+        match(urlParser::HYPH);
+        break;
+      }
+
+      case urlParser::US: {
+        enterOuterAlt(_localctx, 6);
+        setState(176);
+        match(urlParser::US);
         break;
       }
 
@@ -1643,7 +1900,7 @@ std::any urlParser::LoginContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::LoginContext* urlParser::login() {
   LoginContext *_localctx = _tracker.createInstance<LoginContext>(_ctx, getState());
-  enterRule(_localctx, 36, urlParser::RuleLogin);
+  enterRule(_localctx, 40, urlParser::RuleLogin);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -1655,18 +1912,122 @@ urlParser::LoginContext* urlParser::login() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(156);
+    setState(179);
     user();
-    setState(158);
+    setState(181);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == urlParser::COL) {
-      setState(157);
+      setState(180);
       loginPassword();
     }
-    setState(160);
+    setState(183);
     match(urlParser::AT);
+   
+  }
+  catch (RecognitionException &e) {
+    _errHandler->reportError(this, e);
+    _localctx->exception = std::current_exception();
+    _errHandler->recover(this, _localctx->exception);
+  }
+
+  return _localctx;
+}
+
+//----------------- UserContext ------------------------------------------------------------------
+
+urlParser::UserContext::UserContext(ParserRuleContext *parent, size_t invokingState)
+  : ParserRuleContext(parent, invokingState) {
+}
+
+urlParser::ParameterStringContext* urlParser::UserContext::parameterString() {
+  return getRuleContext<urlParser::ParameterStringContext>(0);
+}
+
+tree::TerminalNode* urlParser::UserContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::UserContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::UserContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
+}
+
+
+size_t urlParser::UserContext::getRuleIndex() const {
+  return urlParser::RuleUser;
+}
+
+void urlParser::UserContext::enterRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->enterUser(this);
+}
+
+void urlParser::UserContext::exitRule(tree::ParseTreeListener *listener) {
+  auto parserListener = dynamic_cast<urlListener *>(listener);
+  if (parserListener != nullptr)
+    parserListener->exitUser(this);
+}
+
+
+std::any urlParser::UserContext::accept(tree::ParseTreeVisitor *visitor) {
+  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
+    return parserVisitor->visitUser(this);
+  else
+    return visitor->visitChildren(this);
+}
+
+urlParser::UserContext* urlParser::user() {
+  UserContext *_localctx = _tracker.createInstance<UserContext>(_ctx, getState());
+  enterRule(_localctx, 42, urlParser::RuleUser);
+
+#if __cplusplus > 201703L
+  auto onExit = finally([=, this] {
+#else
+  auto onExit = finally([=] {
+#endif
+    exitRule();
+  });
+  try {
+    setState(189);
+    _errHandler->sync(this);
+    switch (_input->LA(1)) {
+      case urlParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(185);
+        parameterString();
+        break;
+      }
+
+      case urlParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(186);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
+
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(187);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(188);
+        match(urlParser::DIGITS);
+        break;
+      }
+
+    default:
+      throw NoViableAltException(this);
+    }
    
   }
   catch (RecognitionException &e) {
@@ -1719,7 +2080,7 @@ std::any urlParser::LoginPasswordContext::accept(tree::ParseTreeVisitor *visitor
 
 urlParser::LoginPasswordContext* urlParser::loginPassword() {
   LoginPasswordContext *_localctx = _tracker.createInstance<LoginPasswordContext>(_ctx, getState());
-  enterRule(_localctx, 38, urlParser::RuleLoginPassword);
+  enterRule(_localctx, 44, urlParser::RuleLoginPassword);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1730,9 +2091,9 @@ urlParser::LoginPasswordContext* urlParser::loginPassword() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(162);
+    setState(191);
     match(urlParser::COL);
-    setState(163);
+    setState(192);
     password();
    
   }
@@ -1755,8 +2116,16 @@ urlParser::ParameterStringContext* urlParser::PasswordContext::parameterString()
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::PasswordContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::PasswordContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::PasswordContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::PasswordContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
 }
 
 
@@ -1786,7 +2155,7 @@ std::any urlParser::PasswordContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::PasswordContext* urlParser::password() {
   PasswordContext *_localctx = _tracker.createInstance<PasswordContext>(_ctx, getState());
-  enterRule(_localctx, 40, urlParser::RulePassword);
+  enterRule(_localctx, 46, urlParser::RulePassword);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1796,21 +2165,34 @@ urlParser::PasswordContext* urlParser::password() {
     exitRule();
   });
   try {
-    setState(167);
+    setState(198);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case urlParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(165);
+        setState(194);
         parameterString();
         break;
       }
 
-      case urlParser::STRING:
-      case urlParser::DIGITS: {
+      case urlParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(166);
-        string();
+        setState(195);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
+
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(196);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(197);
+        match(urlParser::DIGITS);
         break;
       }
 
@@ -1869,7 +2251,7 @@ std::any urlParser::FragContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::FragContext* urlParser::frag() {
   FragContext *_localctx = _tracker.createInstance<FragContext>(_ctx, getState());
-  enterRule(_localctx, 42, urlParser::RuleFrag);
+  enterRule(_localctx, 48, urlParser::RuleFrag);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1880,9 +2262,9 @@ urlParser::FragContext* urlParser::frag() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(169);
+    setState(200);
     match(urlParser::HASH);
-    setState(170);
+    setState(201);
     fragString();
    
   }
@@ -1905,8 +2287,12 @@ urlParser::ParameterStringContext* urlParser::FragStringContext::parameterString
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::FragStringContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::FragStringContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::FragStringContext::STRING() {
+  return getToken(urlParser::STRING, 0);
 }
 
 tree::TerminalNode* urlParser::FragStringContext::DIGITS() {
@@ -1940,7 +2326,7 @@ std::any urlParser::FragStringContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::FragStringContext* urlParser::fragString() {
   FragStringContext *_localctx = _tracker.createInstance<FragStringContext>(_ctx, getState());
-  enterRule(_localctx, 44, urlParser::RuleFragString);
+  enterRule(_localctx, 50, urlParser::RuleFragString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1950,32 +2336,39 @@ urlParser::FragStringContext* urlParser::fragString() {
     exitRule();
   });
   try {
-    setState(175);
+    setState(207);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 17, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(172);
-      parameterString();
-      break;
-    }
+    switch (_input->LA(1)) {
+      case urlParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(203);
+        parameterString();
+        break;
+      }
 
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(173);
-      string();
-      break;
-    }
+      case urlParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(204);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
 
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(174);
-      match(urlParser::DIGITS);
-      break;
-    }
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(205);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(206);
+        match(urlParser::DIGITS);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
    
   }
@@ -2029,7 +2422,8 @@ std::any urlParser::QueryContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::QueryContext* urlParser::query() {
   QueryContext *_localctx = _tracker.createInstance<QueryContext>(_ctx, getState());
-  enterRule(_localctx, 46, urlParser::RuleQuery);
+  enterRule(_localctx, 52, urlParser::RuleQuery);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2040,10 +2434,17 @@ urlParser::QueryContext* urlParser::query() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(177);
+    setState(209);
     match(urlParser::Q);
-    setState(178);
-    search();
+    setState(211);
+    _errHandler->sync(this);
+
+    _la = _input->LA(1);
+    if ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 114) != 0)) {
+      setState(210);
+      search();
+    }
    
   }
   catch (RecognitionException &e) {
@@ -2100,7 +2501,7 @@ std::any urlParser::SearchContext::accept(tree::ParseTreeVisitor *visitor) {
 
 urlParser::SearchContext* urlParser::search() {
   SearchContext *_localctx = _tracker.createInstance<SearchContext>(_ctx, getState());
-  enterRule(_localctx, 48, urlParser::RuleSearch);
+  enterRule(_localctx, 54, urlParser::RuleSearch);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2112,15 +2513,15 @@ urlParser::SearchContext* urlParser::search() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(180);
+    setState(213);
     searchParameter();
-    setState(184);
+    setState(217);
     _errHandler->sync(this);
     _la = _input->LA(1);
     while (_la == urlParser::AMP) {
-      setState(181);
+      setState(214);
       multiSearch();
-      setState(186);
+      setState(219);
       _errHandler->sync(this);
       _la = _input->LA(1);
     }
@@ -2176,7 +2577,7 @@ std::any urlParser::MultiSearchContext::accept(tree::ParseTreeVisitor *visitor) 
 
 urlParser::MultiSearchContext* urlParser::multiSearch() {
   MultiSearchContext *_localctx = _tracker.createInstance<MultiSearchContext>(_ctx, getState());
-  enterRule(_localctx, 50, urlParser::RuleMultiSearch);
+  enterRule(_localctx, 56, urlParser::RuleMultiSearch);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2187,9 +2588,9 @@ urlParser::MultiSearchContext* urlParser::multiSearch() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(187);
+    setState(220);
     match(urlParser::AMP);
-    setState(188);
+    setState(221);
     searchParameter();
    
   }
@@ -2212,8 +2613,16 @@ urlParser::SearchParameterKeyContext* urlParser::SearchParameterContext::searchP
   return getRuleContext<urlParser::SearchParameterKeyContext>(0);
 }
 
-urlParser::SearchParameterValueContext* urlParser::SearchParameterContext::searchParameterValue() {
-  return getRuleContext<urlParser::SearchParameterValueContext>(0);
+tree::TerminalNode* urlParser::SearchParameterContext::EQ() {
+  return getToken(urlParser::EQ, 0);
+}
+
+std::vector<urlParser::SearchParameterValueContext *> urlParser::SearchParameterContext::searchParameterValue() {
+  return getRuleContexts<urlParser::SearchParameterValueContext>();
+}
+
+urlParser::SearchParameterValueContext* urlParser::SearchParameterContext::searchParameterValue(size_t i) {
+  return getRuleContext<urlParser::SearchParameterValueContext>(i);
 }
 
 
@@ -2243,7 +2652,7 @@ std::any urlParser::SearchParameterContext::accept(tree::ParseTreeVisitor *visit
 
 urlParser::SearchParameterContext* urlParser::searchParameter() {
   SearchParameterContext *_localctx = _tracker.createInstance<SearchParameterContext>(_ctx, getState());
-  enterRule(_localctx, 52, urlParser::RuleSearchParameter);
+  enterRule(_localctx, 58, urlParser::RuleSearchParameter);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2255,15 +2664,20 @@ urlParser::SearchParameterContext* urlParser::searchParameter() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(190);
+    setState(223);
     searchParameterKey();
-    setState(192);
+    setState(224);
+    match(urlParser::EQ);
+    setState(228);
     _errHandler->sync(this);
-
     _la = _input->LA(1);
-    if (_la == urlParser::EQ) {
-      setState(191);
+    while ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 17010) != 0)) {
+      setState(225);
       searchParameterValue();
+      setState(230);
+      _errHandler->sync(this);
+      _la = _input->LA(1);
     }
    
   }
@@ -2286,8 +2700,16 @@ urlParser::ParameterStringContext* urlParser::SearchParameterKeyContext::paramet
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::SearchParameterKeyContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::SearchParameterKeyContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::SearchParameterKeyContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::SearchParameterKeyContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
 }
 
 
@@ -2317,7 +2739,7 @@ std::any urlParser::SearchParameterKeyContext::accept(tree::ParseTreeVisitor *vi
 
 urlParser::SearchParameterKeyContext* urlParser::searchParameterKey() {
   SearchParameterKeyContext *_localctx = _tracker.createInstance<SearchParameterKeyContext>(_ctx, getState());
-  enterRule(_localctx, 54, urlParser::RuleSearchParameterKey);
+  enterRule(_localctx, 60, urlParser::RuleSearchParameterKey);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2327,21 +2749,34 @@ urlParser::SearchParameterKeyContext* urlParser::searchParameterKey() {
     exitRule();
   });
   try {
-    setState(196);
+    setState(235);
     _errHandler->sync(this);
     switch (_input->LA(1)) {
       case urlParser::DBL_DOLLAR: {
         enterOuterAlt(_localctx, 1);
-        setState(194);
+        setState(231);
         parameterString();
         break;
       }
 
-      case urlParser::STRING:
-      case urlParser::DIGITS: {
+      case urlParser::BASIC_STRING: {
         enterOuterAlt(_localctx, 2);
-        setState(195);
-        string();
+        setState(232);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
+
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(233);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(234);
+        match(urlParser::DIGITS);
         break;
       }
 
@@ -2365,12 +2800,32 @@ urlParser::SearchParameterValueContext::SearchParameterValueContext(ParserRuleCo
   : ParserRuleContext(parent, invokingState) {
 }
 
-tree::TerminalNode* urlParser::SearchParameterValueContext::EQ() {
-  return getToken(urlParser::EQ, 0);
+urlParser::ParameterStringContext* urlParser::SearchParameterValueContext::parameterString() {
+  return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::SearchParameterValueStringContext* urlParser::SearchParameterValueContext::searchParameterValueString() {
-  return getRuleContext<urlParser::SearchParameterValueStringContext>(0);
+tree::TerminalNode* urlParser::SearchParameterValueContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::SearchParameterValueContext::STRING() {
+  return getToken(urlParser::STRING, 0);
+}
+
+tree::TerminalNode* urlParser::SearchParameterValueContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
+}
+
+std::vector<tree::TerminalNode *> urlParser::SearchParameterValueContext::HEX() {
+  return getTokens(urlParser::HEX);
+}
+
+tree::TerminalNode* urlParser::SearchParameterValueContext::HEX(size_t i) {
+  return getToken(urlParser::HEX, i);
+}
+
+tree::TerminalNode* urlParser::SearchParameterValueContext::COL() {
+  return getToken(urlParser::COL, 0);
 }
 
 
@@ -2400,8 +2855,7 @@ std::any urlParser::SearchParameterValueContext::accept(tree::ParseTreeVisitor *
 
 urlParser::SearchParameterValueContext* urlParser::searchParameterValue() {
   SearchParameterValueContext *_localctx = _tracker.createInstance<SearchParameterValueContext>(_ctx, getState());
-  enterRule(_localctx, 56, urlParser::RuleSearchParameterValue);
-  size_t _la = 0;
+  enterRule(_localctx, 62, urlParser::RuleSearchParameterValue);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2411,121 +2865,70 @@ urlParser::SearchParameterValueContext* urlParser::searchParameterValue() {
     exitRule();
   });
   try {
-    enterOuterAlt(_localctx, 1);
-    setState(198);
-    match(urlParser::EQ);
-    setState(200);
+    size_t alt;
+    setState(247);
     _errHandler->sync(this);
+    switch (_input->LA(1)) {
+      case urlParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(237);
+        parameterString();
+        break;
+      }
 
-    _la = _input->LA(1);
-    if ((((_la & ~ 0x3fULL) == 0) &&
-      ((1ULL << _la) & 41988) != 0)) {
-      setState(199);
-      searchParameterValueString();
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
+      case urlParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(238);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
 
-  return _localctx;
-}
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(239);
+        match(urlParser::STRING);
+        break;
+      }
 
-//----------------- SearchParameterValueStringContext ------------------------------------------------------------------
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(240);
+        match(urlParser::DIGITS);
+        break;
+      }
 
-urlParser::SearchParameterValueStringContext::SearchParameterValueStringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
+      case urlParser::HEX: {
+        enterOuterAlt(_localctx, 5);
+        setState(242); 
+        _errHandler->sync(this);
+        alt = 1;
+        do {
+          switch (alt) {
+            case 1: {
+                  setState(241);
+                  match(urlParser::HEX);
+                  break;
+                }
 
-urlParser::ParameterStringContext* urlParser::SearchParameterValueStringContext::parameterString() {
-  return getRuleContext<urlParser::ParameterStringContext>(0);
-}
+          default:
+            throw NoViableAltException(this);
+          }
+          setState(244); 
+          _errHandler->sync(this);
+          alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 27, _ctx);
+        } while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER);
+        break;
+      }
 
-urlParser::StringContext* urlParser::SearchParameterValueStringContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
-}
-
-tree::TerminalNode* urlParser::SearchParameterValueStringContext::DIGITS() {
-  return getToken(urlParser::DIGITS, 0);
-}
-
-tree::TerminalNode* urlParser::SearchParameterValueStringContext::HEX() {
-  return getToken(urlParser::HEX, 0);
-}
-
-
-size_t urlParser::SearchParameterValueStringContext::getRuleIndex() const {
-  return urlParser::RuleSearchParameterValueString;
-}
-
-void urlParser::SearchParameterValueStringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterSearchParameterValueString(this);
-}
-
-void urlParser::SearchParameterValueStringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitSearchParameterValueString(this);
-}
-
-
-std::any urlParser::SearchParameterValueStringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
-    return parserVisitor->visitSearchParameterValueString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-urlParser::SearchParameterValueStringContext* urlParser::searchParameterValueString() {
-  SearchParameterValueStringContext *_localctx = _tracker.createInstance<SearchParameterValueStringContext>(_ctx, getState());
-  enterRule(_localctx, 58, urlParser::RuleSearchParameterValueString);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    setState(206);
-    _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 22, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(202);
-      parameterString();
-      break;
-    }
-
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(203);
-      string();
-      break;
-    }
-
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(204);
-      match(urlParser::DIGITS);
-      break;
-    }
-
-    case 4: {
-      enterOuterAlt(_localctx, 4);
-      setState(205);
-      match(urlParser::HEX);
-      break;
-    }
+      case urlParser::COL: {
+        enterOuterAlt(_localctx, 6);
+        setState(246);
+        match(urlParser::COL);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
    
   }
@@ -2583,7 +2986,7 @@ std::any urlParser::ParameterStringContext::accept(tree::ParseTreeVisitor *visit
 
 urlParser::ParameterStringContext* urlParser::parameterString() {
   ParameterStringContext *_localctx = _tracker.createInstance<ParameterStringContext>(_ctx, getState());
-  enterRule(_localctx, 60, urlParser::RuleParameterString);
+  enterRule(_localctx, 64, urlParser::RuleParameterString);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2594,11 +2997,11 @@ urlParser::ParameterStringContext* urlParser::parameterString() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(208);
+    setState(249);
     match(urlParser::DBL_DOLLAR);
-    setState(209);
+    setState(250);
     parameterName();
-    setState(210);
+    setState(251);
     match(urlParser::DBL_DOLLAR);
    
   }
@@ -2617,16 +3020,16 @@ urlParser::ParameterNameContext::ParameterNameContext(ParserRuleContext *parent,
   : ParserRuleContext(parent, invokingState) {
 }
 
-urlParser::StringContext* urlParser::ParameterNameContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::ParameterNameContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
 }
 
-std::vector<urlParser::UsStringContext *> urlParser::ParameterNameContext::usString() {
-  return getRuleContexts<urlParser::UsStringContext>();
+tree::TerminalNode* urlParser::ParameterNameContext::STRING() {
+  return getToken(urlParser::STRING, 0);
 }
 
-urlParser::UsStringContext* urlParser::ParameterNameContext::usString(size_t i) {
-  return getRuleContext<urlParser::UsStringContext>(i);
+tree::TerminalNode* urlParser::ParameterNameContext::DIGITS() {
+  return getToken(urlParser::DIGITS, 0);
 }
 
 
@@ -2656,7 +3059,7 @@ std::any urlParser::ParameterNameContext::accept(tree::ParseTreeVisitor *visitor
 
 urlParser::ParameterNameContext* urlParser::parameterName() {
   ParameterNameContext *_localctx = _tracker.createInstance<ParameterNameContext>(_ctx, getState());
-  enterRule(_localctx, 62, urlParser::RuleParameterName);
+  enterRule(_localctx, 66, urlParser::RuleParameterName);
   size_t _la = 0;
 
 #if __cplusplus > 201703L
@@ -2668,17 +3071,15 @@ urlParser::ParameterNameContext* urlParser::parameterName() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(212);
-    string();
-    setState(216);
-    _errHandler->sync(this);
+    setState(253);
     _la = _input->LA(1);
-    while (_la == urlParser::US) {
-      setState(213);
-      usString();
-      setState(218);
-      _errHandler->sync(this);
-      _la = _input->LA(1);
+    if (!((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 112) != 0))) {
+    _errHandler->recoverInline(this);
+    }
+    else {
+      _errHandler->reportMatch(this);
+      consume();
     }
    
   }
@@ -2701,8 +3102,12 @@ urlParser::ParameterStringContext* urlParser::ConfigParamContext::parameterStrin
   return getRuleContext<urlParser::ParameterStringContext>(0);
 }
 
-urlParser::StringContext* urlParser::ConfigParamContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
+tree::TerminalNode* urlParser::ConfigParamContext::BASIC_STRING() {
+  return getToken(urlParser::BASIC_STRING, 0);
+}
+
+tree::TerminalNode* urlParser::ConfigParamContext::STRING() {
+  return getToken(urlParser::STRING, 0);
 }
 
 tree::TerminalNode* urlParser::ConfigParamContext::DIGITS() {
@@ -2736,7 +3141,7 @@ std::any urlParser::ConfigParamContext::accept(tree::ParseTreeVisitor *visitor) 
 
 urlParser::ConfigParamContext* urlParser::configParam() {
   ConfigParamContext *_localctx = _tracker.createInstance<ConfigParamContext>(_ctx, getState());
-  enterRule(_localctx, 64, urlParser::RuleConfigParam);
+  enterRule(_localctx, 68, urlParser::RuleConfigParam);
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -2746,175 +3151,40 @@ urlParser::ConfigParamContext* urlParser::configParam() {
     exitRule();
   });
   try {
-    setState(222);
+    setState(259);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 24, _ctx)) {
-    case 1: {
-      enterOuterAlt(_localctx, 1);
-      setState(219);
-      parameterString();
-      break;
-    }
+    switch (_input->LA(1)) {
+      case urlParser::DBL_DOLLAR: {
+        enterOuterAlt(_localctx, 1);
+        setState(255);
+        parameterString();
+        break;
+      }
 
-    case 2: {
-      enterOuterAlt(_localctx, 2);
-      setState(220);
-      string();
-      break;
-    }
+      case urlParser::BASIC_STRING: {
+        enterOuterAlt(_localctx, 2);
+        setState(256);
+        match(urlParser::BASIC_STRING);
+        break;
+      }
 
-    case 3: {
-      enterOuterAlt(_localctx, 3);
-      setState(221);
-      match(urlParser::DIGITS);
-      break;
-    }
+      case urlParser::STRING: {
+        enterOuterAlt(_localctx, 3);
+        setState(257);
+        match(urlParser::STRING);
+        break;
+      }
+
+      case urlParser::DIGITS: {
+        enterOuterAlt(_localctx, 4);
+        setState(258);
+        match(urlParser::DIGITS);
+        break;
+      }
 
     default:
-      break;
+      throw NoViableAltException(this);
     }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- StringContext ------------------------------------------------------------------
-
-urlParser::StringContext::StringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* urlParser::StringContext::STRING() {
-  return getToken(urlParser::STRING, 0);
-}
-
-tree::TerminalNode* urlParser::StringContext::DIGITS() {
-  return getToken(urlParser::DIGITS, 0);
-}
-
-
-size_t urlParser::StringContext::getRuleIndex() const {
-  return urlParser::RuleString;
-}
-
-void urlParser::StringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterString(this);
-}
-
-void urlParser::StringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitString(this);
-}
-
-
-std::any urlParser::StringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
-    return parserVisitor->visitString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-urlParser::StringContext* urlParser::string() {
-  StringContext *_localctx = _tracker.createInstance<StringContext>(_ctx, getState());
-  enterRule(_localctx, 66, urlParser::RuleString);
-  size_t _la = 0;
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(224);
-    _la = _input->LA(1);
-    if (!(_la == urlParser::STRING
-
-    || _la == urlParser::DIGITS)) {
-    _errHandler->recoverInline(this);
-    }
-    else {
-      _errHandler->reportMatch(this);
-      consume();
-    }
-   
-  }
-  catch (RecognitionException &e) {
-    _errHandler->reportError(this, e);
-    _localctx->exception = std::current_exception();
-    _errHandler->recover(this, _localctx->exception);
-  }
-
-  return _localctx;
-}
-
-//----------------- UsStringContext ------------------------------------------------------------------
-
-urlParser::UsStringContext::UsStringContext(ParserRuleContext *parent, size_t invokingState)
-  : ParserRuleContext(parent, invokingState) {
-}
-
-tree::TerminalNode* urlParser::UsStringContext::US() {
-  return getToken(urlParser::US, 0);
-}
-
-urlParser::StringContext* urlParser::UsStringContext::string() {
-  return getRuleContext<urlParser::StringContext>(0);
-}
-
-
-size_t urlParser::UsStringContext::getRuleIndex() const {
-  return urlParser::RuleUsString;
-}
-
-void urlParser::UsStringContext::enterRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->enterUsString(this);
-}
-
-void urlParser::UsStringContext::exitRule(tree::ParseTreeListener *listener) {
-  auto parserListener = dynamic_cast<urlListener *>(listener);
-  if (parserListener != nullptr)
-    parserListener->exitUsString(this);
-}
-
-
-std::any urlParser::UsStringContext::accept(tree::ParseTreeVisitor *visitor) {
-  if (auto parserVisitor = dynamic_cast<urlVisitor*>(visitor))
-    return parserVisitor->visitUsString(this);
-  else
-    return visitor->visitChildren(this);
-}
-
-urlParser::UsStringContext* urlParser::usString() {
-  UsStringContext *_localctx = _tracker.createInstance<UsStringContext>(_ctx, getState());
-  enterRule(_localctx, 68, urlParser::RuleUsString);
-
-#if __cplusplus > 201703L
-  auto onExit = finally([=, this] {
-#else
-  auto onExit = finally([=] {
-#endif
-    exitRule();
-  });
-  try {
-    enterOuterAlt(_localctx, 1);
-    setState(226);
-    match(urlParser::US);
-    setState(227);
-    string();
    
   }
   catch (RecognitionException &e) {

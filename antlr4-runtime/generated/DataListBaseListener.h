@@ -66,11 +66,23 @@ public:
   virtual void enterStartList(DataListParser::StartListContext * /*ctx*/) override { }
   virtual void exitStartList(DataListParser::StartListContext * /*ctx*/) override { }
 
+  virtual void enterListId(DataListParser::ListIdContext * /*ctx*/) override { }
+  virtual void exitListId(DataListParser::ListIdContext * /*ctx*/) override { }
+
   virtual void enterListItem(DataListParser::ListItemContext * /*ctx*/) override { }
   virtual void exitListItem(DataListParser::ListItemContext * /*ctx*/) override { }
 
   virtual void enterListItemContent(DataListParser::ListItemContentContext * /*ctx*/) override { }
   virtual void exitListItemContent(DataListParser::ListItemContentContext * /*ctx*/) override { }
+
+  virtual void enterNumericalListItemContent(DataListParser::NumericalListItemContentContext * /*ctx*/) override { }
+  virtual void exitNumericalListItemContent(DataListParser::NumericalListItemContentContext * /*ctx*/) override { }
+
+  virtual void enterComplexListItemContent(DataListParser::ComplexListItemContentContext * /*ctx*/) override { }
+  virtual void exitComplexListItemContent(DataListParser::ComplexListItemContentContext * /*ctx*/) override { }
+
+  virtual void enterDataListString(DataListParser::DataListStringContext * /*ctx*/) override { }
+  virtual void exitDataListString(DataListParser::DataListStringContext * /*ctx*/) override { }
 
   virtual void enterEndList(DataListParser::EndListContext * /*ctx*/) override { }
   virtual void exitEndList(DataListParser::EndListContext * /*ctx*/) override { }
@@ -89,6 +101,15 @@ public:
 
   virtual void enterScheme(DataListParser::SchemeContext * /*ctx*/) override { }
   virtual void exitScheme(DataListParser::SchemeContext * /*ctx*/) override { }
+
+  virtual void enterSchemeSeparator(DataListParser::SchemeSeparatorContext * /*ctx*/) override { }
+  virtual void exitSchemeSeparator(DataListParser::SchemeSeparatorContext * /*ctx*/) override { }
+
+  virtual void enterUriSchemePrefix(DataListParser::UriSchemePrefixContext * /*ctx*/) override { }
+  virtual void exitUriSchemePrefix(DataListParser::UriSchemePrefixContext * /*ctx*/) override { }
+
+  virtual void enterUriScheme(DataListParser::UriSchemeContext * /*ctx*/) override { }
+  virtual void exitUriScheme(DataListParser::UriSchemeContext * /*ctx*/) override { }
 
   virtual void enterHost(DataListParser::HostContext * /*ctx*/) override { }
   virtual void exitHost(DataListParser::HostContext * /*ctx*/) override { }
@@ -126,11 +147,11 @@ public:
   virtual void enterPathString(DataListParser::PathStringContext * /*ctx*/) override { }
   virtual void exitPathString(DataListParser::PathStringContext * /*ctx*/) override { }
 
-  virtual void enterUser(DataListParser::UserContext * /*ctx*/) override { }
-  virtual void exitUser(DataListParser::UserContext * /*ctx*/) override { }
-
   virtual void enterLogin(DataListParser::LoginContext * /*ctx*/) override { }
   virtual void exitLogin(DataListParser::LoginContext * /*ctx*/) override { }
+
+  virtual void enterUser(DataListParser::UserContext * /*ctx*/) override { }
+  virtual void exitUser(DataListParser::UserContext * /*ctx*/) override { }
 
   virtual void enterLoginPassword(DataListParser::LoginPasswordContext * /*ctx*/) override { }
   virtual void exitLoginPassword(DataListParser::LoginPasswordContext * /*ctx*/) override { }
@@ -162,9 +183,6 @@ public:
   virtual void enterSearchParameterValue(DataListParser::SearchParameterValueContext * /*ctx*/) override { }
   virtual void exitSearchParameterValue(DataListParser::SearchParameterValueContext * /*ctx*/) override { }
 
-  virtual void enterSearchParameterValueString(DataListParser::SearchParameterValueStringContext * /*ctx*/) override { }
-  virtual void exitSearchParameterValueString(DataListParser::SearchParameterValueStringContext * /*ctx*/) override { }
-
   virtual void enterParameterString(DataListParser::ParameterStringContext * /*ctx*/) override { }
   virtual void exitParameterString(DataListParser::ParameterStringContext * /*ctx*/) override { }
 
@@ -173,12 +191,6 @@ public:
 
   virtual void enterConfigParam(DataListParser::ConfigParamContext * /*ctx*/) override { }
   virtual void exitConfigParam(DataListParser::ConfigParamContext * /*ctx*/) override { }
-
-  virtual void enterString(DataListParser::StringContext * /*ctx*/) override { }
-  virtual void exitString(DataListParser::StringContext * /*ctx*/) override { }
-
-  virtual void enterUsString(DataListParser::UsStringContext * /*ctx*/) override { }
-  virtual void exitUsString(DataListParser::UsStringContext * /*ctx*/) override { }
 
 
   virtual void enterEveryRule(antlr4::ParserRuleContext * /*ctx*/) override { }

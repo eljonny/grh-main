@@ -37,6 +37,34 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitSiteFormat(SitesParser::SiteFormatContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitSiteType(SitesParser::SiteTypeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitSiteDetailFormat(SitesParser::SiteDetailFormatContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitSiteFormatElement(SitesParser::SiteFormatElementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitSiteFormatId(SitesParser::SiteFormatIdContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitOptionalDataElement(SitesParser::OptionalDataElementContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitSite(SitesParser::SiteContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -165,6 +193,18 @@ public:
     return visitChildren(ctx);
   }
 
+  virtual std::any visitSchemeSeparator(SitesParser::SchemeSeparatorContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitUriSchemePrefix(SitesParser::UriSchemePrefixContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
+  virtual std::any visitUriScheme(SitesParser::UriSchemeContext *ctx) override {
+    return visitChildren(ctx);
+  }
+
   virtual std::any visitHost(SitesParser::HostContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -213,11 +253,11 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitUser(SitesParser::UserContext *ctx) override {
+  virtual std::any visitLogin(SitesParser::LoginContext *ctx) override {
     return visitChildren(ctx);
   }
 
-  virtual std::any visitLogin(SitesParser::LoginContext *ctx) override {
+  virtual std::any visitUser(SitesParser::UserContext *ctx) override {
     return visitChildren(ctx);
   }
 
@@ -261,10 +301,6 @@ public:
     return visitChildren(ctx);
   }
 
-  virtual std::any visitSearchParameterValueString(SitesParser::SearchParameterValueStringContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
   virtual std::any visitParameterString(SitesParser::ParameterStringContext *ctx) override {
     return visitChildren(ctx);
   }
@@ -274,14 +310,6 @@ public:
   }
 
   virtual std::any visitConfigParam(SitesParser::ConfigParamContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitString(SitesParser::StringContext *ctx) override {
-    return visitChildren(ctx);
-  }
-
-  virtual std::any visitUsString(SitesParser::UsStringContext *ctx) override {
     return visitChildren(ctx);
   }
 

@@ -59,40 +59,40 @@ void phonenumberParserInitialize() {
       "dtmfLocalizer", "phoneSep"
     },
     std::vector<std::string>{
-      "", "'('", "')'", "", "", "", "", "", "", "", "", "", "'='", "':'", 
-      "'#'", "' '", "'$'", "'/'", "'_'", "'+'", "'-'", "'%'"
+      "", "'('", "')'", "", "", "", "", "", "", "", "", "", "'.'", "'='", 
+      "':'", "'#'", "' '", "'$'", "'/'", "'_'", "'+'", "'-'", "'%'", "'['", 
+      "']'", "'&'", "'@'", "'\\u003F'"
     },
     std::vector<std::string>{
-      "", "LPAREN", "RPAREN", "WS", "STRING", "ALPHANUM", "ALPHA", "HEX", 
-      "HEX_ALPHA", "DIGITS", "SINGLE_DIGIT_INT", "ZERO", "EQ", "COL", "HASH", 
-      "SPACE", "DOLLAR", "FS", "US", "PLUS", "HYPH", "PERC"
+      "", "LPAREN", "RPAREN", "WS", "BASIC_STRING", "STRING", "DIGITS", 
+      "ALPHANUM", "ALPHA", "HEX", "SINGLE_DIGIT_INT", "ZERO", "PERIOD", 
+      "EQ", "COL", "HASH", "SPACE", "DOLLAR", "FS", "US", "PLUS", "HYPH", 
+      "PERC", "LBRACKET", "RBRACKET", "AMP", "AT", "Q"
     }
   );
   static const int32_t serializedATNSegment[] = {
-  	4,1,21,84,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
+  	4,1,27,80,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,6,2,7,
   	7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,1,0,1,0,1,0,1,0,1,0,
-  	1,0,1,1,3,1,34,8,1,1,1,1,1,1,2,3,2,39,8,2,1,2,1,2,3,2,43,8,2,1,3,1,3,
-  	3,3,47,8,3,1,4,1,4,1,4,1,4,1,5,1,5,1,6,1,6,1,7,1,7,3,7,59,8,7,1,8,1,8,
-  	3,8,63,8,8,1,8,1,8,1,9,4,9,68,8,9,11,9,12,9,69,1,10,4,10,73,8,10,11,10,
-  	12,10,74,1,11,4,11,78,8,11,11,11,12,11,79,1,12,1,12,1,12,0,0,13,0,2,4,
-  	6,8,10,12,14,16,18,20,22,24,0,1,2,0,15,15,20,20,79,0,26,1,0,0,0,2,33,
-  	1,0,0,0,4,38,1,0,0,0,6,46,1,0,0,0,8,48,1,0,0,0,10,52,1,0,0,0,12,54,1,
-  	0,0,0,14,58,1,0,0,0,16,60,1,0,0,0,18,67,1,0,0,0,20,72,1,0,0,0,22,77,1,
-  	0,0,0,24,81,1,0,0,0,26,27,3,2,1,0,27,28,3,24,12,0,28,29,3,4,2,0,29,30,
-  	3,24,12,0,30,31,3,6,3,0,31,1,1,0,0,0,32,34,5,19,0,0,33,32,1,0,0,0,33,
-  	34,1,0,0,0,34,35,1,0,0,0,35,36,5,9,0,0,36,3,1,0,0,0,37,39,5,1,0,0,38,
-  	37,1,0,0,0,38,39,1,0,0,0,39,40,1,0,0,0,40,42,5,9,0,0,41,43,5,2,0,0,42,
-  	41,1,0,0,0,42,43,1,0,0,0,43,5,1,0,0,0,44,47,3,8,4,0,45,47,3,14,7,0,46,
-  	44,1,0,0,0,46,45,1,0,0,0,47,7,1,0,0,0,48,49,3,10,5,0,49,50,3,24,12,0,
-  	50,51,3,12,6,0,51,9,1,0,0,0,52,53,5,9,0,0,53,11,1,0,0,0,54,55,5,9,0,0,
-  	55,13,1,0,0,0,56,59,3,16,8,0,57,59,3,20,10,0,58,56,1,0,0,0,58,57,1,0,
-  	0,0,59,15,1,0,0,0,60,62,3,18,9,0,61,63,3,24,12,0,62,61,1,0,0,0,62,63,
-  	1,0,0,0,63,64,1,0,0,0,64,65,3,22,11,0,65,17,1,0,0,0,66,68,5,5,0,0,67,
-  	66,1,0,0,0,68,69,1,0,0,0,69,67,1,0,0,0,69,70,1,0,0,0,70,19,1,0,0,0,71,
-  	73,5,5,0,0,72,71,1,0,0,0,73,74,1,0,0,0,74,72,1,0,0,0,74,75,1,0,0,0,75,
-  	21,1,0,0,0,76,78,5,5,0,0,77,76,1,0,0,0,78,79,1,0,0,0,79,77,1,0,0,0,79,
-  	80,1,0,0,0,80,23,1,0,0,0,81,82,7,0,0,0,82,25,1,0,0,0,9,33,38,42,46,58,
-  	62,69,74,79
+  	1,0,3,0,33,8,0,1,1,3,1,36,8,1,1,1,1,1,1,2,3,2,41,8,2,1,2,1,2,3,2,45,8,
+  	2,1,3,1,3,3,3,49,8,3,1,4,1,4,1,4,1,4,1,5,1,5,1,6,1,6,1,7,1,7,3,7,61,8,
+  	7,1,8,1,8,3,8,65,8,8,1,8,1,8,1,9,4,9,70,8,9,11,9,12,9,71,1,10,1,10,1,
+  	11,1,11,1,12,1,12,1,12,0,0,13,0,2,4,6,8,10,12,14,16,18,20,22,24,0,2,2,
+  	0,4,4,6,6,3,0,12,12,16,16,21,21,74,0,26,1,0,0,0,2,35,1,0,0,0,4,40,1,0,
+  	0,0,6,48,1,0,0,0,8,50,1,0,0,0,10,54,1,0,0,0,12,56,1,0,0,0,14,60,1,0,0,
+  	0,16,62,1,0,0,0,18,69,1,0,0,0,20,73,1,0,0,0,22,75,1,0,0,0,24,77,1,0,0,
+  	0,26,27,3,2,1,0,27,28,3,24,12,0,28,29,3,4,2,0,29,30,3,24,12,0,30,32,3,
+  	6,3,0,31,33,5,0,0,1,32,31,1,0,0,0,32,33,1,0,0,0,33,1,1,0,0,0,34,36,5,
+  	20,0,0,35,34,1,0,0,0,35,36,1,0,0,0,36,37,1,0,0,0,37,38,5,6,0,0,38,3,1,
+  	0,0,0,39,41,5,1,0,0,40,39,1,0,0,0,40,41,1,0,0,0,41,42,1,0,0,0,42,44,5,
+  	6,0,0,43,45,5,2,0,0,44,43,1,0,0,0,44,45,1,0,0,0,45,5,1,0,0,0,46,49,3,
+  	8,4,0,47,49,3,14,7,0,48,46,1,0,0,0,48,47,1,0,0,0,49,7,1,0,0,0,50,51,3,
+  	10,5,0,51,52,3,24,12,0,52,53,3,12,6,0,53,9,1,0,0,0,54,55,5,6,0,0,55,11,
+  	1,0,0,0,56,57,5,6,0,0,57,13,1,0,0,0,58,61,3,16,8,0,59,61,3,20,10,0,60,
+  	58,1,0,0,0,60,59,1,0,0,0,61,15,1,0,0,0,62,64,3,18,9,0,63,65,3,24,12,0,
+  	64,63,1,0,0,0,64,65,1,0,0,0,65,66,1,0,0,0,66,67,3,22,11,0,67,17,1,0,0,
+  	0,68,70,7,0,0,0,69,68,1,0,0,0,70,71,1,0,0,0,71,69,1,0,0,0,71,72,1,0,0,
+  	0,72,19,1,0,0,0,73,74,5,4,0,0,74,21,1,0,0,0,75,76,5,4,0,0,76,23,1,0,0,
+  	0,77,78,7,1,0,0,78,25,1,0,0,0,8,32,35,40,44,48,60,64,71
   };
   staticData->serializedATN = antlr4::atn::SerializedATNView(serializedATNSegment, sizeof(serializedATNSegment) / sizeof(serializedATNSegment[0]));
 
@@ -167,6 +167,10 @@ PhoneNumberParser::PhoneNumberContext* PhoneNumberParser::PhoneContext::phoneNum
   return getRuleContext<PhoneNumberParser::PhoneNumberContext>(0);
 }
 
+tree::TerminalNode* PhoneNumberParser::PhoneContext::EOF() {
+  return getToken(PhoneNumberParser::EOF, 0);
+}
+
 
 size_t PhoneNumberParser::PhoneContext::getRuleIndex() const {
   return PhoneNumberParser::RulePhone;
@@ -215,6 +219,19 @@ PhoneNumberParser::PhoneContext* PhoneNumberParser::phone() {
     phoneSep();
     setState(30);
     phoneNumber();
+    setState(32);
+    _errHandler->sync(this);
+
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 0, _ctx)) {
+    case 1: {
+      setState(31);
+      match(PhoneNumberParser::EOF);
+      break;
+    }
+
+    default:
+      break;
+    }
    
   }
   catch (RecognitionException &e) {
@@ -279,15 +296,15 @@ PhoneNumberParser::CountryCodeContext* PhoneNumberParser::countryCode() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(33);
+    setState(35);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == PhoneNumberParser::PLUS) {
-      setState(32);
+      setState(34);
       match(PhoneNumberParser::PLUS);
     }
-    setState(35);
+    setState(37);
     match(PhoneNumberParser::DIGITS);
    
   }
@@ -357,22 +374,22 @@ PhoneNumberParser::AreaCodeContext* PhoneNumberParser::areaCode() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(38);
+    setState(40);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == PhoneNumberParser::LPAREN) {
-      setState(37);
+      setState(39);
       match(PhoneNumberParser::LPAREN);
     }
-    setState(40);
-    match(PhoneNumberParser::DIGITS);
     setState(42);
+    match(PhoneNumberParser::DIGITS);
+    setState(44);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
     if (_la == PhoneNumberParser::RPAREN) {
-      setState(41);
+      setState(43);
       match(PhoneNumberParser::RPAREN);
     }
    
@@ -437,25 +454,25 @@ PhoneNumberParser::PhoneNumberContext* PhoneNumberParser::phoneNumber() {
     exitRule();
   });
   try {
-    setState(46);
+    setState(48);
     _errHandler->sync(this);
-    switch (_input->LA(1)) {
-      case PhoneNumberParser::DIGITS: {
-        enterOuterAlt(_localctx, 1);
-        setState(44);
-        localPhone();
-        break;
-      }
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx)) {
+    case 1: {
+      enterOuterAlt(_localctx, 1);
+      setState(46);
+      localPhone();
+      break;
+    }
 
-      case PhoneNumberParser::ALPHANUM: {
-        enterOuterAlt(_localctx, 2);
-        setState(45);
-        dtmf();
-        break;
-      }
+    case 2: {
+      enterOuterAlt(_localctx, 2);
+      setState(47);
+      dtmf();
+      break;
+    }
 
     default:
-      throw NoViableAltException(this);
+      break;
     }
    
   }
@@ -524,11 +541,11 @@ PhoneNumberParser::LocalPhoneContext* PhoneNumberParser::localPhone() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(48);
-    localArea();
-    setState(49);
-    phoneSep();
     setState(50);
+    localArea();
+    setState(51);
+    phoneSep();
+    setState(52);
     localizer();
    
   }
@@ -589,7 +606,7 @@ PhoneNumberParser::LocalAreaContext* PhoneNumberParser::localArea() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(52);
+    setState(54);
     match(PhoneNumberParser::DIGITS);
    
   }
@@ -650,7 +667,7 @@ PhoneNumberParser::LocalizerContext* PhoneNumberParser::localizer() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(54);
+    setState(56);
     match(PhoneNumberParser::DIGITS);
    
   }
@@ -714,19 +731,19 @@ PhoneNumberParser::DtmfContext* PhoneNumberParser::dtmf() {
     exitRule();
   });
   try {
-    setState(58);
+    setState(60);
     _errHandler->sync(this);
-    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 4, _ctx)) {
+    switch (getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 5, _ctx)) {
     case 1: {
       enterOuterAlt(_localctx, 1);
-      setState(56);
+      setState(58);
       dtmfWithLocal();
       break;
     }
 
     case 2: {
       enterOuterAlt(_localctx, 2);
-      setState(57);
+      setState(59);
       dtmfAll();
       break;
     }
@@ -802,19 +819,18 @@ PhoneNumberParser::DtmfWithLocalContext* PhoneNumberParser::dtmfWithLocal() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(60);
-    localAreaWithDtmf();
     setState(62);
+    localAreaWithDtmf();
+    setState(64);
     _errHandler->sync(this);
 
     _la = _input->LA(1);
-    if (_la == PhoneNumberParser::SPACE
-
-    || _la == PhoneNumberParser::HYPH) {
-      setState(61);
+    if ((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 2166784) != 0)) {
+      setState(63);
       phoneSep();
     }
-    setState(64);
+    setState(66);
     dtmfLocalizer();
    
   }
@@ -833,12 +849,20 @@ PhoneNumberParser::LocalAreaWithDtmfContext::LocalAreaWithDtmfContext(ParserRule
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<tree::TerminalNode *> PhoneNumberParser::LocalAreaWithDtmfContext::ALPHANUM() {
-  return getTokens(PhoneNumberParser::ALPHANUM);
+std::vector<tree::TerminalNode *> PhoneNumberParser::LocalAreaWithDtmfContext::DIGITS() {
+  return getTokens(PhoneNumberParser::DIGITS);
 }
 
-tree::TerminalNode* PhoneNumberParser::LocalAreaWithDtmfContext::ALPHANUM(size_t i) {
-  return getToken(PhoneNumberParser::ALPHANUM, i);
+tree::TerminalNode* PhoneNumberParser::LocalAreaWithDtmfContext::DIGITS(size_t i) {
+  return getToken(PhoneNumberParser::DIGITS, i);
+}
+
+std::vector<tree::TerminalNode *> PhoneNumberParser::LocalAreaWithDtmfContext::BASIC_STRING() {
+  return getTokens(PhoneNumberParser::BASIC_STRING);
+}
+
+tree::TerminalNode* PhoneNumberParser::LocalAreaWithDtmfContext::BASIC_STRING(size_t i) {
+  return getToken(PhoneNumberParser::BASIC_STRING, i);
 }
 
 
@@ -869,6 +893,7 @@ std::any PhoneNumberParser::LocalAreaWithDtmfContext::accept(tree::ParseTreeVisi
 PhoneNumberParser::LocalAreaWithDtmfContext* PhoneNumberParser::localAreaWithDtmf() {
   LocalAreaWithDtmfContext *_localctx = _tracker.createInstance<LocalAreaWithDtmfContext>(_ctx, getState());
   enterRule(_localctx, 18, PhoneNumberParser::RuleLocalAreaWithDtmf);
+  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -880,23 +905,32 @@ PhoneNumberParser::LocalAreaWithDtmfContext* PhoneNumberParser::localAreaWithDtm
   try {
     size_t alt;
     enterOuterAlt(_localctx, 1);
-    setState(67); 
+    setState(69); 
     _errHandler->sync(this);
     alt = 1;
     do {
       switch (alt) {
         case 1: {
-              setState(66);
-              match(PhoneNumberParser::ALPHANUM);
+              setState(68);
+              _la = _input->LA(1);
+              if (!(_la == PhoneNumberParser::BASIC_STRING
+
+              || _la == PhoneNumberParser::DIGITS)) {
+              _errHandler->recoverInline(this);
+              }
+              else {
+                _errHandler->reportMatch(this);
+                consume();
+              }
               break;
             }
 
       default:
         throw NoViableAltException(this);
       }
-      setState(69); 
+      setState(71); 
       _errHandler->sync(this);
-      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 6, _ctx);
+      alt = getInterpreter<atn::ParserATNSimulator>()->adaptivePredict(_input, 7, _ctx);
     } while (alt != 2 && alt != atn::ATN::INVALID_ALT_NUMBER);
    
   }
@@ -915,12 +949,8 @@ PhoneNumberParser::DtmfAllContext::DtmfAllContext(ParserRuleContext *parent, siz
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<tree::TerminalNode *> PhoneNumberParser::DtmfAllContext::ALPHANUM() {
-  return getTokens(PhoneNumberParser::ALPHANUM);
-}
-
-tree::TerminalNode* PhoneNumberParser::DtmfAllContext::ALPHANUM(size_t i) {
-  return getToken(PhoneNumberParser::ALPHANUM, i);
+tree::TerminalNode* PhoneNumberParser::DtmfAllContext::BASIC_STRING() {
+  return getToken(PhoneNumberParser::BASIC_STRING, 0);
 }
 
 
@@ -951,7 +981,6 @@ std::any PhoneNumberParser::DtmfAllContext::accept(tree::ParseTreeVisitor *visit
 PhoneNumberParser::DtmfAllContext* PhoneNumberParser::dtmfAll() {
   DtmfAllContext *_localctx = _tracker.createInstance<DtmfAllContext>(_ctx, getState());
   enterRule(_localctx, 20, PhoneNumberParser::RuleDtmfAll);
-  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -962,16 +991,8 @@ PhoneNumberParser::DtmfAllContext* PhoneNumberParser::dtmfAll() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(72); 
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    do {
-      setState(71);
-      match(PhoneNumberParser::ALPHANUM);
-      setState(74); 
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    } while (_la == PhoneNumberParser::ALPHANUM);
+    setState(73);
+    match(PhoneNumberParser::BASIC_STRING);
    
   }
   catch (RecognitionException &e) {
@@ -989,12 +1010,8 @@ PhoneNumberParser::DtmfLocalizerContext::DtmfLocalizerContext(ParserRuleContext 
   : ParserRuleContext(parent, invokingState) {
 }
 
-std::vector<tree::TerminalNode *> PhoneNumberParser::DtmfLocalizerContext::ALPHANUM() {
-  return getTokens(PhoneNumberParser::ALPHANUM);
-}
-
-tree::TerminalNode* PhoneNumberParser::DtmfLocalizerContext::ALPHANUM(size_t i) {
-  return getToken(PhoneNumberParser::ALPHANUM, i);
+tree::TerminalNode* PhoneNumberParser::DtmfLocalizerContext::BASIC_STRING() {
+  return getToken(PhoneNumberParser::BASIC_STRING, 0);
 }
 
 
@@ -1025,7 +1042,6 @@ std::any PhoneNumberParser::DtmfLocalizerContext::accept(tree::ParseTreeVisitor 
 PhoneNumberParser::DtmfLocalizerContext* PhoneNumberParser::dtmfLocalizer() {
   DtmfLocalizerContext *_localctx = _tracker.createInstance<DtmfLocalizerContext>(_ctx, getState());
   enterRule(_localctx, 22, PhoneNumberParser::RuleDtmfLocalizer);
-  size_t _la = 0;
 
 #if __cplusplus > 201703L
   auto onExit = finally([=, this] {
@@ -1036,16 +1052,8 @@ PhoneNumberParser::DtmfLocalizerContext* PhoneNumberParser::dtmfLocalizer() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(77); 
-    _errHandler->sync(this);
-    _la = _input->LA(1);
-    do {
-      setState(76);
-      match(PhoneNumberParser::ALPHANUM);
-      setState(79); 
-      _errHandler->sync(this);
-      _la = _input->LA(1);
-    } while (_la == PhoneNumberParser::ALPHANUM);
+    setState(75);
+    match(PhoneNumberParser::BASIC_STRING);
    
   }
   catch (RecognitionException &e) {
@@ -1069,6 +1077,10 @@ tree::TerminalNode* PhoneNumberParser::PhoneSepContext::SPACE() {
 
 tree::TerminalNode* PhoneNumberParser::PhoneSepContext::HYPH() {
   return getToken(PhoneNumberParser::HYPH, 0);
+}
+
+tree::TerminalNode* PhoneNumberParser::PhoneSepContext::PERIOD() {
+  return getToken(PhoneNumberParser::PERIOD, 0);
 }
 
 
@@ -1110,11 +1122,10 @@ PhoneNumberParser::PhoneSepContext* PhoneNumberParser::phoneSep() {
   });
   try {
     enterOuterAlt(_localctx, 1);
-    setState(81);
+    setState(77);
     _la = _input->LA(1);
-    if (!(_la == PhoneNumberParser::SPACE
-
-    || _la == PhoneNumberParser::HYPH)) {
+    if (!((((_la & ~ 0x3fULL) == 0) &&
+      ((1ULL << _la) & 2166784) != 0))) {
     _errHandler->recoverInline(this);
     }
     else {

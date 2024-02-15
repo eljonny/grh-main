@@ -14,11 +14,11 @@ class  DataListLexer : public antlr4::Lexer {
 public:
   enum {
     SOURCE = 1, LAST_UPDATED = 2, START_LIST = 3, END_LIST = 4, STATIC_SOURCE = 5, 
-    SCHEME_SEP = 6, DBL_DOLLAR = 7, DBL_COL = 8, AMP = 9, AT = 10, LBRACKET = 11, 
-    RBRACKET = 12, Q = 13, WS = 14, STRING = 15, ALPHANUM = 16, ALPHA = 17, 
-    HEX = 18, HEX_ALPHA = 19, DIGITS = 20, SINGLE_DIGIT_INT = 21, ZERO = 22, 
-    EQ = 23, COL = 24, HASH = 25, SPACE = 26, DOLLAR = 27, FS = 28, US = 29, 
-    PLUS = 30, HYPH = 31, PERC = 32
+    DBL_DOLLAR = 6, DBL_COL = 7, WS = 8, BASIC_STRING = 9, STRING = 10, 
+    DIGITS = 11, ALPHANUM = 12, ALPHA = 13, HEX = 14, SINGLE_DIGIT_INT = 15, 
+    ZERO = 16, PERIOD = 17, EQ = 18, COL = 19, HASH = 20, SPACE = 21, DOLLAR = 22, 
+    FS = 23, US = 24, PLUS = 25, HYPH = 26, PERC = 27, LBRACKET = 28, RBRACKET = 29, 
+    AMP = 30, AT = 31, Q = 32
   };
 
   explicit DataListLexer(antlr4::CharStream *input);

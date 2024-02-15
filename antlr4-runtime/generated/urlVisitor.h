@@ -30,6 +30,12 @@ public:
 
     virtual std::any visitScheme(urlParser::SchemeContext *context) = 0;
 
+    virtual std::any visitSchemeSeparator(urlParser::SchemeSeparatorContext *context) = 0;
+
+    virtual std::any visitUriSchemePrefix(urlParser::UriSchemePrefixContext *context) = 0;
+
+    virtual std::any visitUriScheme(urlParser::UriSchemeContext *context) = 0;
+
     virtual std::any visitHost(urlParser::HostContext *context) = 0;
 
     virtual std::any visitHostname(urlParser::HostnameContext *context) = 0;
@@ -54,9 +60,9 @@ public:
 
     virtual std::any visitPathString(urlParser::PathStringContext *context) = 0;
 
-    virtual std::any visitUser(urlParser::UserContext *context) = 0;
-
     virtual std::any visitLogin(urlParser::LoginContext *context) = 0;
+
+    virtual std::any visitUser(urlParser::UserContext *context) = 0;
 
     virtual std::any visitLoginPassword(urlParser::LoginPasswordContext *context) = 0;
 
@@ -78,17 +84,11 @@ public:
 
     virtual std::any visitSearchParameterValue(urlParser::SearchParameterValueContext *context) = 0;
 
-    virtual std::any visitSearchParameterValueString(urlParser::SearchParameterValueStringContext *context) = 0;
-
     virtual std::any visitParameterString(urlParser::ParameterStringContext *context) = 0;
 
     virtual std::any visitParameterName(urlParser::ParameterNameContext *context) = 0;
 
     virtual std::any visitConfigParam(urlParser::ConfigParamContext *context) = 0;
-
-    virtual std::any visitString(urlParser::StringContext *context) = 0;
-
-    virtual std::any visitUsString(urlParser::UsStringContext *context) = 0;
 
 
 };

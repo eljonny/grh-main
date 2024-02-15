@@ -30,6 +30,20 @@ public:
 
     virtual std::any visitCommentTextFragment(SitesParser::CommentTextFragmentContext *context) = 0;
 
+    virtual std::any visitSiteFormat(SitesParser::SiteFormatContext *context) = 0;
+
+    virtual std::any visitSiteType(SitesParser::SiteTypeContext *context) = 0;
+
+    virtual std::any visitSiteDetailFormat(SitesParser::SiteDetailFormatContext *context) = 0;
+
+    virtual std::any visitSiteFormatElement(SitesParser::SiteFormatElementContext *context) = 0;
+
+    virtual std::any visitSiteFormatId(SitesParser::SiteFormatIdContext *context) = 0;
+
+    virtual std::any visitOptionalDataElement(SitesParser::OptionalDataElementContext *context) = 0;
+
+    virtual std::any visitOptionalSiteFormatId(SitesParser::OptionalSiteFormatIdContext *context) = 0;
+
     virtual std::any visitSite(SitesParser::SiteContext *context) = 0;
 
     virtual std::any visitSiteDetail(SitesParser::SiteDetailContext *context) = 0;
@@ -94,6 +108,12 @@ public:
 
     virtual std::any visitScheme(SitesParser::SchemeContext *context) = 0;
 
+    virtual std::any visitSchemeSeparator(SitesParser::SchemeSeparatorContext *context) = 0;
+
+    virtual std::any visitUriSchemePrefix(SitesParser::UriSchemePrefixContext *context) = 0;
+
+    virtual std::any visitUriScheme(SitesParser::UriSchemeContext *context) = 0;
+
     virtual std::any visitHost(SitesParser::HostContext *context) = 0;
 
     virtual std::any visitHostname(SitesParser::HostnameContext *context) = 0;
@@ -118,9 +138,9 @@ public:
 
     virtual std::any visitPathString(SitesParser::PathStringContext *context) = 0;
 
-    virtual std::any visitUser(SitesParser::UserContext *context) = 0;
-
     virtual std::any visitLogin(SitesParser::LoginContext *context) = 0;
+
+    virtual std::any visitUser(SitesParser::UserContext *context) = 0;
 
     virtual std::any visitLoginPassword(SitesParser::LoginPasswordContext *context) = 0;
 
@@ -142,17 +162,11 @@ public:
 
     virtual std::any visitSearchParameterValue(SitesParser::SearchParameterValueContext *context) = 0;
 
-    virtual std::any visitSearchParameterValueString(SitesParser::SearchParameterValueStringContext *context) = 0;
-
     virtual std::any visitParameterString(SitesParser::ParameterStringContext *context) = 0;
 
     virtual std::any visitParameterName(SitesParser::ParameterNameContext *context) = 0;
 
     virtual std::any visitConfigParam(SitesParser::ConfigParamContext *context) = 0;
-
-    virtual std::any visitString(SitesParser::StringContext *context) = 0;
-
-    virtual std::any visitUsString(SitesParser::UsStringContext *context) = 0;
 
     virtual std::any visitPhone(SitesParser::PhoneContext *context) = 0;
 
