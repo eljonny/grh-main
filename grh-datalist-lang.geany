@@ -28,22 +28,22 @@ long_line_behaviour=1
 long_line_column=72
 
 [files]
-current_page=2
+current_page=1
 FILE_NAME_0=2711;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2Furl.g4;0;4
-FILE_NAME_1=118;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FDataList.g4;0;4
-FILE_NAME_2=315;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
+FILE_NAME_1=715;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FDataList.g4;0;4
+FILE_NAME_2=516;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
 
 [VTE]
-last_dir=/home/jhyry
+last_dir=/home/jhyry/Code/GamblingRecoveryHelp/GRHCrawler/lang/config
 
 [build-menu]
 NoneFT_00_LB=parse-dlist-US_STATE
-NoneFT_00_CM=antlr4-parse %d/%f dlist -tokens -tree -trace %d/../../res/data/US_STATE.list
+NoneFT_00_CM=antlr4-parse %d/%f dlist -tokens -tree -gui -trace %d/../../res/data/US_STATE.list
 NoneFT_00_WD=
 filetypes=None;
 NoneFT_01_LB=parse-dlist-USSTATEFULL
-NoneFT_01_CM=antlr4-parse %d/%f dlist -tokens -tree -trace %d/../../res/data/US_STATE_FULL.list
+NoneFT_01_CM=antlr4-parse %d/%f dlist -tokens -tree -gui -trace %d/../../res/data/US_STATE_FULL.list
 NoneFT_01_WD=
 NoneFT_02_LB=parse-dlist-INTLGAPAGE
-NoneFT_02_CM=antlr4-parse %d/%f dlist -tokens -tree -trace %d/../../res/data/INTL_GA_PAGE.list
+NoneFT_02_CM=antlr4-parse %d/%f dlist -tokens -tree -gui -trace %d/../../res/data/INTL_GA_PAGE.list
 NoneFT_02_WD=

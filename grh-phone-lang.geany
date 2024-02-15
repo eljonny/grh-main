@@ -20,6 +20,8 @@ indent_mode=2
 [project]
 name=grh-phone-lang
 base_path=/home/jhyry/Code/GamblingRecoveryHelp
+description=
+file_patterns=
 
 [long line marker]
 long_line_behaviour=1
@@ -27,6 +29,22 @@ long_line_column=72
 
 [files]
 current_page=0
+FILE_NAME_0=122;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FPhoneNumber.g4;0;4
 
 [VTE]
-last_dir=/home/jhyry
+last_dir=/home/jhyry/Code/GamblingRecoveryHelp/GRHCrawler/lang/config
+
+[build-menu]
+NoneFT_00_LB=parse-phone-test
+NoneFT_00_CM=antlr4-parse %d/%f phone -tokens -tree -gui -trace %d/../../test/lang/%e/phoneRegular.txt
+NoneFT_00_WD=
+NoneFT_01_LB=parse-dtmf-test
+NoneFT_01_CM=antlr4-parse %d/%f phone -tokens -tree -gui -trace %d/../../test/lang/%e/phoneDtmf.txt
+NoneFT_01_WD=
+NoneFT_02_LB=parse-half-test
+NoneFT_02_CM=antlr4-parse %d/%f phone -tokens -tree -gui -trace %d/../../test/lang/%e/phoneHalf.txt
+NoneFT_02_WD=
+filetypes=None;
+NF_00_LB=_Make
+NF_00_CM=make
+NF_00_WD=

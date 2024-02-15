@@ -29,10 +29,17 @@ long_line_column=72
 
 [files]
 current_page=0
-FILE_NAME_0=758;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FSites.g4;0;4
-FILE_NAME_1=91;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
-FILE_NAME_2=2696;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2Furl.g4;0;4
-FILE_NAME_3=823;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FDataList.g4;0;4
+FILE_NAME_0=2704;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FSites.g4;0;4
+FILE_NAME_1=430;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FCommonRules.g4;0;4
+FILE_NAME_2=2740;None;0;EUTF-8;1;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2Furl.g4;0;4
+FILE_NAME_3=350;None;0;EUTF-8;0;1;0;%2Fhome%2Fjhyry%2FCode%2FGamblingRecoveryHelp%2FGRHCrawler%2Flang%2Fconfig%2FPhoneNumber.g4;0;4
 
 [VTE]
 last_dir=/home/jhyry/Code/GamblingRecoveryHelp/GRHCrawler/lang/config
+
+[build-menu]
+NoneFT_00_LB=parse-sites-config
+NoneFT_00_CM=antlr4-parse %d/%f sites -tokens -tree -trace %d/../../res/config/sites.csv
+NoneFT_00_WD=
+filetypes=None;
+Noneerror_regex=(extraneous|mismatched)\\s+input
