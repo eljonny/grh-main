@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdexcept>
 
+#include "DataListLexer.h"
+#include "DataListParser.h"
 #include "SitesLexer.h"
 #include "SitesParser.h"
 #include "antlr4-runtime.h"
@@ -12,8 +14,6 @@ using namespace antlrcpp;
 
 namespace grh::crawler::config {
     void GRHCrawlerConfig::configLoad(string configFile) {
-        cout << "Loading GRH Crawler configuration file " << configFile << endl;
-        
         GRHCrawlerConfig::validateConfigPath(configFile);
         
         ANTLRInputStream input(grh::crawler::util::read_file(configFile));
@@ -44,6 +44,31 @@ namespace grh::crawler::config {
 
     void GRHCrawlerConfig::dataListLoad(string dataFile) {
         GRHCrawlerConfig::validateConfigPath(dataFile);
+        
+        ANTLRInputStream input(grh::crawler::util::read_file(dataFile));
+        cout << "GRH Crawler configuration file " << dataFile << " loaded"
+             << " into token stream buffer." << endl;
+        
+        DataListLexer lexer(&input);
+        cout << "Tokens loaded into configuration lexer." << endl;
+        
+        CommonTokenStream tokens(&lexer);
+        cout << "Lexer loaded into token stream." << endl;
+        
+        cout << "Preparing token stream..." << endl;
+        tokens.fill();
+        cout << "Token stream ready." << endl;
+        
+        for (auto token : tokens.getTokens()) {
+          cout << token->toString() << endl;
+        }
+
+        DataListParser parser(&tokens);
+        cout << "Token stream loaded into parser. Parsing..." << endl;
+        tree::ParseTree* tree = parser.sites();
+        cout << "Configuration parsed successfully." << endl;
+
+        cout << tree->toStringTree(&parser) << endl << endl;
     }
 
     void GRHCrawlerConfig::validateConfigPath(string path) {
