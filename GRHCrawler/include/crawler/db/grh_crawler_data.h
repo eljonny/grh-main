@@ -5,14 +5,16 @@
 
 using namespace std;
 
-class GRHDocument {
-public:
-    string rawData;
-};
+namespace grh::crawler::db {
+    class GRHDocument {
+    public:
+        string rawData;
+    };
 
-class GRHCrawlerSiteData {
-public:
-    GRHDocument data;
-};
+    class GRHCrawlerSiteData {
+    public:
+        GRHDocument data;
+    };
+}
 
 #endif

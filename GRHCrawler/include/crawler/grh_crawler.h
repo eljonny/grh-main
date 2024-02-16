@@ -6,15 +6,17 @@
 #include "config/grh_crawler_config.h"
 #include "db/grh_crawler_db.h"
 
-class GRHCrawler {
-public:
-    void run(GRHCrawlerConfig config);
-    GRHCrawlerSiteData data();
-    
-private:
-    GRHCrawlerSiteData _data;
+namespace grh::crawler {
+    class GRHCrawler {
+    public:
+        void run(config::GRHCrawlerConfig config);
+        db::GRHCrawlerSiteData data();
+        
+    private:
+        db::GRHCrawlerSiteData _data;
 
-    void parse(GRHCrawlerSiteData rawData);
-};
+        void parse(db::GRHCrawlerSiteData rawData);
+    };
+}
 
 #endif

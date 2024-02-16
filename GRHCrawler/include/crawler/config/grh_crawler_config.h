@@ -6,26 +6,30 @@
 
 using namespace std;
 
-template<class T>
-class GRHDataList {
-    string name;
-    string loadTime;
-    vector<T> dataList;
-};
+namespace grh::crawler::config {
+    template<class T>
+    class GRHDataList {
+        string name;
+        string loadTime;
+        vector<T> dataList;
+    };
 
-class GRHConfigMap {
-    GRHDataList<string> usStateAbbrevs;
-    GRHDataList<string> usStateNames;
-    GRHDataList<int> intlGAPages;
-};
+    class GRHConfigMap {
+        GRHDataList<string> usStateAbbrevs;
+        GRHDataList<string> usStateNames;
+        GRHDataList<int> intlGAPages;
+    };
 
-class GRHCrawlerConfig {
-public:
-    void configLoad(string configFile);
-    void dataListLoad(string dataFile);
-    
-private:
-    GRHConfigMap _config;
-};
+    class GRHCrawlerConfig {
+    public:
+        void configLoad(string configFile);
+        void dataListLoad(string dataFile);
+        
+    private:
+        GRHConfigMap _config;
+        
+        void validateConfigPath(string path);
+    };
+}
 
 #endif
