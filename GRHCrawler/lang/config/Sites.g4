@@ -10,15 +10,63 @@ siteListEntry : comment | site ;
 
 comment : HASH commentTextFragment* WS ;
 
-commentTextFragment : STRING
+commentTextFragment : BASIC_STRING
+                    | STRING
                     | SPACE
                     | GRAVE
                     | DOLLAR
+                    | DBL_DOLLAR
+                    | HYPH
                     | COMMA
                     | COL
                     | DIGITS
                     | FS
+                    | DQUOTE
+                    | HASH
+                    | MEETINGS
+                    | FELLOWSHIP
+                    | ORGANIZATION
+                    | RESOURCE
+                    | TEXT
+                    | CALL
+                    | CHAT
+                    | TEST
+                    | CALL_LIST
+                    | LITERATURE
+                    | READING
+                    | STORE
+                    | BULLETIN
+                    | US_IN_PERSON
+                    | INTL_IN_PERSON
+                    | ALL_IN_PERSON
+                    | CA_IN_PERSON
+                    | VIRTUAL
+                    | PHONE
+                    | LBRACKET
+                    | RBRACKET
+                    | AMP
+                    | AT
+                    | Q
+                    | siteFormat
                     ;
+
+siteFormat : GRAVE siteType GRAVE siteDetailFormat ;
+
+siteType : MEETINGS
+         | FELLOWSHIP
+         | ORGANIZATION
+         | RESOURCE
+         ;
+
+siteDetailFormat : siteFormatElement+ optionalDataElement* ;
+
+siteFormatElement : COMMA siteFormatId ;
+
+siteFormatId : BASIC_STRING | STRING ;
+
+optionalDataElement : LBRACKET COMMA optionalSiteFormatId RBRACKET ;
+
+optionalSiteFormatId : siteFormatId ;
 
 site : siteDetail WS ;
 
@@ -93,7 +141,7 @@ resourceDataPrimary : resourceTextNumber
                     | resourceUrl
                     ;
 
-resourceTextNumber : ALPHANUM+ ;
+resourceTextNumber : DIGITS+ BASIC_STRING* ;
 
 resourcePhoneNumber : phone ;
 
@@ -103,15 +151,15 @@ resourceOptional : COMMA resourceDataContext ;
 
 resourceDataContext : ANY | resourceDataContextSpecifier;
 
-resourceDataContextSpecifier : STRING ;
+resourceDataContextSpecifier : BASIC_STRING | STRING ;
 
 entityId : entityIdSegment+ ;
 
-entityIdSegment : ALPHA | HYPH ;
+entityIdSegment : BASIC_STRING | STRING | HYPH ;
 
-entityName : ALPHA entityNameSegment* ;
+entityName : (BASIC_STRING | STRING) entityNameSegment* ;
 
-entityNameSegment : SPACE | ALPHA | HYPH ;
+entityNameSegment : SPACE | BASIC_STRING | STRING | HYPH ;
 
 /* Lexer Rules */
 
@@ -127,7 +175,7 @@ TEST : 'test' ;
 
 CALL_LIST : 'call-list' ;
 
-LITERATURE : 'literature' ;
+LITERATURE : 'program-literature' ;
 
 READING : 'reading' ;
 
@@ -156,5 +204,7 @@ ORGANIZATION : 'organization' ;
 RESOURCE : 'resource' ;
 
 GRAVE : '`' ;
+
+DQUOTE : '"' ;
 
 COMMA : ',' ;

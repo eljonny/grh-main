@@ -97,7 +97,7 @@ organization,per-state,per-state,https://www.ncpgambling.org/help-treatment/help
 #  other useful information.
 #
 # Format:
-# `resource`,id,resource-type,data1[,data2]
+# `resource`,id,resourceType,data1[,data2]
 #
 # NOTE: The data1 field is either a URL or a phone/text number.
 #       Also, the GA call-list item is a URL for the GA hotlines.
@@ -115,14 +115,14 @@ resource,ncpg,call,1-800-GAMBLER
 resource,ncpg,test,https://www.ncpgambling.org/help-treatment/problem-gambling-self-assessment/
 resource,ga,test,https://gamblersanonymous.org/ga/content/20-questions
 resource,ga,call-list,https://gamblersanonymous.org/ga/hotlines
-resource,ga,literature,https://www.gamblersanonymous.org.uk/literature
+resource,ga,program-literature,https://www.gamblersanonymous.org.uk/literature
 resource,ga,reading,https://gamblersanonymous.ph/
 resource,ga,store,https://www.gamblersanonymous.org/ga/products
 resource,ga,bulletin,https://www.gamblersanonymous.org/ga/pdf
 resource,ba,test,https://bettors-anonymous.org/questions.html
 resource,rro,reading,https://dev01.recoveryroadonline.com/00_promises/
 resource,gam-anon,call-list,https://www.gam-anon.org/?view=article&id=574:hotline-numbers&catid=11:general
-resource,gam-anon,literature,https://www.gam-anon.org/literature-summary
+resource,gam-anon,program-literature,https://www.gam-anon.org/literature-summary
 resource,gam-talk,chat,http://www.gamtalk.org/
 resource,per-state,call,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/
 resource,per-state,text,https://www.ncpgambling.org/help-treatment/help-by-state/$$US_STATE_FULL$$/

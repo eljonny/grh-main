@@ -34,13 +34,21 @@ tzHour : DIGITS ;
 
 tzMinutes : DIGITS ;
 
-startList : START_LIST WS ;
+startList : START_LIST SPACE+ listId SPACE* WS ;
+
+listId : SOURCE ;
 
 listItem : listItemContent WS;
 
-listItemContent : DIGITS (SPACE DIGITS)* | STRING (SPACE STRING)*;
+listItemContent : numericalListItemContent | complexListItemContent ;
 
-endList : END_LIST WS? ;
+numericalListItemContent : DIGITS (SPACE+ DIGITS)* ;
+
+complexListItemContent : dataListString (SPACE+ dataListString)* ;
+
+dataListString : BASIC_STRING | STRING ;
+
+endList : END_LIST SPACE+ listId SPACE* WS? ;
 
 /* Lexer Rules */
 

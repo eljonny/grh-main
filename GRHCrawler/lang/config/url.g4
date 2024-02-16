@@ -46,7 +46,7 @@ url
     ;
 
 uri
-    : scheme SCHEME_SEP login? host uriPort? uriPath? query? frag?
+    : scheme schemeSeparator login? host uriPort? uriPath? query? frag?
     ;
 
 uriPort
@@ -58,7 +58,19 @@ uriPath
     ;
 
 scheme
-    : string
+    : uriSchemePrefix? uriScheme
+    ;
+
+schemeSeparator
+    : COL FS? FS?
+    ;
+
+uriSchemePrefix
+    : BASIC_STRING
+    ;
+
+uriScheme
+    : BASIC_STRING
     ;
 
 host
@@ -70,7 +82,7 @@ hostname
     ;
 
 domainNameOrIpv4Host
-    : parameterString | string
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 ipv6Host
@@ -98,23 +110,23 @@ port
     ;
 
 path
-    : pathString multiPathChunk* FS?
+    : pathString+ multiPathChunk* FS?
     ;
 
 multiPathChunk
-    : FS pathString
+    : FS pathString+
     ;
 
 pathString
-    : parameterString | string
-    ;
-
-user
-    : parameterString | string
+    : parameterString | BASIC_STRING | STRING | DIGITS | HYPH | US
     ;
 
 login
     : user loginPassword? AT
+    ;
+
+user
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 loginPassword
@@ -122,7 +134,7 @@ loginPassword
     ;
 
 password
-    : parameterString | string
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 frag
@@ -130,11 +142,11 @@ frag
     ;
 
 fragString
-    : parameterString | string | DIGITS
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 query
-    : Q search
+    : Q search?
     ;
 
 search
@@ -146,19 +158,15 @@ multiSearch
     ;
 
 searchParameter
-    : searchParameterKey searchParameterValue?
+    : searchParameterKey EQ searchParameterValue*
     ;
 
 searchParameterKey
-    : parameterString | string
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 searchParameterValue
-    : EQ searchParameterValueString?
-    ;
-
-searchParameterValueString
-    : parameterString | string | DIGITS | HEX
+    : parameterString | BASIC_STRING | STRING | DIGITS | HEX+ | COL
     ;
 
 parameterString
@@ -166,27 +174,14 @@ parameterString
     ;
 
 parameterName
-    : string usString*
+    : BASIC_STRING | STRING | DIGITS
     ;
 
 configParam
-    : parameterString | string | DIGITS
-    ;
-
-string
-    : STRING
-    | DIGITS
-    ;
-
-usString
-    : US string
+    : parameterString | BASIC_STRING | STRING | DIGITS
     ;
 
 /* Lexer Rules */
-
-SCHEME_SEP
-    : COL FS FS
-    ;
 
 DBL_DOLLAR
     : DOLLAR DOLLAR
@@ -194,24 +189,4 @@ DBL_DOLLAR
 
 DBL_COL
     : COL COL
-    ;
-
-AMP
-    : '&'
-    ;
-
-AT
-    : '@'
-    ;
-
-LBRACKET
-    : '['
-    ;
-
-RBRACKET
-    : ']'
-    ;
-
-Q
-    : '?'
     ;

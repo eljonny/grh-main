@@ -4,7 +4,7 @@ import CommonRules;
 
 phone : countryCode phoneSep
         areaCode phoneSep
-        phoneNumber
+        phoneNumber EOF?
       ;
 
 countryCode : PLUS? DIGITS ;
@@ -23,13 +23,13 @@ dtmf : dtmfWithLocal | dtmfAll ;
 
 dtmfWithLocal : localAreaWithDtmf phoneSep? dtmfLocalizer ;
 
-localAreaWithDtmf : ALPHANUM+ ;
+localAreaWithDtmf : (DIGITS | BASIC_STRING)+ ;
 
-dtmfAll : ALPHANUM+ ;
+dtmfAll : BASIC_STRING ;
 
-dtmfLocalizer : ALPHANUM+ ;
+dtmfLocalizer : BASIC_STRING ;
 
-phoneSep : SPACE | HYPH ;
+phoneSep : SPACE | HYPH | PERIOD ;
 
 /* Lexer Rules */
 

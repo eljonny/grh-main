@@ -1,7 +1,7 @@
 source=https://en.wikipedia.org/wiki/List_of_U.S._state_and_territory_abbreviations
 source2=static
 lastUpdated=2024-02-06 23:34-07:00
-start-list
+start-list source
 Alabama
 Alaska
 Arizona
@@ -53,7 +53,7 @@ Washington
 West Virginia
 Wisconsin
 Wyoming
-end-list
-start-list
+end-list source
+start-list source2
 usterritories
-end-list
+end-list source2
